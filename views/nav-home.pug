@@ -1,0 +1,104 @@
+nav.main-nav(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar-collapse.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.active.nav-item
+          a(href='https://sunflowergenome.org') Home
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Project Overview
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | Research Activities
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='geneticmapping.html') Genetic Mapping
+                li
+                  a(href='physicalmapping.html') Physical Mapping
+                li
+                  a(href='sequencing.html') Sequencing
+                li
+                  a(href='assembly.html') Assembly
+                li
+                  a(href='annotation.html') Annotation
+            li
+              a(href='team.html') Research Team
+            li
+              a(href='publications.html') Recent Publications
+            li
+              a(href='funding.html') Funding Partners
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Tools
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li
+              a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') JBrowse
+            li
+              a(href='https://sunflowergenome.org/blast/') BLAST (HA412-HO Bronze Assembly)
+            li
+              a(href='https://sunflowergenome.org/cgi-bin/cmap/viewer?ref_map_set_acc=1') cMap
+            li
+              a(href='expression.html') Gene Expression Browser
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | INRA Tools (External)
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='https://www.heliagene.org/gb2/gbrowse/Ha412Newbler20120907/') HA412HO v0.1 Genome Browser
+                li
+                  a(href='https://www.heliagene.org/Ha412Newbler20120907/') HA412HO v0.1 Genome Annotation
+                li
+                  a(href='http://www.heliagene.org/Ha412T4l') HA412HO v0.1 Transcriptome Search
+                li
+                  a(href='http://www.heliagene.org/HaT13l') HAXRQ Transcriptome Search
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Data
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li
+              a(href='genespace.html') Gene Space
+            li
+              a(href='genomeassembly.html') Genome Assemblies
+            li
+              a(href='geneticmap.html') Genetic Map
+            li
+              a(href='physicalmap.html') Physical Map
+            li
+              a(href='transcriptome.html') Transcriptome
+            li
+              a(href='diversity.html') Phylogenetic Diversity
+            li
+              a(href='variants.html') Variant Calls
+            li
+              a(href='annotations.html') Annotations
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | Presentations
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='pag2013.html') PAG 2013
+                li
+                  a(href='pag2014.html') PAG 2014
+                li
+                  a(href='pag2015.html') PAG 2015
+                li
+                  a(href='pag2017.html') PAG 2017
+        li.nav-item
+          a(href='news.html') News
+        li.nav-item
+          a(href='events.html') Events
+        li.nav-item
+          a(href='contact.html') Contact

@@ -1,0 +1,208 @@
+extends header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='faq.html') FAQ
+              li
+                a(href='contact.html') Contact
+            br
+      include nav-home
+      .content.container
+        #promo-slider.slider.flexslider
+          ul.slides
+            li
+              img(src='/images/slides/sun-slide-1.jpg', alt='')
+              p.flex-caption
+                span.main
+                  i Helianthus neglectus
+                  | , near Monahans, Texas, USA
+                br
+                |
+                span.secondary.clearfix
+                  | Photo by
+                  a(href='https://www.flickr.com/photos/140153126@N06/albums/72157666502516820/page1/') Dylan Burge
+            li
+              img(src='/images/slides/sun-slide-2.jpg', alt='')
+              p.flex-caption
+                span.main
+                  i Helianthus annuus
+                  | , near Rockport, Texas, USA
+                br
+                |
+                span.secondary.clearfix
+                  | Photo by
+                  a(href='https://www.flickr.com/photos/140153126@N06/albums/72157666502516820/page1/') Dylan Burge
+            li
+              img(src='/images/slides/sun-slide-3.jpg', alt='')
+              p.flex-caption
+                span.main
+                  i Helianthus argophyllus
+                  | , near Rockport, Texas, USA
+                br
+                |
+                span.secondary.clearfix
+                  | Photo by
+                  a(href='https://www.flickr.com/photos/140153126@N06/albums/72157666502516820/page1/') Dylan Burge
+            li
+              img(src='/images/slides/sun-slide-4.jpg', alt='')
+              p.flex-caption
+                span.main
+                  i Helianthus annuus
+                  | , New Mexico, USA
+                br
+                |
+                span.secondary.clearfix
+                  | Photo by
+                  a(href='https://www.flickr.com/photos/140153126@N06/albums/72157666502516820/page1/') Dylan Burge
+        section.promo.box.box-dark
+          .col-md-9
+            h1.section-heading About the sunflower genome database
+            p
+              | The data available on this site was generated as part of the sunflower genome project by an international group of researchers. For information related to the use of data on this site, the funding for this project, or any other questions, please see the
+              a(href='faq.html') FAQ
+              |  page or
+              a(href='contact.html') contact
+              |  us directly.
+        section.news
+          h1.section-heading.text-highlight
+            span.line Latest News
+          .carousel-controls
+            a.prev(href='#news-carousel', data-slide='prev')
+              i.fa.fa-caret-left
+            a.next(href='#news-carousel', data-slide='next')
+              i.fa.fa-caret-right
+          .section-content.clearfix
+            #news-carousel.news-carousel.carousel.slide
+              .carousel-inner
+                .item.active
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-expression.html') HA412HO gene expression browser released
+                    |
+                    img.thumb(src='/images/news/expression-thumb-1.jpg', alt='')
+                    p
+                      | A new set of tools to explore gene expression by tissue is now
+                      a(href='expression.html') available
+                      | . Users can now customize the and export the results in multiple formats.
+                    |
+                    a.read-more(href='news-expression.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-annotation.html') Gene and transposon annotations released
+                    p
+                      | The version 1.0 gene and transposon annotations have been made public. Please start using the latest annotations today!
+                    |
+                    a.read-more(href='news-annotation.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                    |
+                    img.thumb(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-browser.html') Genome browser updates
+                    p
+                      | Many data sets and visualization improvements have been added to JBrowse, which we hope will make the data more accessible and easy to understand.
+                    |
+                    a.read-more(href='news-browser.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                    |
+                    img.thumb(src='/images/news/browser-thumb-3.jpg', alt='')
+                .item
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-tools.html') Annotation tools publicly available
+                    p
+                      | In addition to making the annotation data public, much of the software written to generate the annotations is available on github.
+                    |
+                    a.read-more(href='news-tools.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                    |
+                    img.thumb(src='/images/news/git-thumb-3.jpg', alt='')
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-expression.html') HA412HO gene expression browser released
+                    |
+                    img.thumb(src='/images/news/expression-thumb-1.jpg', alt='')
+                    p
+                      | A new set of tools to explore gene expression by tissue is now
+                      a(href='expression.html') available
+                      | . Users can now customize the and export the results in multiple formats.
+                    |
+                    a.read-more(href='news-expression.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                  .col-md-4.news-item
+                    h2.title
+                      a(href='news-annotation.html') Gene and transposon annotations released
+                    p
+                      | The version 1.0 gene and transposon annotations have been made public. Please start using the latest annotations today!
+                    |
+                    a.read-more(href='news-annotation.html')
+                      | Read more
+                      i.fa.fa-chevron-right
+                    |
+                    img.thumb(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+        section.awards
+          #awards-carousel.awards-carousel.carousel.slide
+            .carousel-inner
+              .item.active
+                ul.logos
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.energy.gov')
+                      img.img-responsive(src='/images/funding/doe_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.nsf.gov')
+                      img.img-responsive(src='/images/funding/nsf_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.usda.gov')
+                      img.img-responsive(src='/images/funding/usda_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.genomecanada.ca')
+                      img.img-responsive(src='/images/funding/GenomeCanada_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.genomebc.ca')
+                      img.img-responsive(src='/images/funding/GenomeBC_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.inra.fr/en/')
+                      img.img-responsive(src='/images/funding/inra_logo_100x100.jpg', alt='')
+              .item
+                ul.logos
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.pioneer.com')
+                      img.img-responsive(src='/images/funding/Pioneer_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.advantaseeds.com/')
+                      img.img-responsive(src='/images/funding/Advanta_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.pioneer.com')
+                      img.img-responsive(src='/images/funding/biogemma_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.biogemma.com/')
+                      img.img-responsive(src='/images/funding/Syngenta_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.kws.com/')
+                      img.img-responsive(src='/images/funding/kws_logo_100x100.jpg', alt='')
+                  li.col-md-2.col-sm-2.col-xs-4
+                    a(href='http://www.dowagro.com/en-US')
+                      img.img-responsive(src='/images/funding/dow-agrosciences_logo_100x100.jpg', alt='')
+            a.left.carousel-control(href='#awards-carousel', data-slide='prev')
+              i.fa.fa-angle-left
+            a.right.carousel-control(href='#awards-carousel', data-slide='next')
+              i.fa.fa-angle-right
+
+  include footer
