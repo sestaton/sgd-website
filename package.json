@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "build-css": "stylus public/stylesheets/styles.styl -o public/stylesheets/",
     "watch-css": "stylus public/stylesheets/styles.styl -o public/stylesheets/ -w",
     "clean": "rm -f public/stylesheets/css/*.css",
@@ -19,9 +19,11 @@
     "fontawesome": "^4.7.2",
     "helmet": "^3.5.0",
     "morgan": "~1.7.0",
-    "nodemon": "^1.11.0",
     "pug": "~2.0.0-beta6",
     "serve-favicon": "~2.3.0",
     "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
