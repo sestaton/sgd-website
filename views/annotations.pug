@@ -1,0 +1,288 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Annotations
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Annotations
+          .page-content
+            .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.has-divider.clearfix
+                  p.lead
+                    | Please see the annotation page for a description of the procedures for generating the data on this page. Basic statistics are available on the annotation
+                    |
+                    a(href='/news-annotation') news
+                    |  page. Below you will find annotated gene products and transposons, as well as files of combined annotations of all features.
+                  h2 Genes
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Release version
+                          th Filename
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td v1.0
+                          td Ha412v1r1_CDS_v1.0.fasta.gz
+                          td Nucleotide CDS for each gene
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_CDS_v1.0.fasta.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_CDS_v1.0.fasta.gz.md5
+                          td MD5 checksum of nucleotide CDS for each gene
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_CDS_v1.0.fasta.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_CDS_iprscan_v1.0.tsv.gz
+                          td Functional annotation table
+                          td TSV
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_CDS_iprscan_v1.0.tsv.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_CDS_iprscan_v1.0.tsv.gz.md5
+                          td MD5 checksum of functional annotation table
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_CDS_iprscan_v1.0.tsv.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_prot_v1.0.faa.gz
+                          td Translated CDS, or protein sequence
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_prot_v1.0.faa.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_prot_v1.0.faa.gz.md5
+                          td MD5 checksum of translated CDS
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_prot_v1.0.faa.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.gff3.gz
+                          td Annotated gene features in GFF3 format
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.gff3.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.gff3.gz.md5
+                          td MD5 checksum of annotated gene features in GFF3
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.gff3.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.gtf.gz
+                          td Annotated gene features in GTF format
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.gtf.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.gtf.gz.md5
+                          td MD5 checksum of annotated gene features in GTF
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.gtf.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.fasta.gz
+                          td Full-length nucleotide sequence for each gene
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.fasta.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_v1.0.fasta.gz.md5
+                          td MD5 checksum of full-length nucleotide sequence for each gene
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/genes/Ha412v1r1_genes_v1.0.fasta.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                  h2 Transposons
+                  p
+                    | The transposon annotations below were generated with
+                    a(href='https://github.com/sestaton/tephra') Tephra
+                    | , a software package developed for this project. If you use these annotations in your work, please refer to the link provided on how to cite this software.
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Release version
+                          th Filename
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td v1.0
+                          td Ha412v1r1_transposons_v1.0.gff3.gz
+                          td Annotated transposons in GFF3 format
+                          td GFF3
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/transposons/Ha412v1r1_transposons_v1.0.gff3.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_transposons_v1.0.gff3.gz.md5
+                          td MD5 checksum of annotated transposons in GFF3 format
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/transposons/Ha412v1r1_transposons_v1.0.gff3.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_transposons_v1.0.fasta.gz
+                          td Full-length nucleotide sequence for each transposon
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/transposons/Ha412v1r1_transposons_v1.0.fasta.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_transposons_v1.0.gff3.gz.md5
+                          td MD5 checksum of full-length nucleotide sequence for each transposon
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/transposons/Ha412v1r1_transposons_v1.0.gff3.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                  h2 Combined annotations
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Release version
+                          th Filename
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_transposons_v1.0.gff3.gz
+                          td Annotated gene and transposon features in GFF3 format
+                          td GFF3
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/combined/Ha412v1r1_genes_transposons_v1.0.gff3.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_transposons_v1.0.gff3.gz.md5
+                          td MD5 checksum of annotated gene and transposon features in GFF3 format
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/combined/Ha412v1r1_genes_transposons_v1.0.gff3.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_transposons_v1.0.fasta.gz
+                          td Full-length gene and transposon sequences
+                          td FASTA
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/combined/Ha412v1r1_genes_transposons_v1.0.fasta.gz')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td v1.0
+                          td Ha412v1r1_genes_transposons_v1.0.fasta.gz.md5
+                          td MD5 checksum of full-length gene and transposon sequences
+                          td MD5 checksum
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/combined/Ha412v1r1_genes_transposons_v1.0.fasta.gz.md5')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                  h2 File Specifications
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Release version
+                          th Filename
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td v1.0
+                          td FILE_SPECIFICATIONS.txt
+                          td Detailed description of all annotation file contents and formats
+                          td Plain text
+                          td
+                            a.btn.btn-sm.btn-default(href='/data/annotations/FILE_SPECIFICATIONS.txt')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  img(src='/images/variants.png', width='360', height='321')
+                section.widget.has-divider
+                  article.news-item.row
+                    p
+                      | Circular view of all 1.4M SNPs called in the SAM population (courtesy Sariel Hubner). Chromosome number is indicated next to each gray bar. Genomic scans were conducted in 1Mb windows including: SNP density (red), diversity - Pi (blue), Tajima&apos;s-D (orange), and linkage disequilibrium (green).
+
+  include footer
