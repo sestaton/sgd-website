@@ -6,7 +6,7 @@
     "start": "nodemon ./bin/www",
     "build-css": "stylus public/stylesheets/styles.styl -o public/stylesheets/",
     "watch-css": "stylus public/stylesheets/styles.styl -o public/stylesheets/ -w",
-    "clean": "rm -f public/stylesheets/css/*.css",
+    "clean": "rm -f public/stylesheets/*.css",
     "build": "npm run clean && npm run build-css",
     "watch": "npm run clean && npm run watch-css & nodemon ./bin/www -e styl,pug"
   },
