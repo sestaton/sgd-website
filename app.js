@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var about = require('./routes/about');
 var annotation = require('./routes/annotation');
 var annotations = require('./routes/annotations');
+var contact = require('./routes/contact');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/', index);
 app.use('/about', about);
 app.use('/annotation', annotation);
 app.use('/annotations', annotations);
+app.use('/contact', contact);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
