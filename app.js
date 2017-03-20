@@ -8,7 +8,6 @@ var helmet = require('helmet');
 
 var index = require('./routes/index');
 var about = require('./routes/about');
-var annotation = require('./routes/annotation');
 var annotations = require('./routes/annotations');
 var contact = require('./routes/contact');
 
@@ -19,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(helmet());
-// uncomment after placing your favicon in /public        
+// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev')); // short
 app.use(bodyParser.json());
@@ -30,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/about', about);
-app.use('/annotation', annotation);
 app.use('/annotations', annotations);
 app.use('/contact', contact);
 
