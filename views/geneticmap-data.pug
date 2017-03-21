@@ -1,0 +1,153 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Genetic Map
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Genetic Map files
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/geneticmap') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/geneticmap-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li.active
+                    a(href='/geneticmap-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              h2 Downloads
+              .table-responsive
+               table.table.table-hover.table-bordered
+                 thead
+                   tr
+                     th Description
+                     th Format
+                     th Download
+                 tbody
+                   tr
+                     td Fixed SNPs
+                     td VCF
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/P280_and_P801.qualGT20.fixedHom.vcf.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Placed Genomic Contigs
+                     td Tab-delimited table
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/gMap.280x801.slidingWindows.splitChimericGenomeScaffolds.allpaths.apr052013.tab.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Sliding Window Genetic Map (Using AllPaths Assembly, Apr 5 2013)
+                     td Tab-delimited table
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/gMap.280x801.30112011.with_snp_count.tab.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Split Chimeric Genome Assembly Scaffolds (Using AllPaths Assembly, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/AllPathsLG_france001.final.assembly.split.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Original Genome Assembly Scaffolds (Using AllPaths Assembly, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/AllPathsLG_france001.final.assembly.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Sliding Window Genetic Map (Using Celera Novk22 Assembly, Apr 5 2013)
+                     td Tab-delimited table
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/gMap.280x801.slidingWindows.splitChimericGenomeScaffolds.celeraNovk22.apr052013.tab.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td
+                       | Split Chimeric Genome Assembly Scaffolds (Using Celera Novk22 Assembly, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/Nov22k22.scf.split.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Original Genome Assembly Scaffolds (Using Celera Novk22 Assembly, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/Nov22k22.scf.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td
+                       | Sliding Window Genetic Map (Using Celera Assembly Scaffolded and Extended with SSPACE using 40k Mate Pair libraries, Apr 5 2013)
+                     td Tab-delimited table
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/gMap.280x801.slidingWindows.splitChimericGenomeScaffolds.celera14libs.apr052013.tab.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td
+                       | Split Chimeric Genome Assembly Scaffold (Using Celera Assembly Scaffolded and Extended with SSPACE using 40k Mate Pair libraries, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/Celera_14libs_sspace2_ext.final.scaffolds.split.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td
+                       | Original Genome Assembly Scaffolds (Using Celera Assembly Scaffolded and Extended with SSPACE using 40k Mate Pair libraries, Apr 5 2013)
+                     td FASTA
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/celera_sspace.scaffoldsSep2012.extended.fasta.bz2')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+                   tr
+                     td Graphical Map
+                     td PDF
+                     td
+                       a.btn.btn-sm.btn-default(href='assets/data/geneticmap/grassa_PAG_2012.v2.lowres.pdf')
+                         span.glyphicon.glyphicon-cloud-download
+                         |  Download
+
+  include footer

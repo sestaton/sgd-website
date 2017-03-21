@@ -1,0 +1,85 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Genetic Map
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Genetic Map procedures
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li.active
+                    a(href='/geneticmap') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/geneticmap-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/geneticmap-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | We have developed several high density genetic maps that can be used for correctly placing and ordering sequence scaffolds on chromosomes, as well as for association and QTL analyses (shown to the right). Initially, we employed two gene chips for mapping: (1) a 10,640- SNP Infinium array that we developed in collaboration with Advanta Seeds, Dow Agrosciences, Syngenta AG, and Pioneer Hi-Bred; and (2) a 2.56 million-feature Affymetrix chip that we developed in collaboration with Syngenta AG and Biogemma.
+              p(align='left')
+                | As described in Bowers et al. (2012a), four of our core mapping populations were genotyped with the Infinium array, and between 2,100 and 4,100 markers were placed on each map. A combined map created from the four SNP maps plus simple sequence repeats (SSRs) mapped previously contains 10,083 loci, including 8,571 gene loci, and 1,512 SSRs.
+              p(align='left')
+                | One these mapping populations was also genotyped using the Affymetrix array, which allowed us to map 130,707, corresponding to over 20,000 genes (Bowers et al. 2012b). If we combine the Illumina and Affymetrix maps we are able to place more than 25,000 genes on the sunflower genetic map.
+              p(align='left')
+                | Due to the complexity of the sunflower genome, however, we found it desirable to increase the density of our genetic map further using a sequence-based mapping approach. Our core mapping population was derived from two highly homozygous sunflower cultivars: RHA280, a confectionary line, and RHA801, an oil seed line. Eighth generation RILS of single seed descent were used for mapping. Whole genome shotgun (WGS) sequencing was carried out with 100 bp paired-end Illumina reads at Genome Quebec. One lane of sequence was generated for each parent. Eight lanes were then multiplexed with 12 RILs, producing about 1x of coverage for each barcoded sample. Parental reads were assigned to one of our early draft assemblies (Newbler) using the Burrows-Wheeler Aligner. Genotypes were called using SAMtools mpileup. In each individual, genomic contigs were called as descended from one or the other parent based on the presence of at least 9 SNPs, with at least 90% called as descended from one or the other parent. MSTMAP was used to place the contigs in linear order. This allowed us to place 261,999 contigs, representing 2.6 million SNPs and circa 30% of the sunflower genome (Figure 1), onto the genetic map (Renaut et al. 2013). The same data set and approach were also used to create maps for our Allpaths and Celera assemblies when they became available. These new maps allowed us to place 22% and 51% of genome onto the genetic map, respectively.
+              p
+                | More recently, our INRA collaborators contributed two additional high-density genetic maps (XRQ x PSC8 - 180 RILs and FU x PAZ2 - 87 RILs) using a 197,914 SNP Affymetrix Axiom array. A total of 31,757 were mapped in the XRQ x PSC8 population and 17,901 in the FU x PAZ2 population. A consensus map based on both populations includes 45,566 markers. We have used these maps, as well as a 5,019 SNP map developed by the USDA and collaborators (Talukder et al. 2014) to place additional scaffolds onto the genetic map, as well as to correctly order and orient the scaffolds we had previously mapped.
+              .ow.page-row
+                h3.has-divider.text-highlight References
+                ol.ref-apa
+                  li
+                    | Bowers, J.E., E. Bachlava, R.L. Brunick, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2012a. Development of a 10,000 Locus Genetic Map of the Sunflower Genome Based on Multiple Crosses.
+                    em G3: GENES, GENOMES, GENETICS
+                    |  2:721-729.
+                  li
+                    | Bowers, S. Nambeesan, J. Corbi, M.S. Barker, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2012b. Development of an ultra-dense genetic map of the sunflower genome based on single-feature polymorphisms.
+                    em PLoS ONE
+                    |  7:e51360.
+                  li
+                    | Talukder ZI, Gong L, Hulke BS, Pegadaraju V, Song Q, et al. (2014) A High-Density SNP Map of Sunflower Derived from RAD-Sequencing Facilitating Fine-Mapping of the Rust Resistance Gene R12.
+                    em PLoS ONE
+                    |  9(7): e98628. doi:10.1371/journal.pone.0098628
+                  li
+                    | Renaut, S., C.J. Grassa, S. Yeaman, B.T. Moyers, Z. Lai, N.C. Kane, J.E. Bowers, J.M. Burke, and L.H. Rieseberg. 2013. Genomic islands of divergence are not affected by geography of speciation in sunflowers.
+                    em Nature Communications
+                    |  4, 1827.
+
+  include footer

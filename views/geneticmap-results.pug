@@ -1,0 +1,94 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Genetic Map
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Genetic Map statistics
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/geneticmap') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/geneticmap-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/geneticmap-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | We sequenced Helianthus annuus cultivars RHA801 and RHA280, which are the parental lines of our core recombinant inbred line (RIL) mapping population, to an average depth of 10x. Alignment to the contiguous sequences of the draft sunflower genome assembly revealed over two million high quality SNPs fixed between the two parental cultivar lines. Ninety-six eighth generation RILs were sequenced to a mean depth of 1.0x. In the RILs, genomic regions were called as descended from one or the other parent based on the presence of at least ten SNP calls at informative sites. Perfectly correlated regions not exhibiting significant segregation distortion were binned for use as genetic markers for the template map. Markers were ordered using the MSTmap software. Centimorgan distance of adjacent markers was calculated using Kosambi&apos;s mapping function.
+              h2 Fixed SNPs
+              p
+                | This file contains the candidate sites used for mapping in the Variant Call Format. The specification is available online at: http://vcftools.sourceforge.net/specs.html. Parental reads were aligned to our draft reference assembly using the Burrows-Wheeler Aligner (BWA). Genotypes were called using SAMtools mpileup. Fixed SNPs with a genotype quality more than 20 and a mapping quality more than 30 on the Phred scale were used as candidate sites for calling genotype blocks in the RILs.
+              h2 Placed Genomic Contigs
+              p
+                | Contigs containing segregating SNPs were compared to the template map in forward and reverse order and the best match was stored for each direction. A contig was placed with an upper distance of the best forward match match and a lower distance of the best reverse match if both were found on the same linkage group. Contigs placed within narrow bounds and containing a high number of candidate sites are placed with increased confidence.
+              p Column descriptions:
+              ol
+                li
+                  | contig name (as found in
+                  |
+                  a(href='assets/data/geneticmap/454AllContigs.fna.bz2') 454AllContigs.fna
+                  | )
+                li conventional linkage group
+                li estimated position on conventional linkage group, in centiMorgans
+                li centimorgan lower bound
+                li centimorgan upper bound
+                li framework location lower bound
+                li framework location upper bound
+                li framework location inverted with respect to conventional linkage
+                li number of candidate sites on contig
+                li centimorgan bound width
+                li framework location bound width
+              h2 Placed Genomic Scaffolds
+              p
+                | Segregation patterns were created using a sliding window approach. If a genome assembly scaffold was placed on multiple chromosomes, then it was split. Split scaffolds are renamed {original name}_{0-based index of split sections} . Below are links to the genetic map, the genome assembly fasta containing all the original non-chimeric scaffolds and split chimeric scaffolds, and the genome assembly fasta containing only original scaffolds.
+              p Column descriptions:
+              ol
+                li ScaffoldNumber.WindowIndex
+                li Upper LinkageGroup.Bin
+                li Lower LinkageGroup.bin
+                li Scaffold Region Base Start - Base End (1-based)
+                li Split Scaffold Name
+              h2 Graphical Map
+              p
+                | A graphical genetic map and recombinations detected are presented in the main figure of Chris Grassa&apos;s PAG poster. The cM positions are quite small, but the resolution of the image is such that they are legible upon zooming. Linkage groups are presented in order, 1-17, beginning at the top of the circle, and progressing clockwise (LG1 begins at approximatly the 12:01 position).
+
+  include footer
