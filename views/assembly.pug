@@ -30,23 +30,44 @@ block content
                 li
                   a(href='https://sunflowergenome.org') Home
                   i.fa.fa-angle-right
-                li.current Assembly
+                li.current Assembly procedures
           .page-content
-            .row.page-row
-              article.events-item.page-row.has-divider.clearfix
-                p.lead(align='left')
-                  | For assembly of the sunflower genome, we tested several different Assemblers. These include the Celera Genome Assembler (Myers et al. 2000) and NEWBLER (Margulies et al. 2005), which use an &ldquo;Overlap-Layout-Consensus&rdquo; approach and perform well for longer reads (&gt; 100 bp), as well as the ABySS (Simpson et al. 2009) SOAPdenovo
-                  a(href='http://soap.genomics.org.cn/soapdenovo.html') (http://soap.genomics.org.cn/soapdenovo.html)
-                  |  assemblers, and ALLPATHS-LG
-                  a(href='http://www.broadinstitute.org/software/allpaths-lg/blog/') (http://www.broadinstitute.org/software/allpaths-lg/blog/)
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li.active
+                    a(href='/assembly') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/assembly-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/assembly-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+               p.lead(align='left')
+                  | For assembly of the sunflower genome, we tested several different assemblers. These include the Celera Genome Assembler (Myers et al. 2000) and NEWBLER (Margulies et al. 2005), which use an &ldquo;Overlap-Layout-Consensus&rdquo; approach and perform well for longer reads (&gt; 100 bp), as well as the ABySS (Simpson et al. 2009)
+                  |
+                  a(href='http://soap.genomics.org.cn/soapdenovo.html') SOAPdenovo
+                  |  assemblers, and
+                  |
+                  a(href='http://www.broadinstitute.org/software/allpaths-lg/blog/') ALLPATHS-LG
+
                   | , which are de Bruijn Graph methods best suited for short reads (Schatz et al. 2010; Simpson et al. 2009).
-                p(align='left')
+               p(align='left')
                   | The Celera Assembler (Nov22k22) gave us the best assembly of the 454 data, with a N50 of 25kb, and a total assembly length of 3.1 Gb, or 86% of the estimated genome length (Figure 1). For the Illumina data, the Allpaths assembler provided the most reliable assembly, with an N50 of 21 Kb, and an assembly length of 1.2 Gb, or 33% of the estimated genome length.
-                p(align='left')
+               p(align='left')
                   | We initially were planning to use the Celera assembly as the basis for finishing, but we found that many of the Allpaths scaffolds were not found in the Celera assembly. Therefore, the computer program MINIMUS2 was used to merge the two assemblies. To reduce the complexity of the merger (and to minimize false merges), we used the integrated genetic and physical map to assign scaffolds from each assembly to individual linkage groups prior to the merger. Scaffolds assigned to each linkage groups were then merged independently. The overall genome length of anchored scaffolds in the merged assembly was 2.45 Gb, or circa 68% of the 3.6 Gb sunflower genome, with an N50 of 26.7 Kb. Next, we employed the computer SSPACE to increase scaffold lengths. Again, this was done for each chromosome independently to reduce the likelihood of generating chimeric scaffolds. The scaffolding was successful, resulting in a total of 155,000 scaffolds and an N50 of 39.5 Kb. Validation of the scaffolds with our genetic map revealed very few chimeras.
-                p(align='left')
+               p(align='left')
                   | Finishing of the merged reference assembly involved several steps, including error correction, elimination of vector contaminants, super-scaffolding with the genetic and physical map, gap-filling, removal of potential redundancy due to incomplete scaffolding, and generation of pseudomolecules. A brief description of these steps is found below:
-                .ow.page-row
+               .row.page-row
                   ol
                     li
                       | Error correction: To correct sequencing errors in the merged assembly (caused mainly by the long 454 reads in the Celera assembly) we used a high quality paired-end Illumina library with 200bp insert-size. After removing duplicates, single reads and low quality reads, an approximate coverage of 12X was used to correct errors. Altogether 485,763 errors were detected of which 228,444 were short indels.
@@ -56,10 +77,7 @@ block content
                       | Additional scaffolding: Each of the merged LGs went through another round of scaffolding using lower stringency (3 mate-pairs support compared to 5 in previous scaffolding). This step was conducted to increase the N50, which would facilitate a better integration of the assembly with the physical and genetic maps. Scaffolding was conducted with the program SSPACE and increased the N50 score to 57,779.
                     li
                       | The linkage group-specific physical maps were integrated with the merged assemby to make super-scaffolds. We did one more round of scaffolding within the super-scaffolds, so as to order and orient the scaffolds found within each super-scaffold. The super-scaffolds were then merged to create pseudomolecules. Our custom pseudomolecule pipeline included steps to correct chimeric or redundant contigs/scaffolds that appear to have been caused by incomplete merging and/or by the lower stringency scaffolding step. The pseudomolecules were then subjected to seven rounds of gap-filling using a custom gap-filler developed by the software company, SAP. The total length of the genome covered by the super-scaffolds is similar to the expected genome length: 3.64 Gb for the merged (bronze) assembly versus 3.6 Gb expected (Figure 1). Likewise, the N50 values for the super-scaffolds are much better than for the individual assemblies, ranging from 210 Kb for the bronze assembly to 476 Kb for the gold assembly, another merged assembly that was generated by more stringent filtering of scaffolds prior to the merger.
-                p(align='left')
-                  img(src='/images/activities/assemblyFig1.png', width='600', height='450')
-                  br
-                  .ow.page-row
+               .row.page-row
                     h3.has-divider.text-highlight References
                     ol.ref-apa
                       li

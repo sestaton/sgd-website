@@ -1,0 +1,112 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Assembly
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Assembly statistics
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/assembly') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/assembly-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/assembly-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              .row.page-row
+                p
+                  | Below are some basic descriptive statistics for the HA412HO genome assembly. Note that the 'bronze-pseudomolecules' assembly is the annotated version available for download.
+                .table-responsive
+                  table.table.table-striped.table-bordered
+                    thead
+                      tr
+                        th Assembly name
+                        th nATCG
+                        th Length
+                        th N
+                        th N50
+                        th N90
+                    tbody
+                      tr
+                        td gold-superscaffolds
+                        td 1658168430
+                        td 3131940255
+                        td 14940
+                        td 476491
+                        td 89759
+                      tr
+                        td bronze-pseudomolecules
+                        td 1989332786
+                        td 3641596391
+                        td 17
+                        td NA
+                        td NA
+                      tr
+                        td bronze-superscaffolds
+                        td 2037102379
+                        td 4168038957
+                        td 31392
+                        td 210251
+                        td 54824
+                      tr
+                        td AllPathsLG
+                        td 993696150
+                        td 1156891308
+                        td 100027
+                        td 20687
+                        td 6018
+                      tr
+                        td Nov22k22
+                        td 2163238910
+                        td 3082784204
+                        td 453539
+                        td 24876
+                        td 1541
+                      tr
+                        td 454AllContigs
+                        td 1946374353
+                        td 1946374353
+                        td 1603248
+                        td 2009
+                        td 509
+
+  include footer
