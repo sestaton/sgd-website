@@ -1,0 +1,87 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Physical Map
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Physical Map procedures
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li.active
+                    a(href='/physicalmap') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/physicalmap-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/physicalmap-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead(align='left')
+                | To develop a robust physical map for sunflower, BAC libraries were constructed for HA412-HO by the
+                |
+                a(href='http://cnrgv.toulouse.inra.fr/en/library/sunflower') French Plant Genome Resource Center
+                | . Three different restriction enzymes (
+                em HindIII, BamHI, EcoRI
+                | ) were used for library development in order to provide more complete genomic coverage (Wu et al. 2004). The
+                |  library includes 238,080 clones with an average insert size of 132 kb (~9x coverage); the
+                |
+                em BamHI
+                |  library comprises 86,400 clones with inserts averaging 114 Kb (~2.6x coverage); and the
+                |
+                em EcoRI
+                |  library contains 81,792 clones averaging 93 Kb (~2.2x). Total BAC library coverage is 13.8x.
+              p(align='left')
+                | For physical mapping, we employed the sequence-based mapping approach developed by Keygene N.V.( van Oeveren J et al. 2011), which takes advantage of the very low cost of Illumina sequencing to generate 20-30 unique sequence tags for each BAC clone. Briefly, the sequence tags are produced from the terminal ends of restriction fragments from 2D pooled BAC clones using the Illumina Genome Analyzer platform. BAC pools are tagged individually to allow assignment of sequences to individual BAC clones using the coordinates in the 2D pool screening. The BAC clones can be ordered into contigs on the basis of shared sequence tags using a modified version of FPC (Keygene N.V), the same software used for physical mapping based on restriction profiles (Engler et al. 2003; Nelson and Soderlund 2005, Soderlund et al. 2000).
+              p(align='left')
+                | We employed 382,464 clones from the three BAC libraries to develop a 12.5x physical map. Eighty-eight percent (335,201) of the BACs contain unique sequence tags, with an average of 20 unique tags per BAC. The sequence-based physical map was assembled from these BACs by FPC, using an iterative assembly approach starting at 1e-75; followed by adding singletons to the ends, end-to-end merging of the contigs and DQing for 14 successively lower cutoffs. The resulting map was integrated with high density sequence-based genetic maps, on the basis of which chimeric BACs removed, chimeric contigs were split and an improved physical map was generated comprising 8,576 contigs. The integrated physical-genetic map was used to place BACs onto Linkage Groups (LGs). The BAC to LG placements were then used to generate the LG-specific physical maps at a cut off of 1e-15 and tolerance level 0. The DQer function of FPC was used to break up all contigs containing &gt;10% Questionable (Q) clones. Approximately 3.3Gb (~92.5% of the 3.6 Gb genome) is assigned to the 17 linkage groups through these LG specific physical maps.
+              .ow.page-row
+                h3.has-divider.text-highlight References
+                ol.ref-apa
+                  li
+                    | Engler, F.W., Hatfield, J., Nelson, W. and Soderlund, C.A. 2003. Locating sequence on FPC maps and selecting a minimal tiling path, Genome Research 13(9): 2152-2163.
+                  li
+                    | Nelson, W. and C. Soderlund 2005. Software for restriction fragment physical maps. K. Meksem, G. Kahl (ed) The Handbook of Genome Mapping: Genetic and Physical Mapping, Wiley-VCH. pp. 285-306.
+                  li
+                    | Soderlund, C., Humphray, S., Dunham, A. and French, L. 2000. Contigs built with fingerprints, markers, and FPCV4.7, Genome Research 10(11): 1772-1787.
+                  li
+                    | van Oeveren J, de Ruiter M, Jesse T, van der Poel H, Tang J, Yalcin F, Janssen A, Volpin H, Stormo KE, Bogden R, van Eijk MJ, Prins M. 2011. Sequence-based physical mapping of complex genomes by whole genome profiling. Genome Research 21(4):618-625.
+                  li
+                    | Wu, C.C., Nimmakayala, P., Santos, F.A., Springman, R., Scheuring, C., Meksem, K., Lightfoot, D.A., and Zhang, H.B. 2004. Construction and characterization of a soybean bacterial artificial chromosome library and use of multiple complementary libraries for genome physical mapping. Theor. Appl. Genet. 109(5): 1041-1050.
+
+  include footer

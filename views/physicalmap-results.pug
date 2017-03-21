@@ -1,0 +1,86 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Physical Map
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Physical Map statistics
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/physicalmap') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/physicalmap-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/physicalmap-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | We report a 12.5x sequence-based physical map of the cultivated sunflower genome based on a whole-genome profiling (WGP) technique developed by Keygene NV. Fourteen-genome equivalent BAC libraries were constructed and pooled two-dimensionally, and the restriction fragments from the pooled BAC clones were sequenced using the Illumina Genome Analyzer platform. WGP takes advantage of these short read sequences to generate 20-30 unique sequence tags for each BAC clone. BAC pools were tagged individually and based on the coordinates in the 2D pool screens, unique sequence tags were assigned to individual BACs. The BAC clones were ordered into contigs based on shared regions containing identical sequence tags, using a customized version of Finger Print Contigs (FPC) -the software that has been routinely used for restriction profile-based physical mapping. The resulting FPC map was integrated with high-density sequence-based genetic maps and genome assemblies, on the basis of which chimeric BACs were removed and chimeric contigs were split to generate an improved physical map comprising 8,576 contigs. The integrated physical-genetic map was used to construct Linkage Group (LG) specific physical maps. Approximately 3.3Gb (~92.5% of the 3.6 Gb genome) is assigned to the 17 linkage groups through these LG specific physical maps. Integration of the physical map with genetic maps and the genomic scaffolds not only validates the physical map but also demonstrates its ability to act as a common platform towards a superior sunflower genome assembly.
+              h2 Whole Genome FPC Physical Map
+              p
+                | The whole genome physical map is assembled at 1e-15 with chimeric BACs removed and chimeric contigs split. Here, the chimeric BACs refer to BACs determined as being chimeric through alignment with the early genetic maps, as well as the higher-density SNP genetic map. Chimeric contigs were split using a custom perl program instead of FPC. This fpc file is incompatible with the fpc software, but is compatible with the fpc BioPerl modules.
+              h2 Physical Map to Genetic Map Associations:
+              ol
+                li
+                  | BLAST all tags to the genome assembly scaffolds used in a Sliding Window Genetic Map
+                li Assign tags to chromosomes. Tags can be assigned multiple chromosomes.
+                li Assign BACs to chromosomes with the most unique tag hits.
+                li Characterize the BAC as confidently placed, poorly placed, or unplaced:
+                ul
+                  li Allow multicopy tags, but give greater precedence to single copy tags.
+                  li Single copy tag weight = 1
+                  li
+                    | Multicopy tag weight = weight single copy tag * total all multicopy tags / total all single copy tags = around 0.4
+                  li
+                    | Calculate maximum total weight of BAC = # single copy tags in bac * 1 + # multicopy tags in bac* 0.4
+                  li BAC is unplaced if it has fewer than 3 tags hitting any genetic locus.
+                  li
+                    | BAC is confidently placed if the weight of its unique tags hitting the assigned chromosome &gt;= 95% maximum tag weight.
+                  li
+                    | BAC is poorly placed if the weight of its unique tags hitting the assigned chromosome
+                li
+                  | Assign physical map contigs to chromosomes using only confidently placed BACs. If confidently placed BACs hit multiple chromosomes, then the physical map contig is chimeric.
+              p
+                | In the second round of BAC-chromosome placements, the initially 185,190 unplaced BACs were selected. Multicopy tags that mapped these BACs to multiple chromosomes were removed while a majority rule of 51% was implemented to get additional 78,774 BAC placements.
+              p
+                | Overall, 66 % of the BACs were placed on the 17 Linkage Groups. The BAC to LG placements were used to generate the LG-specific physical maps at a cut off of 1e-15 and tolerance level 0. The DQer function of FPC was used to break up all contigs containing &gt;10% Questionable (Q) clones. Approximately 3.3Gb (~92.5% of the 3.6 Gb genome) is assigned to the 17 linkage groups through these LG specific physical maps.
+              
+  include footer
