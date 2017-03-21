@@ -1,0 +1,324 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Annotations
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Annotations
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-3.col-sm-3.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/annotations') Annotation procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/annotations-results') Annotation statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/annotations-data') Annotation files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead(align='left')
+                | A major challenge of the sunflower genome project has been dealing with the large and repetitive nature of the
+                | genome. Below is a description of our custom annotation procedures and the results. You may skip to the results or download sections using the menu to the left.
+                h2 Annotation results
+                p
+                  | Below are some basic descriptive statistics for the HA412HO bronze genome annotations.
+                h3 Basic gene feature statistics
+                .table-responsive
+                  table.table.table-striped.table-bordered
+                    thead
+                      tr
+                        th Feature name
+                        th Count
+                    tbody
+                      tr
+                        td Total genes
+                        td 44144
+                      tr
+                        td Protein-coding genes
+                        td 44144
+                      tr
+                        td Protein-coding mRNAs
+                        td 44144
+                      tr
+                        td Genes with a Pfam domain
+                        td 36,969 (82.7%)
+                      tr
+                        td Exons
+                        td 202500
+                      tr
+                        td CDSs
+                        td 195630
+                      tr
+                        td five_prime_UTRs
+                        td 19447
+                      tr
+                        td introns
+                        td 316712
+                      tr
+                        td start_codons
+                        td 44144
+                      tr
+                        td stop_codons
+                        td 44144
+                      tr
+                        td three_prime_UTRs
+                        td 16244
+                h3 Basic transposon statistics
+                ul
+                  li Class I
+                  li(style='list-style: none; display: inline')
+                  ul
+                    li LTR Retrotransposons
+                    li(style='list-style: none; display: inline')
+                    ul
+                      li Gypsy (RLG)
+                      li(style='list-style: none; display: inline')
+                      .table-responsive
+                        table.table.table-striped.table-bordered
+                          thead
+                            tr
+                              th Total Count
+                              th Count w/protein matches
+                              th Number of families
+                              th Length Minimum
+                              th Length Mean
+                              th Length Maximum
+                          tbody
+                            tr
+                              th 20185
+                              th 14695
+                              th 420
+                              th 1612
+                              th 8583.76
+                              th 24982
+                      li Copia (RLC)
+                      li(style='list-style: none; display: inline')
+                        .table-responsive
+                          table.table.table-striped.table-bordered
+                            thead
+                              tr
+                                th Total Count
+                                th Count w/protein matches
+                                th Number of families
+                                th Length Minimum
+                                th Length Mean
+                                th Length Maximum
+                            tbody
+                              tr
+                                th 12981
+                                th 10738
+                                th 288
+                                th 1658
+                                th 7729.07
+                                th 24973
+                      li Unclassified (RLX)
+                      li(style='list-style: none; display: inline')
+                        .table-responsive
+                          table.table.table-striped.table-bordered
+                            thead
+                              tr
+                                th Total Count
+                                th Count w/protein matches
+                                th Number of families
+                                th Length Minimum
+                                th Length Mean
+                                th Length Maximum
+                            tbody
+                              tr
+                                th 10978
+                                th 2714
+                                th 323
+                                th 1610
+                                th 5158.72
+                                th 24971
+                      li non-LTR Retrotransposons
+                      li(style='list-style: none; display: inline')
+                        .table-responsive
+                          table.table.table-striped.table-bordered
+                            thead
+                              tr
+                                th Total Count
+                                th Count w/protein matches
+                                th Number of families
+                                th Length Minimum
+                                th Length Mean
+                                th Length Maximum
+                            tbody
+                              tr
+                                th 140
+                                th NA
+                                th NA
+                                th 344
+                                th 2047.63
+                                th 2618
+                      li TRIM Retrotransposons
+                      li(style='list-style: none; display: inline')
+                        .table-responsive
+                          table.table.table-striped.table-bordered
+                            thead
+                              tr
+                                th Total Count
+                                th Count w/protein matches
+                                th Number of families
+                                th Length Minimum
+                                th Length Mean
+                                th Length Maximum
+                            tbody
+                              tr
+                                th 7286
+                                th NA
+                                th NA
+                                th 357
+                                th 931.32
+                                th 1987
+                      li Class II
+                      li(style='list-style: none; display: inline')
+                       ul
+                         li Subclass I
+                         li(style='list-style: none; display: inline')
+                           ul
+                             li Terminal-inverted repeat (TIR) transposons:
+                             li(style='list-style: none; display: inline')
+                               ul
+                                 li hAT (DTA)
+                                 li(style='list-style: none; display: inline')
+                                   .table-responsive
+                                     table.table.table-striped.table-bordered
+                                       thead
+                                         tr
+                                           th Total Count
+                                           th Count w/protein matches
+                                           th Number of families
+                                           th Length Minimum
+                                           th Length Mean
+                                           th Length Maximum
+                                       tbody
+                                         tr
+                                           th 143
+                                           th NA
+                                           th NA
+                                           th 133
+                                           th 1136.34
+                                           th 8572
+                                 li Tc1-Mariner (DTT)
+                                 li(style='list-style: none; display: inline')
+                                   .table-responsive
+                                     table.table.table-striped.table-bordered
+                                       thead
+                                         tr
+                                           th Total Count
+                                           th Count w/protein matches
+                                           th Number of families
+                                           th Length Minimum
+                                           th Length Mean
+                                           th Length Maximum
+                                       tbody
+                                         tr
+                                           th 1966
+                                           th NA
+                                           th NA
+                                           th 119
+                                           th 2063.27
+                                           th 11114
+                                 li Mutator (DTM)
+                                 li(style='list-style: none; display: inline')
+                                   .table-responsive
+                                     table.table.table-striped.table-bordered
+                                       thead
+                                         tr
+                                           th Total Count
+                                           th Count w/protein matches
+                                           th Number of families
+                                           th Length Minimum
+                                           th Length Mean
+                                           th Length Maximum
+                                       tbody
+                                         tr
+                                           th 914
+                                           th NA
+                                           th NA
+                                           th 123
+                                           th 1047.22
+                                           th 9972
+                                 li Unclassified (DTX)
+                                 li(style='list-style: none; display: inline')
+                                   .table-responsive
+                                     table.table.table-striped.table-bordered
+                                       thead
+                                         tr
+                                           th Total Count
+                                           th Count w/protein matches
+                                           th Number of families
+                                           th Length Minimum
+                                           th Length Mean
+                                           th Length Maximum
+                                       tbody
+                                         tr
+                                           th 14726
+                                           th NA
+                                           th NA
+                                           th 113
+                                           th 1866.45
+                                           th 11233
+                         li Subclass II
+                         li(style='list-style: none; display: inline')
+                           ul
+                             li Heltrons (DHH)
+                             li(style='list-style: none; display: inline')
+                               .table-responsive
+                                 table.table.table-striped.table-bordered
+                                   thead
+                                     tr
+                                       th Total Count
+                                       th Count w/protein matches
+                                       th Number of families
+                                       th Length Minimum
+                                       th Length Mean
+                                       th Length Maximum
+                                   tbody
+                                     tr
+                                       th 4308
+                                       th NA
+                                       th NA
+                                       th 202
+                                       th 7896.45
+                                       th 19995
+                .row.page-row.has-divider
+
+  include footer
