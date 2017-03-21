@@ -1,0 +1,141 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Research Team
+            .breadcrumbs.pull-right
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .team-wrapper.col-md-8.col-sm-7
+                h2
+                  strong University of British Columbia
+                h3 Current Members
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                     img.img-responsive(src='/images/team/team-rieseberg.jpg', alt='')
+                  .details.col-md-9.col-sm-8.col-xs-6
+                    h3.title Dr. Loren Rieseberg
+                    h4 Principle Investigator
+                    p
+                      | The dramatic, human-mediated transformations associated with plant domestication provide a model for studying phenotypic evolution. My lab has exploited this situation by studying the domestication of sunflower. Current work includes a large-scale search for associations between sequence variation at candidate genes and domestication traits, and genome scans using next generation sequencing approaches to search for regions of the genome that have undergone selective sweeps during domestication and improvement.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/team/team-sunflower.jpg', alt='')
+                  .details.col-md-9.col-sm-8.col-xs-6
+                    h3.title Dr. Sariel Hubner
+                    h4 Postdoctoral Fellow
+                    p
+                      | Sariel is currently working to characterize the diversity across the sunflower germplasm and further improve the sunflower genome assemblies. In addition, Sariel has collaborated with a number of external groups to develop large-scale variant calling pipelines, which have been utilized as part of the sunflower genome project.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/team/team-staton.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. S. Evan Staton
+                      |
+                      a(href='https://github.com/sestaton', target='_blank')
+                         i.fa.fa-github.fa
+                      |
+                      |
+                      a(href='https://ca.linkedin.com/in/evan-staton-b66b224', target='_blank')
+                         i.fa.fa-linkedin.fa
+                    h4 Postdoctoral Fellow
+                    p
+                      | My primary interest is in understanding how transposable elements contribute to the evolution of their hosts. To better understand questions in this area of research, I am actively developing a number of software tools to enable more accurate transposon descriptions (see the github link by my name). My current focus is on understanding the timescales of transposon amplifications throughout the history of the plant kingdom. Aside from my transposon work, I am currently collaborating on a number of phylogenomic projects related to genome evolution, and much of my time is spent improving gene annotations.
+                    h3
+                      strong Former Members
+                    | Thuy Nguyen
+                    br
+                    |  Frances Raftis
+                    br
+                    |  Nadia Chaidir (currently JGI)
+                    br
+                    |  Greg Baute (currently Monsanto Co.)
+                    br
+                    |  Matthew King (currently Pioneer Hi-Bred)
+                    br
+                    |  Chris Grassa (currently Harvard U.)
+                    br
+                    |  Nolan Kane (currently U. Colorado)
+                    br
+                    |  Navdeep Gill (currently U.C. Davis)
+                    br
+                    |  Matteo Buti (currently Institute Fondazione Edmund Mach)
+                    br
+                    |  Dan Ebert (currently University of New England)
+                    p
+                    h2
+                      strong INRA Toulouse
+                    |  Nicolas Langlade
+                    br
+                    |  Jerome Gouzy
+                    br
+                    |  Patrick Vincourt
+                    br
+                    |  Sebastien Carrere
+                    br
+                    |  Helene Berges
+                    br
+                    |  Arnaud Bellac
+                    br
+                    |  Sonia Vautrin
+                    br
+                    |  Nicolas Helmstetter
+                    p
+                    h2
+                      strong University of Georgia
+                    |  John Burke
+                    br
+                    |  Steve Knapp (currently Monsanto Co.)
+                    br
+                    |  John Bowers
+                    br
+                    |  Eleni Bachlava (currently Monsanto Co.)
+                    br
+                    |  Jennifer Mandel (currently U. Memphis)
+                    br
+                    |  Jessica Barb (currently Iowa State U)
+                    br
+                    |  Ben Hsieh
+                    br
+                    |  Adam Bewick
+                    p
+                    h2
+                      strong Scientific Advisors
+                    |  Brad Barbazuk, University of Florida
+                    br
+                    |  Carl Douglas, University of British Columbia
+                    br
+                    |  Catherine Feuillet, INRA
+                    br
+                    |  Scott Jackson, University of Georgia
+                    br
+                    |  Steve Rounsley, University of Arizona
+                    p
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  img(src='/images/rha801_sketch.jpg', alt='rha801_sketch.jpg', width='300', height='420')
+
+  include footer
