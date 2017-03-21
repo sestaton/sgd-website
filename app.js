@@ -5,13 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
+var requireDir = require('require-dir');
 
-var index = require('./routes/index');
-var about = require('./routes/about');
-var annotations = require('./routes/annotations');
-var contact = require('./routes/contact');
-
+// mount all routes http://stackoverflow.com/a/25446206
+var routes = requireDir('./routes'); // https://www.npmjs.org/package/require-dir
 var app = express();
+for (var i in routes) app.use('/', routes[i]);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,11 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', index);
-app.use('/about', about);
-app.use('/annotations', annotations);
-app.use('/contact', contact);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,9 +43,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-//app.listen(process.env.PORT || 3000, function () {
-//    console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
-//});
 
 module.exports = app;
