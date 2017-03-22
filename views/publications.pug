@@ -1,0 +1,255 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="Sunflower Genome Database website")
+    meta(name="author" content="Evan Staton")
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css')
+    <!-- Global CSS -->
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    <!-- Plugins CSS -->
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+    link(rel="stylesheet" href="/plugins/flexslider/flexslider.css")
+    link(rel="stylesheet" href="/plugins/pretty-photo/css/prettyPhoto.css")
+    <!-- Theme CSS -->
+    link(id="theme-style" rel="stylesheet" href="/stylesheets/styles.css")
+    link(rel="stylesheet" href="/stylesheets/apa-reference-styles.css")
+    <!-- GA -->
+    script(type="text/javascript" src="/javascripts/sgd_ga.js")
+    script(src="http://code.jquery.com/jquery-3.2.0.min.js", integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=", crossorigin="anonymous")
+    script(type="text/javascript" src="/plugins/flexslider/jquery.flexslider-min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-project
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Publications
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Publications
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='#2015') 2015
+                      |
+                  li
+                    a(href='#2014') 2014
+                      |
+                  li
+                    a(href='#2013') 2013
+                      |
+                  li
+                    a(href='#2012') 2012
+            .events-wrapper.col-md-8.col-sm-7
+              article.events-item.page-row.has-divider.clearfix
+                h3#2015 2015
+                .ref-apa
+                  p
+                    | Baute G.J., N.C. Kane, C. Grassa, Z. Lai, and L.H. Rieseberg. 2015. Genome scans reveal candidate domestication and improvement genes in cultivated sunflower, as well as post-domestication introgression with wild relatives.
+                    |
+                    em New Phytologist
+                    | , in press.
+                  p
+                    | Hodgins, K.A., D.G. Bock, M.A. Hahn, S.M. Heredia, K.G. Turner, and L.H. Rieseberg. 2015. Comparative genomics in the Asteraceae reveals little evidence for parallel evolutionary change in invasive taxa.
+                    |
+                    em Molecular Ecology
+                    | , in press.
+                  p
+                    | Baute, G.J., H. Dempewolf, and L.H. Rieseberg. 2015. Using genomic approaches to unlock the potential of CWR for crop adaptation to climate change. In Crop Wild Relatives and Climate Change. (M.S. Swaminathan and G. Fowler, eds.), in press.
+                    |
+                    em Wiley-Blackwell
+                    | , Oxford.
+                h3#2014 2014
+                .ref-apa
+                  p
+                    | Bock, D.G., N.C. Kane, D.P. Ebert, and L.H. Rieseberg. 2014. Genome skimming reveals the origin of the Jerusalem Artichoke tuber crop species: neither from Jerusalem nor an Artichoke.
+                    |
+                    em New Phytologist
+                    |  201:1021&ndash;1030. (Featured in Commentary by Sandra Knapp -
+                    |
+                    em New Phytologist
+                    |  201:710&ndash;711).
+                  p
+                    | Hodgins, K.A., Z. Lai, L.O. Oliveira, D.W. Still, M. Scascitelli, M.S. Barker, N.C. Kane, H. Dempewolf, A. Kozik, R.V. Kesseli, J.M. Burke, R.W. Michelmore, and L.H. Rieseberg. 2014. Genomics of Compositae crops: Reference transcriptome assemblies, and evidence of hybridization with wild relatives.
+                    |
+                    em Molecular Ecology Resources
+                    |  14:155-177.
+                  p
+                    | Renaut, S. G.L. Owens, and L.H. Rieseberg. 2014. Shared selection pressure and local genomic landscape lead to repeatable patterns of genomic divergence in sunflowers.
+                    |
+                    em Molecular Ecology
+                    |  23:311-324.
+                  p
+                    | Mandel, J.R., R.B. Dikow, V.A. Funk, R. Masalia, S.E. Staton, A. Kozik, R.W. Michelmore, L.H. Rieseberg, and J.M. Burke. 2014. A target enrichment method for gathering phylogenetic information from hundreds of loci: An example using taxa across the Compositae.
+                    |
+                    em Applications in Plant Sciences
+                    |  2:1300085.
+                  p
+                    | Gill N., M. Buti, N.C. Kane, A. Bellec, N. Helmstetter, H. Berges, L.H. Rieseberg. 2014. Sequence-based analysis of structural organization and composition of the cultivated sunflower (Helianthus annuus L.) genome.
+                    |
+                    em Biology
+                    |  3:295-319.
+                  p
+                    | Kantar, M.B., G.J. Baute, D.G. Bock, L.H. Rieseberg. 2014. Genomic variation in Helianthus: Learning from the past and looking into the future.
+                    |
+                    em Briefings in Functional Genomics
+                    |  3:328-340.
+                  p
+                    | Renaut, S. H.C. Rowe, M. Ungerer, and L.H. Rieseberg. 2014. Genomics of homoploid hybrid speciation: Diversity and transcriptional activity of LTR retrotransposons in hybrid sunflowers.
+                    |
+                    em Philosophical Transactions of the Royal Society B: Biological Sciences
+                    |  369:20130345.
+                  p
+                    | Marchand, G., V.A. Huynh-Thu, N. Kane, Nolan; S. Arribat, D. Var&egrave;s, D. Rengel, S. Balzergue, L.H. Rieseberg, P. Vincourt, P. Geurts, M. Vignes, and N. Langlade. 2014. Bridging physiological and evolutionary time scales in a gene regulatory network.
+                    |
+                    em New Phytologist
+                    |  203:685&ndash;696.
+                  p
+                    | Barb, J.G., J.E. Bowers, S. Renaut, J.I. Rey, S.J. Knapp, L.H. Rieseberg, J.M. Burke. 2014. Chromosomal evolution and patterns of introgression in Helianthus.
+                    |
+                    em Genetics
+                    |  197:969&ndash;979.
+                  p
+                    | Peng, Y., Z. Lai, T. Lane, M. Nageswara-Rao, M. Okada, M. Jasieniuk, H. O&apos;Geen, R.W. Kim, R.D. Sammons, L. Rieseberg, and C.N. Stewart, Jr. 2014. De novo genome assembly of the economically-important weed Conyza canadensis using integrated data from multiple sequencing platforms.
+                    |
+                    em Plant Physiology
+                    |  166:1241-1254.
+                h3#2013 2013
+                .ref-apa
+                  p
+                    | Kane, N.C. J.M. Burke, L. Marek, S.J. Knapp, G. Seiler, F. Vear, P. Vincourt, and L.H. Rieseberg. 2013. Sunflower genetic, genomic, and ecological resources.
+                    |
+                    em Molecular Ecology Resources
+                    |  13:10-20.
+                  p
+                    | Mandel, J.R., S.U. Nambeesan, J.E. Bowers, L.F. Marek, D. Ebert, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2013. Association mapping and the genomic consequences of selection in sunflower.
+                    |
+                    em PLoS Genetics
+                    |  , e1003378.
+                  p
+                    | Renaut, S., C.J. Grassa, S. Yeaman, B.T. Moyers, Z. Lai, N.C. Kane, J.E. Bowers, J.M. Burke, and L.H. Rieseberg. 2013. Genomic islands of divergence are not affected by geography of speciation in sunflowers.
+                    |
+                    em Nature Communications
+                    |  4, 1827.
+                  p
+                    | Rowe, H.C., and L.H. Rieseberg. 2013. Genome-scale transcriptional analyses of first-generation interspecific sunflower hybrids reveals broad regulatory compatibility.
+                    |
+                    em BMC Genomics
+                    |  14, 342.
+                  p
+                    | King, M.G., S. Renaut, L.H. Rieseberg, and H.C. Rowe. 2013. Genomic Resources Notes accepted 1 February 2013-31 March 2013. Transcriptome resources for three hybrid sunflower species (Helianthus anomalus, H. deserticola, H paradoxus).
+                    |
+                    em Molecular Ecology Resources
+                    |  13:759.
+                  p
+                    | Chapman, M.A., J.R. Mandel, and J.M. Burke. 2013. Sequence validations of candidates for selectively important genes in sunflower.
+                    |
+                    em PLoS ONE
+                    | , e71941.
+                  p
+                    | Natali, L., R.M. Cossu, E. Barghini, T. Giordani, M. Buti, F. Mascagni, N. Gill, N.C. Kane, L.H. Rieseberg, and A. Cavallini. 2013. The repetitive component of the sunflower genome: comparative analyses using different approaches for assembling NGS reads.
+                    |
+                    em BMC Genomics
+                    |  14, 686.
+                  p
+                    | Moyers, B.T., and L.H. Rieseberg. 2013. Divergence in gene expression is uncoupled from divergence in coding sequence in a newly woody sunflower.
+                    |
+                    em International Journal of Plant Science
+                    |  174:1079&ndash;1089.
+                  p
+                    | Ziebell, A.L., J.G. Barb, S. Sandhu, R.W. Sykes, C. Doeppke, K.L. Gracom, M. Carlile, B. Moyers, L.F. Marek, M.F. Davis, S.J. Knapp, and J.M. Burke. 2013. Sunflower as a biofuels crop: an analysis of lignocellulosic chemical properties.
+                    |
+                    em Biomass Bioenergy
+                    |  59:208-217.
+                h3#2012 2012
+                .ref-apa
+                  p
+                    | Kane NC, Gill N, King MG, Bowers JE, Berges H, Gouzy J, Baclava E, Langlade NB, Lai Z, Stewart M, Burke JM, Vincourt P, Knapp SJ and Rieseberg LH. 2011. Progress towards a reference genome for sunflower.
+                    |
+                    em Botany
+                    |  89:429&ndash;437.
+                  p
+                    | Chapman, M.A., S. Tang, D. Draeger, S. Nambeesan, H. Shaffer, J.G. Barb, S.J. Knapp, and J.M. Burke. 2012. The genetics of floral symmetry in van Gogh&rsquo;s sunflowers reveals independent recruitment of CYCLOIDEA genes in the Asteraceae.
+                    |
+                    em PLoS Genetics
+                    |  8:e1002628.
+                  p
+                    | Lai, Z., N.C. Kane, A. Kozik, K.A. Hodgins, K.M. Dlugosch, M.S. Barker, M. Matvienko, Q. Yu, K.G. Turner, S.A. Pearl, G.D.M. Bell, Y. Zou, C. Grassa, A. Guggisberg, K.L. Adams, J.V. Anderson, D.P. Horvath, R.V. Kesseli, J.M. Burke, R.W. Michelmore, and L.H. Rieseberg. 2012. Genomics of Compositae weeds: EST libraries, microarrays, and evidence of introgression.
+                    |
+                    em American Journal of Botany
+                    |  99:209-218.
+                  p
+                    | Bachlava, E., C.A Taylor, S. Tang, J.E. Bowers, J.R. Mandel, J.M. Burke, and S.J. Knapp. 2012. SNP discovery and development of a high-density genotyping array for sunflower.
+                    |
+                    em PLoS ONE
+                    |  7: e29814.
+                  p
+                    | Bowers, J.E., E. Bachlava, R.L. Brunick, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2012. Development of a 10,000 locus genetic map of the sunflower genome based on multiple crosses.
+                    |
+                    em G3: Genes, Genomes, Genetics
+                    |  2:721-729.
+                  p
+                    | Chapman, M.A. and J.M. Burke. 2012. Evidence of selection on fatty acid biosynthetic genes during the evolution of cultivated sunflower.
+                    |
+                    em Theoretical and Applied Genetics
+                    |  125:897&ndash;907.
+                  p
+                    | Rieseberg, L.H., B.K. Blackman, M. Scascitelli, and N.C. Kane. 2012. On the Origin of Sunflowers: Fossils, Genes, Genomes, and Hybridization. 18th International Sunflower Conference, Mar del Plata, Argentina.
+                  p
+                    | Blackman, B. S. Michaels, and L. Rieseberg. 2012. Gene Duplication and the Evolution of Photoperiodic Flowering in Helianthus annuus. 18th International Sunflower Conference, Mar del Plata, Argentina.
+                  p
+                    | Rowe, H.C., D.K. Ro, and L.H. Rieseberg. 2012. Response of Sunflower (Helianthus annuus L.) Leaf Surface Defenses to Exogenous Methyl Jasmonate.
+                    |
+                    em PLoS ONE
+                    |  7:e37191.
+                  p
+                    | Staton, S., B. Hartman Bakken, B. Blackman, M. Chapman, N. Kane, S. Tang, M. Ungerer, S. Knapp, L. Rieseberg, and J. Burke. 2012. The sunflower (Helianthus annuus L.) genome reflects a recent history of biased accumulation of transposable elements.
+                    |
+                    em The Plant Journal
+                    |  72: 142-153.
+                  p
+                    | Renaut, S., C.J. Grassa, B.T. Moyers, N.C. Kane, and L.H. Rieseberg. 2012. The population genomics of sunflowers and genomic determinants of protein evolution revealed by RNAseq.
+                    |
+                    em Biology
+                    |  1:575-596.
+                  p
+                    | Bowers, J.E., S. Nambeesan, J. Corbi, M.S. Barker, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2012. Development of an ultra-dense genetic map of the sunflower genome based on single-feature polymorphisms.
+                    |
+                    em PLoS ONE
+                    |  7:e51360.
+                  p
+                    | Mandel, J.R., S. Nambeesan, J.E. Bowers, L.F. Marek, D. Ebert, L.H. Rieseberg, S.J. Knapp, and J.M. Burke. 2012. Association mapping and the genomic consequences of selection in sunflower.
+                    |
+                    em PLoS Genetics
+                    |  9: e1003378.
+
+  include footer

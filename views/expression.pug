@@ -1,0 +1,107 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-tools
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Gene Expression Browser
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Gene Expression Browser
+            <!-- breadcrumbs -->
+          .page-content
+          article.events-item.page-row.has-divider.clearfix
+            p.lead
+              | This page provides QC metrics and expression tables, including overall read mapping statistics, QC report for each sample, interactive gene expression visualization and analytical tools to gain insights about the data.
+            h2 QC Metrics
+            .section(id='results1.0')
+              .sectionbody
+                #figures_r100.figure
+                table(border='0', cellspacing='0', cellpadding='0')
+                  tr
+                    td(colspan='2')
+                      a#single_image(href='/expression/Summary/read_map_sum.10x7.png')
+                        img(src='/expression/Summary/read_map_sum.10x7.png', width='220', height='220/')
+                    td(colspan='2')
+                      a#single_image(href='/expression/Summary/read_count_sum.10x7.png')
+                        img(src='/expression/Summary/read_count_sum.10x7.png', width='220', height='220/')
+                    td(colspan='2')
+                      a#single_image(href='/expression/Summary/RNASeq-snp-corr.txt.corr.9x7.png')
+                        img(src='/expression/Summary/RNASeq-snp-corr.txt.corr.9x7.png', width='220', height='220/')
+                    td(colspan='2')
+                      a#single_image(href='/expression/Summary/expr_count_RPKM.10x7.png')
+                        img(src='/expression/Summary/expr_count_RPKM.10x7.png', width='220', height='220/')
+                    td(colspan='2')
+                      a#single_image(href='/expression/Summary/RNASeq-expr-corr.txt.corr.9x7.png')
+                        img(src='/expression/Summary/RNASeq-expr-corr.txt.corr.9x7.png', width='220', height='220/')
+                  tr
+                    td(align='center')
+                      a(href='/expression/qc_star-mapping-summary.html', target='_blank')
+                        img(src='/expression/package/img/interactive.png')
+                    td
+                      a(href='/expression/Summary/star-mapping-summary.txt', target='_blank')
+                        p(style='font-size:14px') Mapping Summary
+                    td(align='center')
+                      a(href='/expression/qc_fc-counting-summary.html', target='_blank')
+                        img(src='/expression/package/img/interactive.png')
+                    td
+                      a(href='/expression/Summary/fc-counting-summary.txt', target='_blank')
+                        p(style='font-size:14px') Feature Counts
+                    td(align='center')
+                      a(href='/expression/longitudinal.html', target='_blank')
+                        img(src='/expression/package/img/interactive.png')
+                    td
+                      a(href='/expression/Summary/RNASeq-snp-corr.txt', target='_blank')
+                        p(style='font-size:14px') SNP Correlation
+                    td(align='center')
+                      a(href='/expression/qc_expr_count_RPKM.html', target='_blank')
+                        img(src='/expression/package/img/interactive.png')
+                    td
+                      a(href='/expression/Summary/expr_count_RPKM.txt', target='_blank')
+                        p(style='font-size:14px') Gene Expressed
+                    td(align='center')
+                      a(href='/expression/Summary/RNASeq-expr-corr.txt', target='_blank')
+                        img(src='/expression/package/img/interactive.png')
+                    td
+                      p(style='font-size:14px') Expression Correlation
+            h2 Parallel Plot of QC
+            #results_pp.section
+              .sectionbody
+                a(href='/expression/qc_overview.html', target='_blank')
+                  img(src='/expression/package/img/parallelplot.png', border='1', width='95%')
+                p Click on the image above to access the interactive plot.
+                  |
+                  | (Raw RPKM data can be seen
+                  |
+                  a.download(href='/expression/Summary/RNASeq-merged-metrics.txt') here
+                  | ).
+            h2 Expression Table
+            .sectionbody
+              a(href='/expression/tex.html', target='_blank')
+                img(src='/expression/Summary/expression_tableex.png', border='1', width='95%')
+              p Click on the image above to access the interactive plot.
+
+  include footer
