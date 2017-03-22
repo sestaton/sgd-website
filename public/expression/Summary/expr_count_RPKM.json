@@ -1,0 +1,18 @@
+[
+	{
+	 "key":"RPKM>=0",
+	 "values":[{"x":0,"y":22612,"size":4,"shape":"circle","label":"Bract"},{"x":1,"y":20422,"size":4,"shape":"circle","label":"Corolla"},{"x":2,"y":21500,"size":4,"shape":"circle","label":"Leaves"},{"x":3,"y":23089,"size":4,"shape":"circle","label":"Ligule"},{"x":4,"y":18167,"size":4,"shape":"circle","label":"Ovary"},{"x":5,"y":16772,"size":4,"shape":"circle","label":"Pollen"},{"x":6,"y":22576,"size":4,"shape":"circle","label":"Seed"},{"x":7,"y":20167,"size":4,"shape":"circle","label":"Stamen"},{"x":8,"y":22933,"size":4,"shape":"circle","label":"Stem"},{"x":9,"y":22872,"size":4,"shape":"circle","label":"Style"}]
+	},
+	{
+	 "key":"RPKM>=0.5",
+	 "values":[{"x":0,"y":17898,"size":4,"shape":"diamond"},{"x":1,"y":16853,"size":4,"shape":"diamond"},{"x":2,"y":19368,"size":4,"shape":"diamond"},{"x":3,"y":18938,"size":4,"shape":"diamond"},{"x":4,"y":16448,"size":4,"shape":"diamond"},{"x":5,"y": 5147,"size":4,"shape":"diamond"},{"x":6,"y":17862,"size":4,"shape":"diamond"},{"x":7,"y":17093,"size":4,"shape":"diamond"},{"x":8,"y":19320,"size":4,"shape":"diamond"},{"x":9,"y":17712,"size":4,"shape":"circle"}]
+	},
+	{
+	 "key":"RPKM>=1",
+	 "values":[{"x":0,"y":16210,"size":4,"shape":"square"},{"x":1,"y":14940,"size":4,"shape":"square"},{"x":2,"y":17739,"size":4,"shape":"square"},{"x":3,"y":17306,"size":4,"shape":"square"},{"x":4,"y":14693,"size":4,"shape":"square"},{"x":5,"y": 3587,"size":4,"shape":"square"},{"x":6,"y":16099,"size":4,"shape":"square"},{"x":7,"y":15173,"size":4,"shape":"square"},{"x":8,"y":17723,"size":4,"shape":"square"},{"x":9,"y":15758,"size":4,"shape":"square"}]
+	},
+	{
+	 "key":"RPKM>=10",
+	 "values":[{"x":0,"y": 8938,"size":4,"shape":"cross"},{"x":1,"y": 6511,"size":4,"shape":"cross"},{"x":2,"y": 9156,"size":4,"shape":"cross"},{"x":3,"y": 9552,"size":4,"shape":"cross"},{"x":4,"y": 6098,"size":4,"shape":"cross"},{"x":5,"y":  871,"size":4,"shape":"cross"},{"x":6,"y": 7857,"size":4,"shape":"cross"},{"x":7,"y": 6407,"size":4,"shape":"cross"},{"x":8,"y":10270,"size":4,"shape":"cross"},{"x":9,"y": 7405,"size":4,"shape":"cross"}]
+	}
+]

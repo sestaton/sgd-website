@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="package/d3/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="package/d3/d3.js" charset="utf-8"></script>
+    <script src="package/d3/nv.d3.js"></script>
+</head>
+<div id='canvas1' style='width:100%'>
+  <svg style='height:540px' />
+</div>
+<div id="dataset" style="display:none;">
+[
+	{
+	 "key":"Gene",
+	 "values":[[0,31978222,"Bract"],[1,10735274,"Corolla"],[2,5045653,"Leaves"],[3,26688425,"Ligule"],[4,3019560,"Ovary"],[5,38514689,"Pollen"],[6,23180599,"Seed"],[7,8933849,"Stamen"],[8,19902970,"Stem"],[9,26170890,"Style"]]
+	},
+	{
+	 "key":"Ambiguity",
+	 "values":[[0,155158],[1,20152],[2,68143],[3,41844],[4,5937],[5,28936],[6,71247],[7,11687],[8,59166],[9,79875]]
+	},
+	{
+	 "key":"No_Feature",
+	 "values":[[0,19581036],[1,9397143],[2,2542733],[3,15114235],[4,2911506],[5,19323898],[6,18658475],[7,14429265],[8,12908169],[9,20739373]]
+	}
+]
+</div>
+
+<script type="text/javascript">
+var dataset = d3.select('#dataset').text().replace(/^\s+|\s+$/g, '');;
+var data = JSON.parse(dataset);
+
+nv.addGraph(function() {
+	var chart = nv.models.stackedAreaChart()
+		.x(function(d) {
+			return d[0]
+		}) //We can modify the data accessor functions...
+		.y(function(d) {
+			return d[1]
+		}) //...in case your data is formatted differently.
+		.useInteractiveGuideline(true) //Tooltips which show all data points. Very nice!
+		.duration(300)
+		.controlLabels({
+			stacked: "Stacked"
+		});
+
+
+	chart.xAxis
+		.tickFormat(function(d) {
+			if (!data[0].values[d]) {
+				return d;
+			} else {
+				return data[0].values[d][2];
+			}
+		});
+
+	chart.yAxis
+		.tickFormat(d3.format(',.3s'));
+
+	d3.select('#canvas1 svg')
+		.datum(data)
+		.call(chart);
+
+	nv.utils.windowResize(chart.update);
+
+	return chart;
+});
+
+</script>
+</body>
+</html>

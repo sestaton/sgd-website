@@ -1,0 +1,11 @@
+Run	subject_id	histological_type
+Bract	XRQ	Bract
+Corolla	XRQ	Corolla
+Leaves	XRQ	Leaves
+Ligule	XRQ	Ligule
+Ovary	XRQ	Ovary
+Pollen	XRQ	Pollen
+Seed	XRQ	Seed
+Stamen	XRQ	Stamen
+Stem	XRQ	Stem
+Style	XRQ	Style
