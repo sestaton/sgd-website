@@ -1,0 +1,70 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Gene space
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Gene space
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+            .events-wrapper.col-md-8.col-sm-7
+              article.events-item.page-row.has-divider.clearfix
+                p.lead
+                  | For each genotype, the raw sequence data was quality filtered with PRINSEQ and screened using a custom database of plant chloroplast and mitochondria genomes and repeats. Following screening and filtering, each genotype was assembled using a modified version of
+                  |
+                  a(href='https://github.com/sestaton/VelvetOptimiser') VelvetOptimiser
+                  | .
+                .table-responsive
+                  table.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th Sample name
+                        th Description
+                        th FASTA file
+                    tbody
+                      tr
+                        td Hann1238
+                        td Hann1238 is a wild sunflower collected from Keith County, NE
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/genespace/Sunflower_Hann1238_gene_space.fasta.bz2')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+                      tr
+                        td RHA801
+                        td RHA801 is an elite-bred confectionery restorer line
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/genespace/Sunflower_RHA801_gene_space.fasta.bz2')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+            aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+             section.widget.has-divider
+               img(src='/images/rha801_sketch.jpg', alt='rha801_sketch.jpg', width='300', height='420')
+
+  include footer
