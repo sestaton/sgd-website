@@ -1,0 +1,98 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-news
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left News
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current News
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .news-wrapper.col-md-8.col-sm-7
+                article.news-item.page-row.has-divider.clearfix.row
+                  figure.thumb.col-md-2.col-sm-3.col-xs-4
+                    img.img-responsive(src='/images/news/expression-thumb-1.jpg', alt='')
+                  .details.col-md-10.col-sm-9.col-xs-8
+                    h3.title
+                      a(href='/news-expression') HA412-HO gene expression browser released
+                    p
+                      | A new set of tools to explore gene expression by tissue is now
+                      |
+                      a(href='expression.html') available
+                      | . Users can now customize the and export the results in multiple formats.
+                    |
+                    a.btn.btn-theme.read-more(href='/news-expression')
+                      | Read more
+                      i.fa.fa-chevron-right
+                article.news-item.page-row.has-divider.clearfix.row
+                  figure.thumb.col-md-2.col-sm-3.col-xs-4
+                    img.img-responsive(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                  .details.col-md-10.col-sm-9.col-xs-8
+                    h3.title
+                      a(href='/news-annotation') Gene and transposon annotations released
+                    p
+                      | The version 1.0 gene and transposon annotations have been made public. Please start using the latest annotations today!
+                    |
+                    a.btn.btn-theme.read-more(href='/news-annotation')
+                      | Read more
+                      i.fa.fa-chevron-right
+                article.news-item.page-row.has-divider.clearfix.row
+                  figure.thumb.col-md-2.col-sm-3.col-xs-4
+                    img.img-responsive(src='/images/news/browser-thumb-3.jpg', alt='')
+                  .details.col-md-10.col-sm-9.col-xs-8
+                    h3.title
+                      a(href='/news-browser') Genome browser updates
+                    p
+                      | Many data sets and visualization improvements have been added to JBrowse, which we hope will make the data more accessible and easy to understand.
+                    |
+                    a.btn.btn-theme.read-more(href='/news-browser')
+                      | Read more
+                      i.fa.fa-chevron-right
+                article.news-item.page-row.has-divider.clearfix.row
+                  figure.thumb.col-md-2.col-sm-3.col-xs-4
+                    img.img-responsive(src='/images/news/git-thumb-3.jpg', alt='')
+                  .details.col-md-10.col-sm-9.col-xs-8
+                    h3.title
+                      a(href='news-tools.html') Annotation tools publicly available
+                    p
+                      | In addition to making the annotation data public, much of the software written to generate the annotations is available on github.
+                    |
+                    a.btn.btn-theme.read-more(href='/news-tools')
+                      | Read more
+                      i.fa.fa-chevron-right
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+               section.widget.has-divider
+                 h3.title Is there news you would like to share?
+                 p
+                   | Please
+                   |
+                   a(href='/contact) contact
+                   |  us if there is news about a publication or meeting relating to the sunflower genome that you would like to share.
+
+  include footer
