@@ -1,0 +1,92 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Transcriptome
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Transcriptome files
+            <!-- breadcrumbs -->
+        .page-content
+          .row.page-row
+          aside.page-sidebar.col-md-2.col-sm-2.affix-top
+            section.widget
+              ul.nav
+                li
+                  a(href='/transcriptome') Procedures
+                    |
+                    |
+                    i.fa.fa-book(aria-hidden='true')
+                li
+                  a(href='/transcriptome-accessions') Accessions
+                    |
+                    |
+                    i.fa.fa-table(aria-hidden='true')
+                li.active
+                  a(href='/transcriptome-data') Files
+                    |
+                    |
+                    i.fa.fa-download(aria-hidden='true')
+          article.welcome.col-md-8.col-sm-7
+          h2 Downloads
+          .table-responsive
+            table.table.table-hover.table-bordered
+              thead
+                tr
+                  th Description
+                  th Format
+                  th Download
+              tbody
+                tr
+                  td
+                    | Trinity Assembly
+                    p
+                      span.label.label-success
+                        i.fa.fa-check-circle
+                        | Latest Version
+                  td Illumina
+                  td
+                    a.btn.btn-sm.btn-default(href='assets/data/transcriptome/HA412_trinity.fa.bz2')
+                      span.glyphicon.glyphicon-cloud-download
+                      |  Download
+                tr
+                  td Combined EST Assembly
+                  td Sanger &amp; 454
+                  td
+                    a.btn.btn-sm.btn-default(href='assets/data/transcriptome/TranscriptomeRef_mar30.fa.bz2')
+                      span.glyphicon.glyphicon-cloud-download
+                      |  Download
+                tr
+                  td Reference-based genotyping of 168 sunflower transcriptomes (see below)
+                  td Tab-delimited table
+                  td
+                    a.btn.btn-sm.btn-default(href='assets/data/transcriptome/all_snps_168.Vtable.bz2')
+                      span.glyphicon.glyphicon-cloud-download
+                      |  Download
+
+    include footer
