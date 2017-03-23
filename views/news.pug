@@ -87,12 +87,33 @@ block content
                       | Read more
                       i.fa.fa-chevron-right
               aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
-               section.widget.has-divider
-                 h3.title Is there news you would like to share?
-                 p
-                   | Please
-                   |
-                   a(href='/contact) contact
-                   |  us if there is news about a publication or meeting relating to the sunflower genome that you would like to share.
+                section.widget.has-divider
+                  h3.title Is there news you would like to share?
+                  p
+                    | Please
+                    |
+                    a(href='/contact') contact
+                    |  us if there is news about a publication or meeting relating to the sunflower genome that you would like to share.
+                section.widget.has-divider
+                  h3.title Upcoming Events
+                  article.events-item.row.page-row
+                    .date-label-wrapper.col-md-3.col-sm-4.col-xs-4
+                      p.date-label
+                        span.month AUG
+                        |
+                        span.date-number 15
+                    .details.col-md-9.col-sm-8.col-xs-8
+                      h5.title Bioinformatics Workshop
+                      p.meta
+                        span.time
+                          i.fa.fa-clock-o
+                          | TBD
+                        br
+                        span.location
+                          i.fa.fa-map-marker
+                          | UBC Main Campus
+                section.widget
+                  h3.title Flickr Photo Stream
+                  ul#flickr-photos
 
   include footer
