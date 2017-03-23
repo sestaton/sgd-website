@@ -1,0 +1,95 @@
+nav.main-nav(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar-collapse.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.nav-item
+          a(href='https://sunflowergenome.org') Home
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Project Overview
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | Research Activities
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='https://stress.sunflowergenome.org') Genetics of abiotic stress
+              a(href='/team') Research Team
+            li
+              a(href='/publications') Recent Publications
+            li
+              a(href='/funding') Funding Partners
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Tools
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li
+              a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') JBrowse
+            li
+              a(href='https://sunflowergenome.org/blast/') BLAST (HA412-HO Bronze Assembly)
+            li
+              a(href='https://sunflowergenome.org/cgi-bin/cmap/viewer?ref_map_set_acc=1') cMap
+            li
+              a(href='/expression') Gene Expression Browser
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | INRA Tools (External)
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='https://www.heliagene.org/gb2/gbrowse/Ha412Newbler20120907/') HA412HO v0.1 Genome Browser
+                li
+                  a(href='https://www.heliagene.org/Ha412Newbler20120907/') HA412HO v0.1 Genome Annotation
+                li
+                  a(href='http://www.heliagene.org/Ha412T4l') HA412HO v0.1 Transcriptome Search
+                li
+                  a(href='http://www.heliagene.org/HaT13l') HAXRQ Transcriptome Search
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Data
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li
+              a(href='/genespace') Gene Space
+            li
+              a(href='/assembly') Genome Assemblies
+            li
+              a(href='/geneticmap') Genetic Map
+            li
+              a(href='/physicalmap') Physical Map
+            li
+              a(href='/transcriptome') Transcriptome
+            li
+              a(href='/diversity') Phylogenetic Diversity
+            li
+              a(href='/variants') Variant Calls
+            li
+              a(href='/annotations') Annotations
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | Presentations
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='/pag2013') PAG 2013
+                li
+                  a(href='/pag2014') PAG 2014
+                li
+                  a(href='/pag2015') PAG 2015
+                li
+                  a(href='/pag2017') PAG 2017
+        li.nav-item
+          a(href='/news') News
+        li.nav-item
+          a(href='/events') Events
+        li.active.nav-item
+          a(href='/contact') Contact
