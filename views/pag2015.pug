@@ -1,0 +1,121 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Presentations
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current PAG 2015
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/pag2013') PAG 2013
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li
+                    a(href='/pag2014') PAG 2014
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li.active
+                    a(href='/pag2015') PAG 2015
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li
+                    a(href='/pag2016') PAG 2016
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                      .events-wrapper.col-md-8.col-sm-7
+            article.events-item.page-row.has-divider.clearfix
+                        h2 Slides from Sunflower Genome Consortium Meeting at PAG 2015
+                        .table-responsive
+                          table.table.table-hover.table-bordered
+                            thead
+                              tr
+                                th Presenter, Affiliation
+                                th Title
+                                th Download
+                            tbody
+                              tr
+                                td L. Rieseberg, UBC
+                                td Introductions and project overview
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Rieseberg-Introductory_Comments.pptx')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td C. Grassa, UBC
+                                td Sunflower Genome
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Grassa_consortium2015_final.pdf')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td N. Langdale, INRA
+                                td Bridging Physiological and Evolutionary Time Scales in a Gene Regulatory Network
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Langlade_20150113_PAG_SystemsGenomics.pptx')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td N. Langlade, INRA
+                                td Evaluation of PacBio Sequencing to improve the sunflower genome assembly
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Langlade_20150114_Pacbio_Evaluation_And_Plans.pptx')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td A. Bewick, UGA
+                                td A first look at the cultivated sunflower (Helianthus annuus [L.]) methylome
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Bewickaj_PAGXIII_sunflower_methylome.pdf')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td  S. Carrere, INRA
+                                td Helianthus annuus genome annotation
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Carrere_SanDiego_20150114.pptx')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+                              tr
+                                td  E. Staton, UBC
+                                td
+                                  | Shared patterns of repeat composition in Helianthus provide insight into the history of sunflower genomes
+                                td
+                                  a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2015/Staton_PAG_sunflower_talk_11415.pdf')
+                                    span.glyphicon.glyphicon-cloud-download
+                                    |  Download
+
+    include footer

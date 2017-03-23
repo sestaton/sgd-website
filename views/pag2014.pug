@@ -1,0 +1,132 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Presentations
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current PAG 2014
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/pag2013') PAG 2013
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li.active
+                    a(href='/pag2014') PAG 2014
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li
+                    a(href='/pag2015') PAG 2015
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                  li
+                    a(href='/pag2016') PAG 2016
+                      |
+                      |
+                      i.fa.fa-file-image-o(aria-hidden='true')
+                      .events-wrapper.col-md-8.col-sm-7
+            article.events-item.page-row.has-divider.clearfix
+              h2 Slides from Sunflower Genome Consortium Meeting at PAG 2014
+              .table-responsive
+                table.table.table-hover.table-bordered
+                  thead
+                    tr
+                      th Presenter, Affiliation
+                      th Title
+                      th Download
+                  tbody
+                    tr
+                      td L. Rieseberg, UBC
+                      td Introductions and project overview
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Rieseberg-introductory_comments.pptx')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td C. Grassa, UBC
+                      td Status of the Genome Assembly
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Chris_Grassa-status_of_genome_assembly.pdf')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td A. DeBono, UBC
+                      td Factors Influencing Sunflower Transformation and Propogation
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/DeBono_Sunflower_transformation.pptx')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td J. Gouzy, INRA
+                      td Annotation Update and Genome Browser Overview
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Gouzy_PAG_AnnotationandGenomeBrowser.pptx')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td F. Raftis, UBC
+                      td Demo of New Sunflower Genome Webpage (HTML presentation with outdated demo site)
+                      td NA
+                    tr
+                      td  N. Langlade, INRA
+                      td INRA Participation Overview
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Langlade_INRA_participation.pptx')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td  J. Mandel, UGA
+                      td Association Mapping and Re-sequencing Updates
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Mandel_Association_Mapping.pptx')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td  N. Chaidir, UBC
+                      td
+                        | Bioinformatic Localization of Telomeric and Centromeric Regions in Sunflower Genome
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/N.Chaidir-telomere_centromere_positions.pdf')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+                    tr
+                      td A. Bewick, UGA
+                      td CNV Across the Cultivated Sunflower Gene Pool
+                      td
+                        a.btn.btn-sm.btn-default(href='assets/documents/presentations/PAG2014/Bewick_copy_number_variation.pdf')
+                          span.glyphicon.glyphicon-cloud-download
+                          |  Download
+
+    include footer
