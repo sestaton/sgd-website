@@ -1,0 +1,128 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Phylogenetic diversity
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Phylogenetic diversity
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.has-divider.clearfix
+                  p.lead
+                    | The data described here are from Greg Baute&apos;s PhD thesis, which describes the phylogenetic relationships of wild and cultivated Helianthus accessions, as well as the potential for improvement of modern sunflower. The full thesis may be obtained from this
+                    |
+                    a(href='https://circle.ubc.ca/handle/2429/54841') stable link
+                    | .
+                  h2 Wild Helianthus relationships and population structure
+                  p
+                    | The following is a list of SNP data used in chapter 3, &quot;A genomic survey of wild Helianthus germplasm clarifies phylogenetic relationships and identifies population structure and interspecific gene flow&quot; of Greg Baute&apos;s PhD thesis. These SNP tables are described in the method section of the thesis and the samples used are described in Table B.1.
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td
+                            | Contains all 295 individuals sample and has is the unfilitered VCF file from GATK.
+                          td VCF
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/WildHelianthusGBS/295i_GATK.vcf.bz2')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td
+                            | Is a filtered hapmap format file containing the 287 samples used in most of the analysis (the remainer having been removed due to insufficient data). It has been filtered to only contain sites which have 80% of the samples scored, a MAF of at least 0.05 and maximum observed heterozygosity of 0.5.
+                          td HapMap
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/WildHelianthusGBS/287i_GATK_80d05m50HO.hmp.bz2')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td
+                            | Contains the individuals used in the phylogenetic analsys. It has been filtered to only contain sites which have 80% of the samples scored, a MAF of at least 0.05 and maximum observed heterozygosity of 0.5.
+                          td HapMap
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/WildHelianthusGBS/95i_80d05m50H.hmp.bz2')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                  h2 Pre-bred lines
+                  p
+                    | The following data is from chapter 4 of Greg Baute&apos;s thesis &quot;New pre-bred lines have desirable agronomic traits and give insight into the permeability of the modern sunflower genome.&quot;
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td
+                            | Contains the GBS generated SNPs as described in the method section. It has been filtered to only contain sites which have a MAF of at least 0.05 and 50% of the samples scored.
+                          td HapMap
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/PreBredLines/GOBS_TrimBWACLean_Samtools_CultWild_05m50d.hmp.bz2')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                        tr
+                          td Contians the genomic location of the introgressions in each line.
+                          td Excel
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/PreBredLines/PrebredLineIntrogressionLocations.xls')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+                  h2 Genomic profile of crop sunflower
+                  p
+                    | The following is a list of SNP data used in &quot;The genomic profile of a new hybrid crop: 40 years of sunflower breeding&quot;, chapter 5 of Greg Baute&apos;s thesis.
+                  .table-responsive
+                    table.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Description
+                          th Format
+                          th Download
+                      tbody
+                        tr
+                          td
+                            | Contains the SNPs generated from WGS of the Sunflower Association Mapping population. It has been filtered to only contain sites which have 80% of the samples scored, a MAF of at least 0.05 and maximum observed heterozygosity of 0.5.
+                          td HapMap
+                          td
+                            a.btn.btn-sm.btn-default(href='assets/data/diversity/SAM_Heterosis/SAM_80d05m50Ho.hmp.bz2')
+                              span.glyphicon.glyphicon-cloud-download
+                              |  Download
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  img(src='/images/rha801_sketch.jpg', alt='rha801_sketch.jpg', width='300', height='420')
+
+  include footer

@@ -1,0 +1,52 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Variants
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Variants
+            <!-- breadcrumbs -->
+            .page-content
+              .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.clearfix
+                  p.lead
+                    | Raw sequence data generated for the SAM population was processed, cleaned and aligned to the sunflower reference genome HA412.v.1.1 using the bioinformatics pipelines and tools developed with the software company SAP-AG. Alignment files were further processed to mark potential PCR duplicates using the alignment coordinates and mapping edit distance information stored in a database. Variants including SNPs and indels were joint called across all accessions in one go using a haplotype sensitive algorithm implemented in open source software freebayes (Garrison and Marth &lrm;2012). Altogether 172,794,342 SNPs were detected among 284 accessions. The dataset was further filtered to remove sites with more than 30% missing data and a minor allele frequency lower than 5%, leaving a total of 1,398,933 SNPs.
+                  br
+                  p
+                    | The VCF files for the analysis described above will be made available following the publication of this data set.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget
+                  img(src='/images/variants.png', width='360', height='321')
+                section.widget
+                  article.news-item.row
+                    p
+                      | Circular view of all 1.4M SNPs called in the SAM population (courtesy Sariel Hubner). Chromosome number is indicated next to each gray bar. Genomic scans were conducted in 1Mb windows including: SNP density (red), diversity - Pi (blue), Tajima&apos;s-D (orange), and linkage disequilibrium (green).
+
+  include footer
