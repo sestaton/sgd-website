@@ -1,0 +1,143 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-news
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left News
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current News
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .news-wrapper.col-md-8.col-sm-7
+                article.news-item
+                  p.meta.text-muted
+                    | By:
+                    a(href='http://rieseberglab.botany.ubc.ca/postdoctoral-fellows/evan-staton/') SES
+                    |  | Posted on: 15 Jul 2017
+                  p.featured-image
+                    img.img-responsive(alt='', src='assets/images/news/annotation-canvfeats-2.jpg')
+                  p.box
+                    | Shown above is a screen capture from the
+                    a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata/bronze') genome browser
+                    |  displaying expression levels of genes and transposons in a small window on chromosome 1. The transposon annotations in the genome browser and, available for download on this site, were generated with a tool called Tephra which is discussed on this page.
+                  p
+                    | The primary challenge with the assembly and annotation of plant genomes is dealing with repetitive elements such as transposons. The sunflower genome has been particularly challenging due to nature of transposons. That is, most LTR retrotransposons in sunflower are very young, having accumulated since the origin of the species. While much is know about LTR retrotransposons, less attention has been given to other transposon types, in part due to a lack of published tools and methods.
+                  p
+                    | The command line toolkit I have developed, called
+                    a(href='https://github.com/sestaton/tephra') Tephra
+                    | , aims to characterize all transposon types in the genome, as well as the structure and diversity of these elements in order to better infer their evolutionary history.
+                  p
+                    | The usage of this tool follows Unix convention where you have a single command with subcommands that perform different functions (similar to samtools). To give an idea of the different utilities provided there is overview of the commands and their description below.
+                  .table-responsive
+                    table.table.table-bordered
+                      thead
+                        tr
+                          th Subcommand
+                          th Description
+                      tbody
+                        tr
+                          td classifyltrs
+                          td Classify LTR retrotransposons into superfamilies and families
+                        tr
+                          td classifytirs
+                          td Classify TIR transposons into superfamilies
+                        tr
+                          td findhelitrons
+                          td Find Helitons in a genome assembly
+                        tr
+                          td findltrs
+                          td Find LTR retrotransposons in a genome assembly
+                       tr
+                         td findnonltrs
+                         td Find non-LTR retrotransposons in a genome assembly
+                       tr
+                         td findtirs
+                         td Find TIR transposons in a genome assembly
+                       tr
+                         td findtrims
+                         td Find TRIM retrotransposons in a genome assembly
+                       tr
+                         td illrecomb
+                         td Characterize the distribution of illegitimate recombination in a genome
+                       tr
+                         td ltrage
+                         td Calculate the age distribution of LTR retrotransposons
+                       tr
+                         td maskref
+                         td Mask a reference genome with transposons
+                       tr
+                         td reannotate
+                         td Transfer annotations from a reference set of repeats to Tephra annotations
+                       tr
+                         td sololtr
+                         td Find solo-LTRs in a genome assembly
+                  p.box
+                    | This tool is open source and is available on
+                    a(href='https://github.com/sestaton/tephra') github
+                    | , where you can find information about installation and usage.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1.col-xs-12
+                section.widget.has-divider
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(src='/images/news/expression-thumb-1.jpg', alt='')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-annotation.html') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(src='assets/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-annotation.html') Gene and transposon annotations released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='assets/images/news/browser-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-browser.html') Genome browser updates
+                section.widget.has-divider
+                  h3.title Upcoming Events
+                  article.events-item.row.page-row
+                    .date-label-wrapper.col-md-3.col-sm-4.col-xs-4
+                      p.date-label
+                        span.month AUG
+                        |
+                        span.date-number 15
+                    .details.col-md-9.col-sm-8.col-xs-8
+                  h5.title Bioinformatics Workshop
+                  p.meta
+                    span.time
+                      i.fa.fa-clock-o
+                      | TBD
+                    br
+                    span.location
+                      i.fa.fa-map-marker
+                      | UBC Main Campus
+
+  include footer

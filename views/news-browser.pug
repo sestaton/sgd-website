@@ -1,0 +1,105 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-news
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left News
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current News
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .news-wrapper.col-md-8.col-sm-7
+                article.news-item
+                  p.meta.text-muted
+                    | By:
+                    a(href='http://rieseberglab.botany.ubc.ca/postdoctoral-fellows/evan-staton/') SES
+                    |  | Posted on: 26 Jul 2017
+                  p.featured-image
+                    img.img-responsive(alt='', src='assets/images/news/browser-variants.jpg')
+                  p.box
+                    | Shown above is a screen capture from the
+                    a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') genome browser
+                    |  displaying variants in the association mapping population and gene expression of a gene involved in lipid storage in seeds.
+                  p
+                    | I&apos;ve added quite a few features to the genome browser in the past few months so I wanted to briefly go through some of these changes. First, there are some cosmetic changes that I think add to the user experience. We were previously displaying genes as a &apos;span&apos; which did not show any features, as shown below.
+                  |
+                  img.img-responsive(align='center', alt='', src='assets/images/news/annotation-spanfeats-2.jpg')
+                  p
+                    | The way genes are currently being displayed is with HTML Canvas Features in JBrowse, which highlights all of the gene features. The annotations are the same, but the way the genes are displayed in the top image adds more context and is visually nicer.
+                  p
+                    | Second, the annotation cross-references (e.g., Pfam, InterPro, GO) for the transcripts and genes are now accessible in the browser. We had a subset of the annotations linking out to external databases previously, but now it should be possible to get information about all of the GO terms, Pfam domains, structural information, etc. by clicking on the gene or transcript. This was accomplished with a little JavaScript, which I&apos;ve put online
+                    a(href='https://gist.github.com/sestaton/b48b993f1d70cb28de2e9e39fd2fe98e') here
+                    |  and
+                    a(href='https://gist.github.com/sestaton/ff9424f28b165e761e934f078f07249f') here
+                    |  and included minified versions for JBrowse.
+                  p
+                    | Third, there is now a &quot;Variants&quot; track in JBrowse for viewing variants across the association mapping population of 288 breeding lines and wild accessions. The details of this usage will be the subject of another post.
+                  p
+                    | Last, to make sure all of these features work well into the future, I&apos;ve updated JBrowse to latest version (1.12.1).
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1.col-xs-12
+                section.widget.has-divider
+                  h3.title Other News
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='assets/images/news/expression-thumb-1.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-expression.html') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(src='assets/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-annotation.html') Gene and transposon annotations released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='assets/images/news/git-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='news-tools.html') Annotation tools publicly available
+                section.widget.has-divider
+                  h3.title Upcoming Events
+                  article.events-item.row.page-row
+                    .date-label-wrapper.col-md-3.col-sm-4.col-xs-4
+                      p.date-label
+                        span.month AUG
+                        |
+                        span.date-number 15
+                    .details.col-md-9.col-sm-8.col-xs-8
+                      h5.title Bioinformatics Workshop
+                      p.meta
+                        span.time
+                          i.fa.fa-clock-o
+                          | TBD
+                        br
+                        span.location
+                          i.fa.fa-map-marker
+                          |  UBC Main Campus
+
+  include footer
