@@ -1,0 +1,92 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left HOWTO: JBrowse
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current HOWTO: JBrowse
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.has-divider.clearfix
+                  p.lead
+                    | This guide will give you a brief overview of how to use JBrowse for exploring the sunflower genome annotations. For reference, there is a more detailed guide for how to use JBrowse on
+                    |
+                    a(href='https://www.araport.org/jbrowse/user-guide') ARAPORT
+                    |  (Arabidopsis Information Portal). This page serves to explain some of the features of the sunflower browser that might not be found on other sites.
+                  p.featured-image
+                    img.img-responsive(alt='', src='/images/howto/jbrowse_fullscrn-1.jpg')
+                  p
+                    | By default, the browser will open with the features shown above. You can add or remove features with the menu to the left of the browser window and navigation of the chromosome is handled with the controls at the top of the browser. If we click on a gene or transcript we can find annotation details about this feature and also export various subfeatures as FASTA. Shown below is the view when you hover over gene to open up a new window.
+                  p
+                    img.img-responsive(alt='', src='/images/howto/jbrowse_fullscrn-hover-2.jpg')
+                  p If we click on this gene it will open up a new window, as shown below.
+                  p
+                    img.img-responsive(alt='', src='/images/howto/jbrowse_fullscrn-data-3.jpg')
+                  p
+                    | In this information panel we can see basic information such as the gene name and length, and all of the associated GO terms and other databases cross-references (under the section Dbxref). All of these links will open in a new window. If you scroll down there are is more information about the subfeatures of the gene or transcript and options to export each as FASTA.
+                  p
+                    | The same options are also available for other annotated features such as transposons. You can get the name of the feature and other associated information such as the Superfamily or Family in the case of transposons, and also export subfeatures.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  h3.title Is there a problem with the content on this page?
+                  p
+                    | Please
+                    |
+                    a(href='/contact') contact
+                    |  us if this page needs to be updated or could be improved.
+                section.widget.has-divider
+                  h3.title Latest News
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/expression-thumb-1.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-expression') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-annotation') Gene and transposon annotations released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='/images/news/browser-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-browser') Genome browser updates
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/git-thumb-3.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-tools') Annotation tools publicly available
+
+  include footer

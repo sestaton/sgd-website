@@ -1,0 +1,105 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left HOWTO: BLAST
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current HOWTO: BLAST
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.has-divider.clearfix
+                  p.lead
+                    | This guide will give you a brief overview of how to use the web-based BLAST tool to find sequences of interest in the sunflower genome.
+                  p
+                    | The interface for the
+                    |
+                    a(href='https://sunflowergenome.org/blast/') BLAST
+                    |  tool is pretty straightforward (as shown in the screenshot below). Following some clues in each field, you can see there is place to paste your sequence, an optional box below this field allows you to customise the BLAST search, and finally there is a &quot;BLAST&quot; button to launch the job.
+                  p.featured-image
+                    img.img-responsive(alt='', src='/images/howto/blast-landing-1.jpg')
+                  p
+                    | After pasting in our sequence and starting the job, we see the results page shown below.
+                  |
+                  img.img-responsive(alt='', src='/images/howto/blast-res-2.jpg')
+                  p
+                  p
+                    | The BLAST results are very similar to NCBI&apos;s BLAST results so this should be familiar. If you click on a sequence ID in the list (under the heading &quot;Sequences producing significant alignments&quot;) it will take you to the alignment view shown below.
+                  |
+                  img.img-responsive(alt='', src='/images/howto/blast-res-aln-2.jpg')
+                  p
+                  p
+                    | The alignment view shows basic statistics about the identity of the sequences. To the right are options for exporting the BLAST report in various formats so that you can include these results into an existing workflow. At the top of each alignment view is the option to export the hit as FASTA, or open the aligned region in the genome browser. If we click the link to open the browser, we get an image like the one shown below.
+                  |
+                  img.img-responsive(alt='', src='/images/howto/blast-res-jbrowse-aln-3.jpg')
+                  p
+                  p
+                    | By default, the browser will open to the exact coordinates of the BLAST hit. The region will be highlighted yellow so you can zoom out (with the controls at the top of the screen) to get more context about the region, as shown below.
+                  |
+                  img.img-responsive(alt='', src='/images/howto/blast-res-jbrowse-reg-4.jpg')
+                  p
+                  p
+                    | When the browser opens there will be a default set of features displayed for the region. You can add or remove any features you want by using the menu to the left of the screen (not shown in this screenshot). It should be noted that zooming out too far will cause the variants track, which is displayed by default, to not render all of the features since it is not possible at certain levels. A message will shown to indicate that variants cannot be displayed if this is the case.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  h3.title Is there a problem with the content on this page?
+                  p
+                    | Please
+                    |
+                    a(href='/contact') contact
+                    |  us if this page needs to be updated or could be improved.
+                section.widget.has-divider
+                  h3.title Latest News
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/expression-thumb-1.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-expression') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-annotation') Gene and transposon annotations released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='/images/news/browser-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-browser') Genome browser updates
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/git-thumb-3.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-tools') Annotation tools publicly available
+
+  include footer

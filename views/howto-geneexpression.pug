@@ -1,0 +1,100 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left HOWTO: Gene Expression
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current HOWTO: Gene Expression
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .events-wrapper.col-md-8.col-sm-7
+                article.events-item.page-row.has-divider.clearfix
+                  p.lead
+                    | The gene expression tools available on this site will allow you to 1) see overall mapping quality of RNASeq data to the sunflower genome, 2) explore expression by tissue and gene feature, 3) and compare expression of individual genes in 10 different tissues.
+                  p
+                    | There are three main sections that the data is divided into. In order (from the top of the page), there is 1) the QC Metrics, 2) the Parallel Plot of QC, and 3) the Expression Table. For research purposes, the latter two sections, shown in the screenshot below, will be of most interest.
+                  h2 Parallel Plot of QC
+                  p.featured-image
+                    img.img-responsive(alt='', src='/images/howto/expres-landing-1.jpg')
+                  p
+                    | If we click on the image under the &quot;Parallel Plot of QC&quot; section we are taken to an application for exploring gene expression by tissue (shown below).
+                  p
+                    img.img-responsive(alt='', src='/images/howto/expres-parplot-landing-2.jpg')
+                  p
+                    | There are several utilities provided in this application. As a convenience, we can filter the list of tissues to explore by typing in the search box. With the cursor, you can hover a row and see the expression statistics highlighted in the plot above. Clicking on the tissue name in the first column with open a new window with a comprehensive report on mapping, splicing, and expression statistics for that tissue.
+                  h2 Expression Table
+                  p
+                    | If we click on the expression table image a new application will open which shows expression on a gene-by-gene basis, whereas the Parallel Plot of QC tool shows expression by tissue. Shown below is what you will see when the Expression Table opens.
+                  p
+                    img.img-responsive(alt='', src='/images/howto/expres-table-landing-3.jpg')
+                  p
+                    | If there is a specific gene you are interested in, the way to find that would be to start typing the gene ID in the search box above the table. The gene list should be filtered as you type. To see a plot of expression for that gene in each tissue (shown to the left in the plot below), simply click anywhere in that row under any of the tissue type columns. To compare expression of multiple genes, either click the gene ID in the first column to add them to the list, or paste in a list of IDs in the search box below the table. Then, click &quot;Plot.&quot; You an click the &quot;Example&quot; button to see how this works. This will generate a list of genes to plot and clicking &quot;Plot&quot; will generate the plot to the right in the image below.
+                  p
+                    img.img-responsive(alt='', src='/images/howto/expres-table-plots-landing-4.jpg')
+                  p
+                    | There are controls in the plot windows which will allow you to take a screenshot or save the plot as an image.
+                  p
+                    | Finally, it may be of interest to explore gene expression by tissue without downloading the raw data. It is possible to sort the table by any column, for example, gene description or expression value, by clicking on the column headings.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+                section.widget.has-divider
+                  h3.title Is there a problem with the content on this page?
+                  p
+                    | Please
+                    |
+                    a(href='/contact') contact
+                    |  us if this page needs to be updated or could be improved.
+                section.widget.has-divider
+                  h3.title Latest News
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/expression-thumb-1.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-expression') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-annotation') Gene and transposon annotations released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='/images/news/browser-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-browser') Genome browser updates
+                  article.news-item.row
+                    figure.thumb.col-md-2
+                      img(src='/images/news/git-thumb-3.jpg', alt='')
+                    .details.col-md-10
+                      h4.title
+                        a(href='/news-tools') Annotation tools publicly available
+
+  include footer
