@@ -1,0 +1,100 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Privacy policy
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Privacy policy
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+             .privacy-wrapper.col-md-8.col-sm-7
+              .page-row
+                p
+                  | Your privacy is important to the Sunflower Genome Database. This privacy statement provides information about the personal information that the Sunflower Genome Database collects, and the ways in which the Sunflower Genome Database uses that personal information.
+              .page-row
+                h4.text-highlight Personal information collection
+                p
+                  | The Sunflower Genome Database may collect and use the following kinds of personal information:
+                ul
+                  li information about your use of this website;
+                  li
+                    | information that you provide using for the purpose of registering with the website;
+                  li information about transactions carried out over this website;
+                  li
+                    | information that you provide for the purpose of subscribing to the website services;
+                  li any other information that you send to Sunflower Genome Database.
+              .page-row
+                h4.text-highlight Using personal information
+                p  The Sunflower Genome Database may use your personal information to:
+                ul
+                  li personalize the website for you;
+                  li enable your access to and use of the website services.
+                p
+                  | In addition to the disclosures reasonably necessary for the purposes identified elsewhere above, the Sunflower Genome Database may disclose your personal information to the extent that it is required to do so by law, in connection with any legal proceedings or prospective legal proceedings, and in order to establish, exercise or defend its legal rights.
+              .page-row
+                h4.text-highlight Securing your data
+                p
+                  | The Sunflower Genome Database will take reasonable technical and organisational precautions to prevent the loss, misuse or alteration of your personal information.
+                p
+                  | The Sunflower Genome Database will store all the personal information you provide on its secure servers.
+                p
+                  | Information relating to electronic transactions entered into via this website will be protected by encryption technology. No personal information will be shared with any 3rd party services.
+              .page-row
+                h4.text-highlight Cross-border data transfers
+                p
+                  | Information that the Sunflower Genome Database collects may be stored and processed in and transferred between any of the countries in which the Sunflower Genome Database operates to enable the use of the information in accordance with this privacy policy.
+                p
+                  | In addition, personal information that you submit for publication on the website will be published on the internet and may be available around the world.
+                p  You agree to such cross-border transfers of personal information.
+              .page-row
+                h4.text-highlight Updating this statement
+                p
+                  | The Sunflower Genome Database may update this privacy policy by posting a new version on this website.
+                p
+                  | You should check this page occasionally to ensure you are familiar with any changes.
+                h4.text-highlight Other websites
+                p  This website contains links to other websites.
+              .box
+                h4.text-highlight Credit
+                p
+                  | This document was created using a Contractology template available at
+                  |
+                  a(href='http://www.freenetlaw.com/') http://www.freenetlaw.com
+                  | .
+             aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+               section.widget
+                 h3.title Contact
+                 p
+                   | For questions relating to this policy, or general enquiries, please see our
+                   |
+                   a(href='/contact') contact
+                   |  page for more details.
+
+  include footer
