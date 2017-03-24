@@ -1,0 +1,88 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left About
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current About
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+            .faq-wrapper.col-md-8.col-sm-7
+              #accordion.panel-group
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse-1') There was data on the old site that is no longer available. Where can I find it?
+                  #collapse-1.panel-collapse.collapse.in
+                    .panel-body
+                      | Please
+                      |
+                      a(href='contact') contact
+                      |  us and we will help locate any older data sets that are no longer current.
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse-2') How was the available data such as the annotations produced?
+                  #collapse-2.panel-collapse.collapse
+                    .panel-body
+                      | Please search under the DATA tab at the top of this page for an overview of that methodology used the generate the data on this site.
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse-3') How can I cite the data and tools on this website?
+                  #collapse-3.panel-collapse.collapse
+                    .panel-body
+                      | Please refer to the
+                      |
+                      a(href='/publications') publications
+                      |  page and cite the appropriate source of the data used, or
+                      |
+                      a(href='/contact') contact
+                      |  us if there are doubts about the correct citation. If web-based tools on this site were used for your analysis, please use the &quot;sunflowergenome.org&quot; URL as a citation.
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse-4') I have data that I would like to upload to this site, is that possible?
+                  #collapse-4.panel-collapse.collapse
+                    .panel-body
+                      | If you have a published data set for sunflower that is related to the scope of the work presented on this site please
+                      |
+                      a(href='/contact') get in touch
+                      |  with us and we would happy you discuss any proposals.
+            aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
+              section.widget.has-divider
+                h3.title Could this section be improved?
+                p
+                  | Please
+                  a(href='contact.html') contact
+                  |  us if you find something inaccurate or that could be improved on this page.
+
+
+  include footer
