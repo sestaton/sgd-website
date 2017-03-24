@@ -41,21 +41,24 @@ block content
                     a(href='http://rieseberglab.botany.ubc.ca/postdoctoral-fellows/evan-staton/') SES
                     |  | Posted on: 26 Jul 2017
                   p.featured-image
-                    img.img-responsive(alt='', src='assets/images/news/browser-variants.jpg')
+                    img.img-responsive(alt='', src='/images/news/browser-variants.jpg')
                   p.box
                     | Shown above is a screen capture from the
+                    |
                     a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') genome browser
                     |  displaying variants in the association mapping population and gene expression of a gene involved in lipid storage in seeds.
                   p
                     | I&apos;ve added quite a few features to the genome browser in the past few months so I wanted to briefly go through some of these changes. First, there are some cosmetic changes that I think add to the user experience. We were previously displaying genes as a &apos;span&apos; which did not show any features, as shown below.
                   |
-                  img.img-responsive(align='center', alt='', src='assets/images/news/annotation-spanfeats-2.jpg')
+                  img.img-responsive(align='center', alt='', src='/images/news/annotation-spanfeats-2.jpg')
                   p
                     | The way genes are currently being displayed is with HTML Canvas Features in JBrowse, which highlights all of the gene features. The annotations are the same, but the way the genes are displayed in the top image adds more context and is visually nicer.
                   p
                     | Second, the annotation cross-references (e.g., Pfam, InterPro, GO) for the transcripts and genes are now accessible in the browser. We had a subset of the annotations linking out to external databases previously, but now it should be possible to get information about all of the GO terms, Pfam domains, structural information, etc. by clicking on the gene or transcript. This was accomplished with a little JavaScript, which I&apos;ve put online
+                    |
                     a(href='https://gist.github.com/sestaton/b48b993f1d70cb28de2e9e39fd2fe98e') here
                     |  and
+                    |
                     a(href='https://gist.github.com/sestaton/ff9424f28b165e761e934f078f07249f') here
                     |  and included minified versions for JBrowse.
                   p
@@ -67,22 +70,22 @@ block content
                   h3.title Other News
                   article.news-item.row
                     figure.thumb.col-md-2.col-sm-3.col-xs-3
-                      img(alt='', src='assets/images/news/expression-thumb-1.jpg')
+                      img(alt='', src='/images/news/expression-thumb-1.jpg')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-expression.html') HA412HO gene expression browser released
+                        a(href='/news-expression') HA412HO gene expression browser released
                   article.news-item.row
                     figure.thumb.col-md-2.col-sm-3.col-xs-3
-                      img(src='assets/images/news/jbrowse-thumb-2.jpg', alt='')
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-annotation.html') Gene and transposon annotations released
+                        a(href='/news-annotation') Gene and transposon annotations released
                   article.news-item.row
                     figure.thumb.col-md-2.col-sm-3.col-xs-3
-                      img(alt='', src='assets/images/news/git-thumb-3.jpg')
+                      img(alt='', src='/images/news/git-thumb-3.jpg')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-tools.html') Annotation tools publicly available
+                        a(href='/news-tools') Annotation tools publicly available
                 section.widget.has-divider
                   h3.title Upcoming Events
                   article.events-item.row.page-row
