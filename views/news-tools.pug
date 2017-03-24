@@ -41,7 +41,7 @@ block content
                     a(href='http://rieseberglab.botany.ubc.ca/postdoctoral-fellows/evan-staton/') SES
                     |  | Posted on: 15 Jul 2017
                   p.featured-image
-                    img.img-responsive(alt='', src='assets/images/news/annotation-canvfeats-2.jpg')
+                    img.img-responsive(alt='', src='/images/news/annotation-canvfeats-2.jpg')
                   p.box
                     | Shown above is a screen capture from the
                     a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata/bronze') genome browser
@@ -50,6 +50,7 @@ block content
                     | The primary challenge with the assembly and annotation of plant genomes is dealing with repetitive elements such as transposons. The sunflower genome has been particularly challenging due to nature of transposons. That is, most LTR retrotransposons in sunflower are very young, having accumulated since the origin of the species. While much is know about LTR retrotransposons, less attention has been given to other transposon types, in part due to a lack of published tools and methods.
                   p
                     | The command line toolkit I have developed, called
+                    |
                     a(href='https://github.com/sestaton/tephra') Tephra
                     | , aims to characterize all transposon types in the genome, as well as the structure and diversity of these elements in order to better infer their evolutionary history.
                   p
@@ -61,6 +62,9 @@ block content
                           th Subcommand
                           th Description
                       tbody
+                        tr
+                          td all
+                          td Run all subcommands and generate annotations for all transposon types
                         tr
                           td classifyltrs
                           td Classify LTR retrotransposons into superfamilies and families
@@ -97,6 +101,9 @@ block content
                        tr
                          td sololtr
                          td Find solo-LTRs in a genome assembly
+                       tr
+                         td tirage
+                         td Calculate the age distribution of TIR transposons
                   p.box
                     | This tool is open source and is available on
                     a(href='https://github.com/sestaton/tephra') github
@@ -108,19 +115,19 @@ block content
                       img(src='/images/news/expression-thumb-1.jpg', alt='')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-annotation.html') HA412HO gene expression browser released
+                        a(href='/news-annotation') HA412HO gene expression browser released
                   article.news-item.row
                     figure.thumb.col-md-2.col-sm-3.col-xs-3
-                      img(src='assets/images/news/jbrowse-thumb-2.jpg', alt='')
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-annotation.html') Gene and transposon annotations released
+                        a(href='/news-annotation') Gene and transposon annotations released
                   article.news-item.row
                     figure.thumb.col-md-2.col-sm-3.col-xs-3
-                      img(alt='', src='assets/images/news/browser-thumb-3.jpg')
+                      img(alt='', src='/images/news/browser-thumb-3.jpg')
                     .details.col-md-10.col-sm-9.col-xs-9
                       h4.title
-                        a(href='news-browser.html') Genome browser updates
+                        a(href='/news-browser') Genome browser updates
                 section.widget.has-divider
                   h3.title Upcoming Events
                   article.events-item.row.page-row
