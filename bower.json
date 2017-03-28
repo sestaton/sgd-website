@@ -1,0 +1,22 @@
+{
+  "name": "sgd-website",
+  "description": "Sunflower Genome Database website",
+  "main": "app.js",
+  "authors": [
+    "Evan Staton <statonse@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sestaton/sgd-website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}
