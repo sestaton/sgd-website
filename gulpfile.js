@@ -16,12 +16,11 @@ gulp.task('clean', function() {
 });
 
 gulp.task('test', function() {
-  return gulp.src(['public/javascripts/**/*.js', '!public/plugins/**/*.js'])
+  return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/sgd_ga.js', '!public/javascripts/back-to-top.js', '!public/plugins/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'));
 });
-
 
 gulp.task('scripts',
   gulp.series('test', function scriptsInternal() {
@@ -35,8 +34,11 @@ gulp.task('scripts',
 );
 
 gulp.task('html', function() {
-  return gulp.src('views/**/*.pug')
-    .pipe(pug())
+	return gulp.src('views/**/*.pug')
+      .pipe(pug({
+      	  doctype: 'html',
+      	      pretty: false
+      	      }))
     .pipe(gulp.dest('dist/html'))
 });
 
@@ -45,7 +47,7 @@ gulp.task('styles', function() {
     .pipe(stylus())
     .pipe(minifyCSS())
       //.pipe(autoprefixer())
-      .pipe(prefix())
+    .pipe(prefix())
     .pipe(gulp.dest('dist/styles'));
 });
 
