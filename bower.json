@@ -17,6 +17,15 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "jquery": "^3.2.1",
+    "FlexSlider": "https://github.com/woocommerce/FlexSlider",
+    "prettyPhoto_compressed_3.1.6": "http://www.no-margin-for-errors.com/demos/prettyPhoto-jquery-lightbox-clone/prettyPhoto_compressed_3.1.6.zip",
+    "jflickrfeed": "http://files.gethifi.com/posts/jflickrfeed/jflickrfeed.zip",
+    "jquery-placeholder": "^2.3.1",
+    "gmaps": "^0.4.25",
+    "bower": "*",
+    "install": "^1.0.4",
+    "bootstrap-hover-dropdown": "^2.2.1"
   }
 }
