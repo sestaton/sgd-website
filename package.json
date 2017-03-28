@@ -27,6 +27,7 @@
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
     "gulp-jshint": "^2.0.4",
