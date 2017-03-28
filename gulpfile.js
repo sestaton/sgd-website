@@ -62,5 +62,6 @@ gulp.task('default', gulp.series('clean', gulp.parallel('html', 'styles', 'scrip
           gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
           gulp.watch('public/stylesheets/**/*.styl', gulp.parallel('styles'));
           gulp.watch('dist/**/*', bSync.reload);
+          done();
      })
 );
