@@ -5,7 +5,8 @@ var concat         = require('gulp-concat');
 var stylus         = require('gulp-stylus');
 var pug            = require('gulp-pug');
 var minifyCSS      = require('gulp-csso');
-var autoprefixer   = require('autoprefixer-stylus');
+//var autoprefixer   = require('autoprefixer-stylus');
+var prefix      = require('gulp-autoprefixer');
 var del            = require('del');
 var bSync          = require('browser-sync');
 var mainBowerFiles = require('main-bower-files');
@@ -43,7 +44,8 @@ gulp.task('styles', function() {
   return gulp.src('public/stylesheets/styles.styl')
     .pipe(stylus())
     .pipe(minifyCSS())
-    .pipe(autoprefixer())
+      //.pipe(autoprefixer())
+      .pipe(prefix())
     .pipe(gulp.dest('dist/styles'));
 });
 
