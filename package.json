@@ -23,6 +23,7 @@
     "stylus": "0.54.5"
   },
   "devDependencies": {
+    "autoprefixer-stylus": "^0.13.0",
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
@@ -35,6 +36,7 @@
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "jshint": "^2.9.4",
+    "main-bower-files": "^2.13.1",
     "nodemon": "^1.11.0"
   }
 }
