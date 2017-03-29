@@ -7,8 +7,8 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Sunflower Genome Database' });
+	//res.sendFile('html/index.html');
 	//var html = template({ title: 'Sunflower Genome Database' });
-	//res.send(html);
 });
 
 //module.exports = function(app) {
