@@ -84,17 +84,17 @@ gulp.task('images', function() {
        .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('styles', function() {
-   var styleFiles = ['public/stylesheets/styles.styl'];
-
-   return gulp.src(plugins.mainBowerFiles())
-       .pipe(plugins.filter('**/*.css'))
-       .pipe(plugins.stylus(styleFiles))
-       .pipe(plugins.concat('main.min.css'))
-       .pipe(plugins.autoprefixer())
-       .pipe(plugins.csso())
-       .pipe(gulp.dest('dist/css'));
-});
+//gulp.task('styles', function() {
+//   var styleFiles = ['public/stylesheets/styles.styl'];
+//
+//   return gulp.src(plugins.mainBowerFiles())
+//       .pipe(plugins.filter('**/*.css'))
+//       .pipe(plugins.stylus(styleFiles))
+//       .pipe(plugins.concat('main.min.css'))
+//       .pipe(plugins.autoprefixer())
+//       .pipe(plugins.csso())
+//       .pipe(gulp.dest('dist/css'));
+//});
 
 // the browser-sync recipe below is modified for gulp v4 from: 
 // https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs
