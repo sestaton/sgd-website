@@ -1,8 +1,12 @@
+## TODO
+# website transfer
 DONE - mapfiles for js,css
 DONE - get images in dist/build dir
 DONE - get fonts in dist/build
-- add stress website (subdomain)
-- add mail middleware
+- add stress website (subdomain); perhaps serve static
 - add reverse proxy for blast app
-- add data routes with s3
 - add https support
+
+# new features
+- add data routes with s3
+- add mail (mailgun?) middleware
