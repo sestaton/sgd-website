@@ -14,7 +14,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('compile-styles', function() {
-   return gulp.src('public/stylesheets/styles.styl')
+   return gulp.src('public/stylesheets/*.styl')
        .pipe(plugins.sourcemaps.init())
        .pipe(plugins.stylus())
        .pipe(plugins.sourcemaps.write())
@@ -27,7 +27,7 @@ gulp.task('css',
 
 	   return gulp.src(plugins.mainBowerFiles().concat(cssFiles))
 	       .pipe(plugins.filter('**/*.css'))
-	       //.pipe(plugins.debug())
+	       .pipe(plugins.debug())
 	       .pipe(plugins.concat('main.min.css'))
 	       .pipe(plugins.autoprefixer())
 	       .pipe(plugins.csso())
@@ -36,8 +36,8 @@ gulp.task('css',
    })
 );
 
-gulp.task('fonts-fa', function() {
-   var fontFiles = ['bower_components/font-awesome/fonts/*'];
+gulp.task('fonts-fa-bs', function() {
+   var fontFiles = ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'];
 
    return gulp.src(fontFiles)
        .pipe(plugins.copy('dist/fonts', { prefix: 3 }))
@@ -61,11 +61,11 @@ gulp.task('test', function() {
 
 gulp.task('scripts', 
    gulp.series('test', function scriptsTask() {
-       var jsFiles = ['public/javascripts/*.js'];
+      var jsFiles = ['public/javascripts/*.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
 
       return gulp.src(plugins.mainBowerFiles().concat(jsFiles))
 	  .pipe(plugins.filter('**/*.js'))
-	  //.pipe(plugins.debug())
+	  .pipe(plugins.debug())
 	  .pipe(plugins.concat('main.min.js'))
 	  .pipe(plugins.uglify())
 	  .pipe(gulp.dest('dist/js'));
@@ -126,7 +126,7 @@ gulp.task('browser-sync',
 //browser-sync 
 
 gulp.task('default', 
-   gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts-fa', 'fonts-fs'), 'browser-sync',
+   gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts-fa-bs', 'fonts-fs'), 'browser-sync',
       function watcher(done) {
           gulp.watch('views/**/*.pug', gulp.parallel('html'));
           gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
