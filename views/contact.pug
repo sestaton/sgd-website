@@ -8,20 +8,11 @@ html
     meta(name="description" content="Sunflower Genome Database website")
     meta(name="author" content="Evan Staton")
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css')
-    <!-- Global CSS -->
-    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
-    <!-- Plugins CSS -->
-    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
-    link(rel="stylesheet" href="/plugins/flexslider/flexslider.css")
-    link(rel="stylesheet" href="/plugins/pretty-photo/css/prettyPhoto.css")
-    <!-- Theme CSS -->
-    link(id="theme-style" rel="stylesheet" href="/stylesheets/styles.css")
-    <!-- GA -->
-    script(type="text/javascript" src="/javascripts/sgd_ga.js")
-    script(src="http://code.jquery.com/jquery-3.2.0.min.js", integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=", crossorigin="anonymous")
-    script(type="text/javascript" src="/plugins/flexslider/jquery.flexslider-min.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/main.min.css")
+    link(id="theme-style" rel="stylesheet" href="/css/styles.css")
+    script(type="text/javascript" src="/js/main.min.js")
     script(src="https://www.google.com/recaptcha/api.js")
+    script(type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBWNoza_mHYhGuNhi6n5QhduCNpKdZiTJk")
   body
     .wrapper
       <!-- ******HEADER****** -->
@@ -115,112 +106,6 @@ html
             .page-row
               article.map-section
                 h3.title How to find us
-                <!-- script(type="text/javascript" src="/plugins/gmaps/gmaps.js") -->
-                <!-- script(type="text/javascript" src="/javascripts/map.js") -->
                 #map
 
-  footer.footer
-    .footer-content
-      .container
-        .row
-          .footer-col.col-md-3.col-sm-4.about
-            .footer-col-inner
-              h3 About
-              ul
-                li
-                  a(href='/about')
-                    i.fa.fa-caret-right
-                    | About us
-                li
-                  a(href='/contact')
-                    i.fa.fa-caret-right
-                    | Contact us
-                li
-                  a(href='/privacy')
-                    i.fa.fa-caret-right
-                    | Privacy policy
-                li
-                  a(href='/terms-and-conditions')
-                    i.fa.fa-caret-right
-                    | Terms &amp; Conditions
-          .footer-col.col-md-3.col-sm-4.about
-            .footer-col-inner
-              h3 Quick Links
-              ul
-                li
-                  a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=')
-                    i.fa.fa-caret-right
-                    | JBrowse
-                li
-                  a(href='https://sunflowergenome.org/blast/')
-                    i.fa.fa-caret-right
-                    | BLAST
-                li
-                  a(href='/expression')
-                    i.fa.fa-caret-right
-                    | Gene Expression Browser
-                li
-                  a(href='https://sunflowergenome.org/cgi-bin/cmap/viewer?ref_map_set_acc=1')
-                    i.fa.fa-caret-right
-                    | cMap
-          .footer-col.col-md-3.col-sm-4.about
-            .footer-col-inner
-              h3 Tutorials
-              ul
-                li
-                  a(href='/howto-jbrowse')
-                    i.fa.fa-caret-right
-                    | HOWTO: JBrowse
-                li
-                  a(href='/howto-blast')
-                    i.fa.fa-caret-right
-                    | HOWTO: BLAST
-                li
-                  a(href='/howto-geneexpression')
-                    i.fa.fa-caret-right
-                    | HOWTO: Gene Expression Tools
-                li
-                  a(href='/howto-cmap')
-                    i.fa.fa-caret-right
-                    | HOWTO: cMap
-          .footer-col.col-md-3.col-sm-12.contact
-            .footer-col-inner
-              h3 Contact us
-              .row
-                p.adr.clearfix.col-md-12.col-sm-4
-                  i.fa.fa-map-marker.pull-left
-                  |
-                  span.adr-group.pull-left
-                    span.street-address Beaty Biodiversity Research Centre
-                    br
-                    |
-                    span.region 6270 University Blvd.
-                    br
-                    |
-                    span.city Vancouver, BC
-                    br
-                    |
-                    span.postal-code V6T 1Z4
-                    br
-                    |
-                    span.country-name Canada
-                p.email.col-md-12.col-sm-4
-                  i.fa.fa-envelope
-                  a(href='/contact') Contact Form
-    .bottom-bar
-      .container
-        .row
-          small.copyright.col-md-6.col-sm-12.col-xs-12 Copyright @ 2017 Sunflower Genome Database
-
-  block scripts
-    script(src="http://code.jquery.com/jquery-migrate-3.0.0.min.js", integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=", crossorigin="anonymous")
-    script(type="text/javascript" src="/plugins/bootstrap-hover-dropdown.min.js")
-    script(type="text/javascript" src="/plugins/back-to-top.js")
-    script(type="text/javascript" src="/plugins/jquery-placeholder/jquery.placeholder.js")
-    script(type="text/javascript" src="/plugins/pretty-photo/js/jquery.prettyPhoto.js")
-    script(type="text/javascript" src="/plugins/flexslider/jquery.flexslider-min.js")
-    script(type="text/javascript" src="/plugins/jflickrfeed/jflickrfeed.min.js")
-    script(type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBWNoza_mHYhGuNhi6n5QhduCNpKdZiTJk")
-    script(type="text/javascript" src="/plugins/gmaps/gmaps.js")
-    script(type="text/javascript" src="/javascripts/map.js")
-    script(type="text/javascript" src="/javascripts/main.js")
+  include footer
