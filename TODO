@@ -1,0 +1,8 @@
+DONE - mapfiles for js,css
+DONE - get images in dist/build dir
+DONE - get fonts in dist/build
+- add stress website (subdomain)
+- add mail middleware
+- add reverse proxy for blast app
+- add data routes with s3
+- add https support
