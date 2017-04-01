@@ -17,62 +17,26 @@ block content
               li
                 a(href='https://sunflowergenome.org/contact') Contact
             br
-      nav.main-nav(role='navigation')
-        .container
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-          #navbar-collapse.navbar-collapse.collapse
-            ul.nav.navbar-nav
-              li.active.nav-item
-                a(href='https://stress.sunflowergenome.org') Home
-              li.nav-item
-                a(href='https://stress.sunflowergenome.org/the-challenge') The Challenge
-              li.nav-item.dropdown
-                a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
-                  | Project Overview
-                  i.fa.fa-angle-down
-                ul.dropdown-menu
-                  li
-                    a(href='https://stress.sunflowergenome.org/about-genomics-of-abiotic-stress-resistance-in-wild-and-cultivated-sunflowers') About this project
-                  li
-                    a(href='https://stress.sunflowergenome.org/rationale-and-significance') Rationale and significance
-                  li
-                    a(href='https://stress.sunflowergenome.org/experimental-approaches') Experimental approaches
-                  li
-                    a(href='https://stress.sunflowergenome.org/ge3ls-research') GE3LS research
-                  li
-                    a(href='https://stress.sunflowergenome.org/scientific-outcomes-and-deliverables') Scientific outcomes and deliverables
-                  li
-                    a(href='https://stress.sunflowergenome.org/data-resource-sharing-plan') Data and resource sharing plan
-                  li
-                    a(href='https://stress.sunflowergenome.org/research-support') Research support
-              li.nav-item
-                a(href='https://stress.sunflowergenome.org/about-sunflowers') Sunflowers
-              li.nav-item
-                a(href='https://stress.sunflowergenome.org/research-team') Research team
+      include nav-stress-home
       .content.container
         #promo-slider.slider.flexslider
           ul.slides
             li
-              img(src='/images/slides/stress-slide-1.jpg', alt='')
+              img(src='/images/stress/slides/stress-slide-1.jpg', alt='')
               p.flex-caption
                 span.main Genomics of abiotic stress resistance is wild and cultivated sunflower
             li
-              img(src='/images/slides/stress-slide-2.jpg', alt='')
+              img(src='/images/stress/slides/stress-slide-2.jpg', alt='')
               p.flex-caption
                 span.main
                   | In order to keep pace with projected population growth, we must increase global food production, against the background of a changing climate and increasing competition for land and water
             li
-              img(src='/images/slides/stress-slide-3.jpg', alt='')
+              img(src='/images/stress/slides/stress-slide-3.jpg', alt='')
               p.flex-caption
                 span.main
                   | Wild sunflowers, adapted to a variety of extreme environments, may hold the key to conferring stress resistance in cultivated varieties, allowing development of a more resilient oil crop.
             li
-              img(src='/images/slides/stress-slide-4.jpg', alt='')
+              img(src='/images/stress/slides/stress-slide-4.jpg', alt='')
               p.flex-caption
                 span.main
                   | All germplasm developed by this project is voluntarily distributed under the Standard Material Transfer Agreement (SMTA) of the International Treaty for Plant Genetic Resources in Food and Agriculture. All data from the project are publicly available
@@ -88,6 +52,6 @@ block content
             p
               | The aim of this subdomain of the website is to provide an overview of work towards identifying abiotic stress resistance in wild and cultivated sunflowers.
         |
-        img(src='/images/stress_activity_workflow-150p-400d.jpg', alt='')
+        img(src='/images/stress/stress_activity_workflow-150p-400d.jpg', alt='')
 
   include ../footer

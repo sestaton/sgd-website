@@ -1,0 +1,86 @@
+include ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/stress/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-home
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Data &amp; Resource Sharing Plan
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Data and resource sharing plan
+          .page-content
+            p
+              | We will disseminate information as widely, freely, and rapidly as possible. All sequence and expression data will be made publicly available as soon as they have passed our filtering and quality controls by submission to GenBank and Gene Expression Omnibus, respectively (Table 1). Phenotypic data will be made publicly available through the
+              a(href='http://phenome-networks.com') Phenome Networks
+              | ,
+              a(href='http://phenome-networks.com/unity/') Project Unity Platform
+              | . Other kinds of data such as soil characteristics will be made available by deposition on
+              a(href='http://datadryad.org/') Dryad
+              |  and via prompt publication. Information will also be distributed to the general public and to our end users through our project website, which will involve extending the
+              a(href='https://www.sunflowergenome.org/') Sunflower Genome Database
+              |  to accommodate new data, as well as to provide information about the current project.
+            p
+              | The germplasm resources produced under this award (i.e., the multi-species MAGIC populations) will be deposited in the USDA sunflower germplasm repository at the North Central Regional Plant Introduction Station in Ames, IA for ongoing maintenance and distribution. The germplasm will be made freely available, subject to the standard SMTA required by the Treaty. We also will provide sufficient seed for immediate distribution to interested parties. We have already made our sunflower association mapping (SAM) population available via this mechanism, and it has since been distributed to numerous research groups throughout the world.
+            p
+              strong Table 1.
+              |  Data release and resource sharing plan.
+            .table-responsive
+              table.table.table-hover.table-bordered
+                thead
+                  tr
+                    th Data/resource type
+                    th Time of data/resource generation
+                    th Time of data/resource release
+                    th Data/resource location
+                tbody
+                  tr
+                    td WGS sequence data
+                    td Year 3
+                    td Year 3
+                    td GenBank
+                  tr
+                    td Expression data
+                    td Years 2-4
+                    td Years 2-4
+                    td Gene Expression Omnibus
+                  tr
+                    td Phenotypic data
+                    td Years 1-4
+                    td Years 1-4
+                    td Project Unity Platform
+                  tr
+                    td Other
+                    td Years 1-4
+                    td Years 1-4
+                    td Dryad
+                  tr
+                    td Germplasm
+                    td Year 3
+                    td Year 3
+                    td USDA-ARS sunflower genebank
+            p &nbsp;
+            p
+              | Also, we will provide a central data mining resource on SAP&rsquo;s cloud computing network. Different genomics aspects of the reference genome, elite varieties and wild relatives of sunflower will be publicly accessible including analytical tools (e.g., association mapping), data mining (e.g., sequences, variants, annotations, expression profiles) and interactive visualization tools (e.g., genome browser and many plotting functions). Using an interactive HTML5 UIs in the cloud instance will provide an independent and efficient platform for browsing and analyzing complex datasets in a simple and friendly environment. An advantage of having this resource on the Cloud is that analyses can be done extremely rapidly from any place on the globe.
+
+  include ../footer

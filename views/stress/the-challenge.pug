@@ -1,0 +1,51 @@
+include ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/stress/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-home
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left The challenge
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current The challenge
+          .page-content
+            p.lead
+              | Food production must increase by 70 to 100% by 2050 to keep pace with predicted population growth and changes in diet. Changing climatic conditions and heightened competition for land and water add to the challenge of meeting this goal. For us to succeed, crops must be developed that combine high yield with resistance to biotic and abiotic stress, while requiring lower inputs.
+            p
+              | Here, we propose to identify traits and alleles that will allow such cultivars to be developed and to deliver these alleles to breeding programs. Our focus is on sunflower, a globally important oilseed with production valued at $20B/year, but we will apply new genome editing methods to assess whether our discoveries can be applied to the improvement of other oilseeds.
+            p
+              img.displayed(src='Abiotic-Stressors-Pie-Chart-60p.jpg', alt='')
+            p(style='text-align: left;')
+              b Source:
+              |
+              i Dimensions
+              |
+              i of need &ndash; An atlas of food and agriculture
+              |  (
+              a(href='http://www.fao.org') www.fao.org
+              |)
+            p
+              img.displayed(src='Benefits-to-Canada-and-Developing-World-80p.jpg', alt='')
+
+  include ../footer

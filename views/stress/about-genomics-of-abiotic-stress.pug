@@ -1,0 +1,94 @@
+extends ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/stress/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-home
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Research summary
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current About this project
+          .page-content
+            p.lead
+              | Food production must increase by 70 to 100% by 2050 to keep pace with predicted population growth and changes in diet. This task is exacerbated by ongoing changes in climate and heightened competition for land and water. To meet this challenge, crops must be developed that combine high yield with resistance to biotic and abiotic stress, and require lower inputs. Here we propose to identify traits and alleles that will allow such cultivars to be developed and to deliver these alleles to breeding programs. Our focus is on sunflower, a globally important oilseed with production valued at $20B/year, but we will apply new genome editing methods to assess whether our discoveries can be applied to the improvement of other oilseeds.
+            p
+              | Sunflower is ideal for the proposed research because of its diverse extremophile and cross-compatible wild relatives, which can be exploited for research and breeding. Because sunflower is grown widely in developing countries for food, it is the only oilseed in the Crop Trust&rsquo;s list of 25 priority food security crops. Canada is the world&rsquo;s 13th largest exporter of sunflower, but there is a supply deficit in North America of this healthy vegetable oil. Canadian production is limited by salt and flooding, while low nutrients and drought limit sunflower production in Sub-Saharan Africa (and worldwide). Wild plants have mechanisms to mitigate these challenges, but crops are far less resilient. System-level understanding of stress resistance can facilitate the development of improved varieties that can be grown on marginal farmlands currently unsuitable for crops.
+            p
+              | The goals of this project are to: (1) assess resistance to drought, flooding, salt, and low nutrient stress in sunflower and its wild relatives using traditional and high-throughput phenotyping approaches; (2) associate variation in abiotic stress resistance with specific genes, regulatory networks, and/or causal variants; (3) determine the mechanistic basis of stress resistance via physiological and transcriptomic analyses; (4) address major biological questions concerning the types of genes, their network positions, and the nature of physiological trade-offs involved in the evolution of abiotic stress resistance; and (5) identify suitable stress resistance alleles for use in sunflower breeding programs and potentially for improvement of other oilseeds. Our GE3LS research will ensure realization of social and economic benefits of this project by (a) developing yield models for sunflower under different environmental conditions; and (b) addressing negative impacts of international treaties on the use of plant genetic resources.
+            p
+              | Deliverables are: (1) &ldquo;next generation&rdquo; germplasm resources (resistance alleles with minimal trade-offs in relevant genetic backgrounds), enabling sunflower breeders to put resistant, highyielding cultivars in the field within four years of project end; (2) a central data mining and analysis resource for sunflower to facilitate research and breeding; (3) crop yield models that will enable predictions of likely yields of new stress resistant sunflower cultivars in different soil and climate conditions across Canada; and (4) strategies for mitigating barriers to R&amp;D (e.g., uncertainties in IP, tech transfer, and profit sharing) caused by international treaties.
+            p
+              | We will disseminate information as widely, freely, and rapidly as possible. All sequence and expression data will be made publicly available as soon as they have passed our filtering and quality controls by submission to GenBank and Gene Expression Omnibus, respectively (Table 1). Phenotypic data will be made publicly available through the
+              a(href='http://phenome-networks.com') Phenome Networks
+              | ,
+              a(href='http://phenome-networks.com/unity/') Project Unity Platform
+              | . Other kinds of data such as soil characteristics will be made available by deposition on
+              a(href='http://datadryad.org/') Dryad
+              |  and via prompt publication. Information will also be distributed to the general public and to our end users through our project website, which will involve extending the
+              a(href='https://www.sunflowergenome.org/') Sunflower Genome Database
+              |  to accommodate new data, as well as to provide information about the current project.
+            p
+              | The germplasm resources produced under this award (i.e., the multi-species MAGIC populations) will be deposited in the USDA sunflower germplasm repository at the North Central Regional Plant Introduction Station in Ames, IA for ongoing maintenance and distribution (see letter of support from curator Laura Marek). The germplasm will be made freely available, subject to the standard SMTA required by the Treaty. We also will provide sufficient seed for immediate distribution to interested parties. We have already made our sunflower association mapping (SAM) population available via this mechanism, and it has since been distributed to numerous research groups throughout the world.
+            p
+              strong Table 1.
+              |  Data release and resource sharing plan.
+            .table-responsive
+              table.table.table-hover.table-bordered
+                thead
+                  tr
+                    th Data/resource type
+                    th Time of data/resource generation
+                    th Time of data/resource release
+                    th Data/resource location
+                tbody
+                  tr
+                    td WGS sequence data
+                    td Year 3
+                    td Year 3
+                    td GenBank
+                  tr
+                    td Expression data
+                    td Years 2-4
+                    td Years 2-4
+                    td Gene Expression Omnibus
+                  tr
+                    td Phenotypic data
+                    td Years 1-4
+                    td Years 1-4
+                    td Project Unity Platform
+                  tr
+                    td Other
+                    td Years 1-4
+                    td Years 1-4
+                    td Dryad
+                  tr
+                    td Germplasm
+                    td Year 3
+                    td Year 3
+                    td USDA-ARS sunflower genebank
+            p &nbsp;
+            p
+              | Also, we will provide a central data mining resource on SAP&rsquo;s cloud computing network. Different genomics aspects of the reference genome, elite varieties and wild relatives of sunflower will be publicly accessible including analytical tools (e.g., association mapping), data mining (e.g., sequences, variants, annotations, expression profiles) and interactive visualization tools (e.g., genome browser and many plotting functions). Using an interactive HTML5 UIs in the cloud instance will provide an independent and efficient platform for browsing and analyzing complex datasets in a simple and friendly environment. An advantage of having this resource on the Cloud is that analyses can be done extremely rapidly from any place on the globe.
+
+  include ../footer

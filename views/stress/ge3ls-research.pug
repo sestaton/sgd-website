@@ -1,0 +1,87 @@
+include ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/stress/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-home
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left GE3LS research
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current GE3LS research
+          .page-content
+            p
+              | The GE3LS research includes two activities, both of which are intended to help ensure that the social and economic benefits of this project can be realized. The goal of the first GE3LS activity is to develop crop models that will allow us to predict likely yield gains from new highly resistant sunflower cultivars on primary, secondary, and marginal lands in Canada and in the context of climate change. The goal of the second GE3LS activity is to address significant negative impacts of international treaties on the use of plant genetic resources by private and public sector breeding programs in Canada and worldwide.
+            h2 Activity 5: Development of crop yield models
+            p
+              | We will conduct a broad-scale assessment of the potential growing areas and yields of the new sunflower cultivars, as well as competitor crops, across Canada. Large-scale assessments have previously taken a &ldquo;crop suitability&rdquo; approach 163-165. While such analysis can usefully delineate potential growing areas for different crops as well as potential shifts from climate change, the interpretation of results is challenging as suitability is a simple index ranging from zero to one and its relationship to crop productivity is unclear. Instead, here we will use a crop modelling approach to directly simulate crop yields.
+            p
+              | The development of global crop models in recent years enables the simulation of crop yields using basic ecological principles, a few crop growth and phenological parameters, and largescale climate and soil data sets. The advantage of this approach over using more detailed crop models is that they require fewer input data sets and are capable of doing spatial simulations over large scales. In this project, we will use the Agro-IBIS model, which was developed to assess global crop yield response to climate change and changes in crop management practices. Agro-IBIS was developed by representing agro-ecosystems within the IBIS global ecosystem model. IBIS has process-based representations, within a single consistent framework, of land-surface processes (exchanges of energy, water, and momentum between the vegetation and the atmosphere), plant physiology (photosynthesis and stomatal conductance), vegetation phenology, carbon balance (including soil biogeochemistry), and vegetation dynamics (see 166,167 for more details). Agro-IBIS introduced representations of crop management (planting/harvest dates, cultivar selection, fertilizer application, and tillage) and crop phenology (thermal time and crop growth stages)168. Adapting the Agro-IBIS model to simulate the yields of sunflower as well as its competitor crops will involve the following tasks.
+            h2 Activity 5.1. Model development
+            p
+              | We will develop the Agro-IBIS model to simulate sunflower and other crops important in the Canadian context. Agro-IBIS already includes representation of maize, spring wheat, and soybean. We will include model representations of sunflower, canola, and barley. In developing these model parameterizations, we will derive parameter values by consulting the literature as well as detailed crop growth models that are part of the
+              a(href='http://ecobas.org/wwwserver/rem/mdb/dssat.html') DSSAT system
+              |  (169) and the
+              a(href='http://ecobas.org/wwwserver/rem/mdb/epic.html') EPIC model
+              |  (170).
+            h2 Activity 5.2. Input data gathering and development
+            p
+              | To conduct spatially-explicit model simulations across Canada, we will need spatial input data on climate, soils, irrigation, and fertilizer use. Climate data in gridded format (i.e., spatially-explicit data on a raster grid) are available from the
+              a(href='http://www.cru.uea.ac.uk/high-resolution-gridded-datasets') Climatic Research Unit
+              |  of the University of East Anglia, while soils survey data are available from the Soil Landscapes of Canada data provided by the
+              a(href='http://sis.agr.gc.ca/cansis/') Canadian Soil Information Service
+              | . For irrigation and fertilizer use, we will perform several different model simulations based on alternate scenarios of application rates, as explained in the next section.
+            h2 Activity 5.3. Model simulations and analysis
+            p
+              | We will simulate the yield responses of all crops to different irrigation and fertilizer application rates, for both current cultivars as well as new cultivars developed by this project. For irrigation, as in Deryng et al.171, we will perform model simulations of rain fed conditions as well as varying degrees of irrigation (i.e., irrigation water application rates ranging from zero to that required to maintain non-water-stressed conditions). For fertilizer application, we will perform an initial model simulation using current crop-specific fertilizer application rates from Mueller et al.172. We will then perform simulations with different scenarios of both increased and decreased fertilizer application rates. The different yield responses of the old and new cultivars to varying management conditions will be explored. We will further simulate yield changes as a function of various climate change scenarios173. Comparison of these simulations will reveal the competitive advantage of sunflower relative to other crops as well as shifts in these with climate change. The crop yield models will be further linked to existing economic models, such as those developed by collaborator May174, which will allow predictions of locations where particular cultivars are likely to be successful and to compare predicted productivity and net returns of different crops (and cultivars) at a given site.
+            h2 Activity 6: International treaties and use of plant genetic resources
+            p
+              | This activity focuses on the Convention on Biological Diversity (CBD) and International Treaty for Plant Genetic Resources in Food and Agriculture (Treaty) in two inter-related work streams: (1) to clarify potential impacts and opportunities for the outputs of this project; and (2) to engage in policy discussions with the Treaty Secretariat and other relevant organizations to facilitate uptake of innovations generated by agricultural genomics projects such as this one. To do so, co-PI Marden will work closely with the project team as well as engaging with other stakeholders from academia, governmental bodies, industry and the Treaty Secretariat.
+            p
+              | At present, the CBD and Treaty present potential hurdles to uptake of innovations in agricultural genomics. The CBD, developed to address access and benefit-sharing of indigenous biological resources in developing nations, allows national regimes to control access to these resources on a number of grounds, sometimes resulting in barriers to research and development. The Treaty was developed, in part, to alleviate these barriers by facilitating access to covered plant genetic resources under uniform mutually-agreed upon terms. The signatories to the Treaty, a group that includes Canada, Europe, and most developed and developing countries, commit
+              em inter alia
+              |  to make accessions of plant genetic resources for 64 key crops (including sunflower) available to all users according to the terms of a Standard Material Transfer Agreement (SMTA). The SMTA, negotiated as part of the Treaty, includes potentially perennial benefit sharing obligations arising &ldquo;from the use, including commercial, of plant genetic resources for food and agriculture [covered under the Treaty].&rdquo; The United States is not a signatory to the Treaty and thus materials in its National Plant Germplasm System (NPGS) are not subject to the SMTA; nonetheless, the U.S. has committed to honouring obligations under the SMTA (P. Bretting, USDA-ARS National Program Leader, pers. comm.).
+            p
+              | The Treaty has opened access to many resources. However, there are multiple layers of ambiguity arising from the Treaty and its application that may hamper innovation. First, the scope and impacts of SMTA obligations remain unclear: there is no guidance in the Treaty or SMTA, for example, on what use of Treaty resources triggers benefit sharing obligations, or how such obligations are modified by combination of Treaty resources with other non-Treaty germplasm. Further, it remains unclear whether the SMTA obligations apply to derivative or improved germplasm or to germplasm modified via new genome editing technologies. Even more, there is ongoing ambiguity as to whether genomic data generated from Treaty resources (i.e. plant genomes) or used to modify Treaty resources are also subject to the SMTA. The U.S. position adds a further layer of complexity, as it becomes necessary to track the origins and combinations over time.
+            p
+              | The role of the Treaty vis-&agrave;-vis genomics data is also unclear. As required by Article 17 of the Treaty, the Treaty Secretariat is working toward the creation of a Global Information System (GIS) to facilitate sharing of information not only about Treaty resources but also plant genetic resources and genomic data more broadly. Work on this endeavour has begun, and while the potential benefits of a funded mechanism are clear, there are unresolved questions of what proprietary interests can or should be attached to resources entered into the GIS, and how such interests will be tracked and enforced. Such questions have potential far reaching implications for a broad range of stakeholders.
+            p
+              | The net result of these uncertainties is that some companies avoid use of any genetic resources subject to the SMTA (H. Dempewolf, Global Crop Diversity Trust, pers. comm.), and may not access innovative germplasm such as that proposed by this project. The Rieseberg lab recently witnessed this when a multinational corporation expressed interest but ultimately declined to use pre-bred germplasm generated by the Rieseberg lab, because the germplasm was subject to the Treaty SMTA. Conversations with parties in industry suggest that there is a need for greater clarity and transparency in how germplasm and data are shared.
+            h2 Activity 6.1. Clarify potential impacts and opportunities
+            p
+              | Co-PI Marden will work closely with the project team to: (1) identify the source of externally resourced germplasm and data; (2) identify project use and potential modifications, derivation, or improvements &ndash; in legal terms &ndash; to any such germplasm or data; (3) define intended outputs of the project and relationship to any identified uses, modifications, derivation or improvements of germplasm or data; and (4) coordinate potential sharing or out-licensing of such outputs. This work will commence with meetings and interviews with team members to identify the elements above. In addition, Marden will identify and review terms and conditions related to any germplasm or data utilized by the project team.
+            p
+              | In conjunction with this work, Co-PI Marden will conduct a legal analysis to assess explicit obligations and ambiguities in the CBD and Treaty, as well as in pertinent UBC, Genome Canada and other institutional frameworks. Ultimately, based on the factual information gathered from the project team and the analysis of the relevant legal frameworks, the GE3LS team will map out actual and potential impacts on project outputs in terms of resources used and potential outputs. Marden will also identify areas where the legal frameworks are ambiguous and areas where there are opportunities to interpret the frameworks in a beneficial manner. These analyses will be shared with the project team in an iterative manner in order to refine potential issues and to ensure that any changes are addressed.
+            h2 Activity 6.2. Facilitate Policy Impacts
+            p
+              | In addition to directly advising the project team, Co-PI Marden intends to bring the identified issues into broader policy discussions with the aim of facilitating further innovation in agricultural genomics. This effort will take place through a number of avenues. In each case, Marden will discuss developments with the project team to ensure proposals are consistent with the outputs of the project.
+            p
+              | First, Marden will act as a contributing expert to the two Treaty Secretariat Working Groups and have the potential to modify interpretations of the Treaty (textual changes to the Treaty or the SMTA itself are unlikely in the near term). These Working Groups include: (1) the Article 17 Global Information System (GIS) on Plant Genetic Resources for Food and Agriculture and, (2) to the degree relevant, the Ad Hoc Open-ended Working Group to Enhance the Functioning of the Multilateral System of Access and Benefit-sharing. In particular, the development of the GIS offers the opportunity to discuss how &ndash; if at all &ndash; the Treaty will be interpreted to apply to data arising or derived from SMTA material, as well as how data from non-Treaty sources might interact with SMTA material. Participation in the Working Groups has the potential to result in actual modifications in how the Treaty is interpreted and in new mechanisms through which to share genomics data.
+            p
+              | Separately, in her role as the governance expert on the Steering Committee of the
+              a(href='http://www.divseek.org') DivSeek Initiative
+              | , Marden will engage with plant genomics researchers, breeders, funders, genebank managers and other stakeholders to devise a governance mechanism for sharing plant genomic resources that respects certain proprietary interests but facilitates innovation. This position gives Marden a role at the center of determining how agricultural genomics data will be shared going forward.
+            p
+              | Finally, in an effort to generate independent consensus policy options arising from issues identified in this project, Marden will convene a working group of stakeholders from industry, CGIAR centers, seed banks, academia and the Treaty Secretariat in a neutral forum to propose how ambiguities in the CBD and Treaty could be interpreted to address issues of innovation in agricultural genomics. Through her past and current research, Marden has contacts with the Treaty Secretariat, the CG Bioversity Centre, the USDA Agricultural Research Service, industry, genebank managers and other relevant stakeholders.
+  
+  include ../footer
