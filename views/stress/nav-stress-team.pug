@@ -1,0 +1,37 @@
+nav.main-nav(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar-collapse.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.nav-item
+          a(href='https://stress.sunflowergenome.org') Home
+        li.nav-item
+          a(href='/the-challenge') The Challenge
+        li.nav-item.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', data-delay='0', data-close-others='false', href='#')
+            | Project Overview
+            i.fa.fa-angle-down
+          ul.dropdown-menu
+            li
+              a(href='/about-genomics-of-abiotic-stress') About this project
+            li
+              a(href='/rationale-significance') Rationale and significance
+            li
+              a(href='/experimental-approaches') Experimental approaches
+            li
+              a(href='/ge3ls-research') GE3LS research
+            li
+              a(href='/scientific-outcomes') Scientific outcomes and deliverables
+            li
+              a(href='/data-resource-sharing-plan') Data and resource sharing plan
+            li
+              a(href='/research-support') Research support
+        li.nav-item
+          a(href='/about-sunflowers') Sunflowers
+        li.active.nav-item
+          a(href='/research-team') Research team

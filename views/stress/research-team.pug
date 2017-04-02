@@ -1,0 +1,223 @@
+include ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-team
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Research team
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Research team
+          .page-content
+            h2 Investigators
+            p
+              | Rieseberg and Burke are international leaders in plant evolutionary genomics, with expertise in genetic mapping, QTL analyses, GWAS, genome assembly, population genomics, bioinformatics, and various reverse genetic approaches. Donovan is a leading expert in plant ecophysiology, especially adaptation to drought, salt, and low nutrient stress. Langlade has expertise in high throughput phenotyping, gene network analyses, and molecular physiology, especially in relation to drought stress. Yeaman is a rising star in population genetic theory, population genomics, and bioinformatics, with latter skill set developed as part of the Genome Canada-funded AdapTree project. Hulke has expertise in marker-assisted and genomic selection, as well as flood stress phenotyping. The GE3LS team PIs, Marden and Ramankutty, have complementary expertise relating to the Treaty/sharing of agricultural data and land use, respectively. As mentioned above, Marden&rsquo;s expertise in these areas was developed in part during the Genome Canada-funded Genomics of Sunflower project. Ramankutty is an international leader in global land use change and its implications and brings expertise in crop yield modeling to the project.
+            h2 Collaborators
+            p
+              | Bill May is a Canadian agronomist with expertise in phenotyping, breeding, and economic model development. Bali provides expertise in irrigation and drought stress management, whereas Andrade is an agricultural engineer with expertise in high throughput phenotyping (HTP). Laura Marek runs the USDA&rsquo;s sunflower germplasm collection and brings expertise in the collection and management of wild sunflower germplasm. Parrott is a world leader in the implementation of genome editing approaches, especially in soybean, and Kubach manages a highly skilled team of software engineers at SAP who are developing bioinformatics tools for plant genomics. Our other collaborators, who are also end users, bring expertise in sunflower population development and both conventional and molecular breeding approaches to the project.
+            .row.page-row
+              .team-wrapper.col-md-8.col-sm-7
+                h2 Research Expertise
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-rieseberg.jpg', alt='')
+                  .details.col-md-9.col-sm-8.col-xs-6
+                    h3.title
+                      | Dr. Loren Rieseberg
+                      |
+                      a(href='mailto:lriesebe@mail.ubc.ca', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4
+                      | Project Leader, Professor &amp; CRC Tier 1, Department of Botany, U. British Columbia
+                    p
+                      | Rieseberg is leading overall project and is lead on Activity 4 (functional analyses). Past experience in managing large genomics projects. Pioneer in plant ecological genomics.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/burke_jx260.jpg', alt='')
+                  .details.col-md-9.col-sm-8.col-xs-6
+                    h3.title
+                      | Dr. John Burke
+                      |
+                      a(href='mailto:jmburke@uga.edu', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4 Co-Project Leader, Professor, Department of Plant Biology, U. of Georgia
+                    p
+                      | Burke is the co-project leader and is lead on Activity 1.2 (association mapping). Expert on sunflower genetics &amp; genomics.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/donovan_lx260.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. Lisa Donovan
+                      |
+                      a(href='mailto:ldonovan@uga.edu', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4 Head &amp; Distinguished Professor, Department of Plant Biology, U. Georgia
+                    p
+                      | Leads phenotyping of stress resistance traits (Activities 1.1 and 1.3). Expert on plant ecophysiology.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. Nicolas Langlade
+                      |
+                      a(href='mailto:nicolas.langlade@toulouse.inra.fr', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4 Senior Researcher, INRA Toulouse, France
+                    p
+                      | Leads transcriptomics component &amp; Heliaphen phenotyping (Activities 1.4 and1.5). Expert on sunflower molecular physiology.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Emily Marden
+                    h4
+                      | Research Associate &amp; Lead of Intellectual Property and Policy Research Group, School of Law, U. British Columbia
+                    p
+                      | Leads GE3LS component on barriers to R&amp;D caused by international treaties (Activity 6). Expert in CBD, Treaty &amp; sharing of genomics data.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/Brent-2crop-1.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. Brent Hulke
+                      |
+                      a(href='mailto:brent.hulke@ars.usda.gov', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4 Research Geneticist, USDA ARS Fargo, ND
+                    p Leads MAGIC population development.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/Sam-YeamanCrop.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. Sam Yeaman
+                      |
+                      a(href='mailto:yeaman@zoology.ubc.ca', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4
+                      | AIHS/CAIP Chair in computational evolutionary biology (start date: 8/15), U. Calgary
+                    p
+                      | Will lead population genomics component of project (Activity 2). Expert in population genomics &amp; bioinformatics.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/NavinCrop.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Navin Ramankutty
+                    h4 Professor &amp; CRC Tier 1, Liu Institute, U. British Columbia
+                    p
+                      | Expert on global land use, especially in relation to agriculture. Will lead GE3LS component on crop yield modeling (Activity 5).
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Marie Coque
+                    h4 Sunflower Project Lead, Biogemma
+                    p
+                      | Contributes to MAGIC population development &amp; will deploy resistance alleles in breeding program. Strong track record in molecular breeding.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/SilkeCrop.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Silke Wieckhorst
+                    h4 Project Lead for molecular breeding in sunflower, KWS Seeds
+                    p
+                      | Contributes to MAGIC population development &amp; deploys resistance alleles in breeding program. Strong track record in molecular breeding.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/Zambelli2016crop-1.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Andr&eacute;s Zambelli
+                    h4 Biotechnology Manager, Advanta Semillas SAIC
+                    p
+                      | Contributes to MAGIC population development &amp; will deploy resistance alleles in breeding program. Strong track record in molecular breeding.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Bill May
+                    h4 Crop Management Agronomist, Agriculture and Agri-Food Canada
+                    p
+                      | Contributes to field-based salt tolerance phenotyping, economic modeling &amp; will deploy resistance alleles in breeding program. Strong track record in agronomy.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/Sunflower-WalterCrop.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Walter Anyanga
+                    h4 Research Officer, National Semi-arid Resources Research Institute, Uganda
+                    p
+                      | Contributes to field-based low-nutrient-stress phenotyping &amp; deploys resistance alleles in breeding program. Strong track record in sunflower breeding.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Jim Gerdes
+                    h4 Global R&amp;D Director for Sunflower Breeding, NuSeed Americas
+                    p
+                      | Contributes to MAGIC population development &amp; evaluation &amp; deploys resistance alleles in breeding program. Strong track record in molecular breeding.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Laura Marek
+                    h4 Oil Seeds Crops Curator, USDAARS
+                    p Contributes to collection and distribution of sunflower germplasm.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Pedro Andrade-Sanchez
+                    h4 Assistant Professor, Agricultural and Biosystems Engineering, U. Arizona
+                    p
+                      | Adapting field-based HTP approaches to sunflower. Expert in agricultural engineering.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Khaled Bal
+                    h4 Irrigation Advisor &amp; Interim Director, DREC
+                    p
+                      | Will contribute to drought stress phenotyping at DREC. Expert in water use management.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/01-Wayne-Parrot-visits-IRRI.R-1-e1465147022838.jpg', alt='')
+                  .details.col-md-14
+                    h3.title
+                      | Dr. Wayne Parrott
+                      |
+                      a(href='mailto:wparrott@uga.edu', target='_top')
+                        span.glyphicon.glyphicon-envelope
+                    h4 Professor, Crop and Soil Sciences, U. Georgia
+                    p Conducting genome editing in soybean. Expert in crop biotechnology.
+                .row.page-row
+                  figure.thumb.col-md-3.col-sm-4.col-xs-6
+                    img.img-responsive(src='/images/stress/team/team-sunflower.jpg', alt='')
+                  .details.col-md-14
+                    h3.title Dr. Timo Kubach
+                    h4 Vice President, Portfolio &amp; New Business | Product &amp; Innovation, SAP AG, Germany
+                    p
+                      | Coordinates SAP effort to develop data analytic tools for plant genomics, using sunflower as model.
+
+  include footer

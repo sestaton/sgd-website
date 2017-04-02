@@ -20,7 +20,8 @@
     "pug": "~2.0.0-beta6",
     "require-dir": "^0.3.1",
     "serve-favicon": "~2.3.0",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "vhost": "^3.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",

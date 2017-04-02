@@ -1,0 +1,49 @@
+include ../header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='https://sunflowergenome.org/faq') FAQ
+              li
+                a(href='https://sunflowergenome.org/contact') Contact
+            br
+      include nav-stress-project
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Rationale and significance
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://stress.sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Rationale and significance
+          .page-content
+            p.lead
+              | Wild and cultivated plants are challenged by a variety of abiotic stresses on an ongoing basis. Such stresses affect plant growth and development and reduce crop productivity. Though wild plant populations have evolved a number of mechanisms that mitigate the effects of variable and suboptimal growing conditions, many crop plants exhibit less resilience. This is likely due to the occurrence of unacceptable (from an agricultural perspective) trade-offs between resistance traits and overall growth and productivity as well as the chance loss of adaptive variation during the domestication and breeding process. An improved understanding of the mechanisms underlying abiotic stress resistance is thus needed as we seek to develop crops capable of feeding a rapidly growing population in the context of an increasingly variable climate, particularly as marginal lands are brought into production.
+            p
+              | Here, we propose to investigate the genomic and physiological basis of drought, flooding, salt, and low nutrient stress resistance in cultivated sunflower and reproductively compatible, stress-adapted wild species that represent potential donors of beneficial alleles. This work, which makes heavy use of resources developed under prior Genome Canada support, will involve genotypic and phenotypic characterization of a diverse collection of cultivated sunflower lines to enable genome-wide association studies (GWAS), detailed physiological and transcriptomic analyses of resistant and susceptible lines to investigate the mechanistic basis of variation in stress resistance, and population genomic analyses of related species to identify natural variants that confer stress adaptation in the wild. This knowledge will move us closer to a systems-level understanding of the interactions between plants and their environment, will enable the development of smarter and more efficient strategies for breeding environmentally resilient cultivars in sunflower, and has the potential to positively impact other crops. Throughout the course of our research, we will study fundamentally important biological issues that will both improve our understanding of the natural world and inform ongoing crop improvement efforts. This will include knowledge of the genes, traits, and regulatory networks that are responsible for variation in resistance to the focal stresses, and identification of genomic factors that influence the nature and extent of physiological trade-offs between stress resistance and performance (i.e., yield) under ideal conditions. One might expect, for example, that changes at so-called &ldquo;hub&rdquo; genes (i.e., those with more central positions within networks) would be more likely to incur physiological trade-offs than genes located near the periphery of a network, similar to expectations under the centrality-lethality hypothesis that has been developed in the context of protein interaction networks. We will also determine the origin(s) and extent of evolutionary re-use of the same genes/alleles across species in pursuit of solutions to similar environmental challenges. This latter point will allow us to address evolutionary questions regarding the repeatability of genotypic evolution and the role of hybridization in evolution, and will also provide critical insight into the degree to which such genetic/physiological solutions to abiotic stress might apply across species.
+            p
+              | In addition to addressing fundamental scientific questions, we will develop and characterize &ldquo;next generation&rdquo; germplasm resources in the form of multi-species, advanced generation intercross populations, as well as bioinformatics tools for exploiting these resources. These populations and associated bioinformatics tools will not only facilitate the efficient genetic analysis of complex trait variation in
+              em Helianthus
+              | , but they also will enable the efficient deployment of exotic alleles in breeding programs. Using a backcross breeding design and marker-assisted selection, we expect new sunflower cultivars to be in the field within four years of project end, with significant economic benefits through mitigation of year-to-year risk due to flooding and drought within the existing sunflower growing regions, expansion of sunflower production onto marginal lands, and important social benefits through increased food security in Uganda and other developing countries. Oilseeds such as sunflower represent a concentrated source of energy and essential fatty acids, but per capita availability in developing countries is approximately 40% of the minimum recommended by the Food and Agriculture Administration of the United Nations.
+            p
+              | Concomitantly with the genomic research, we will work closely with scientific researchers, the Secretariat of the International Treaty for Plant Genetic Resources in Food and Agriculture, industry stakeholders, and legal and policy experts to develop strategies for navigating and resolving the ambiguities in interpretation of the Treaty. In addition to benefiting this project, the GE3LS work will also be of considerable interest in the legal/policy community as these are issues that face stakeholders for other crops.
+            p
+              img(src='/images/stress/Figure-2-60p.jpg', alt='')
+            p
+              strong Figure 2.
+              |  Association mapping of leaf mass per area (LMA) using 4.1M SNPs genotyped across the SAM population. Phenotyping was conducted in Georgia (GA) and Iowa (IA): A) Manhattan plot for association meta-analysis across replicates and environments. Horizontal lines correspond to adjusted p-value using Bonferroni (blue) and simpleM (red) methods at significance level of &alpha;=0.05. B) Zoom-in on chromosome Ha3 at position 28041933bp using thegenome browser tool developed with SAP. Vertical red bar corresponds to the position of geneHa3_28041933 (Ubiquitin system component Cue protein), red track corresponds to alternative allele frequency in the SAM population, green track corresponds to genes in that region. C) Forest plot for the effect of the environment at Ha3_28041933. A mixed linear model was used with the environment as a fixed effect and replicates as random effects. Effect = environment effect at SNP in Z units. Left column is the environment and replicate name; central column is the effect of Ha3_28041933 in each environment plus SE, vertical dashed line is the average across environments; left column is the effect of Ha3_28041933 in each environment (in Zunits) and CI (95%).
+
+  include footer

@@ -7,10 +7,10 @@ var plugins = require("gulp-load-plugins")({
         replaceString: /\bgulp[\-.]/
 });
 
-var dest = 'dist/';
+var destination = 'dist';
 
 gulp.task('clean', function() {
-  return del(['dist']);
+  return del([destination]);
 });
 
 gulp.task('compile-styles', function() {
@@ -18,12 +18,12 @@ gulp.task('compile-styles', function() {
        .pipe(plugins.sourcemaps.init())
        .pipe(plugins.stylus())
        .pipe(plugins.sourcemaps.write())
-       .pipe(gulp.dest('dist/css'));
+       .pipe(gulp.dest(destination + '/css'));
 });
 
 gulp.task('css',
    gulp.series('compile-styles', function cssTask() {
-	   var cssFiles = ['dist/css/*.css'];
+	   var cssFiles = [destination+'/css/*.css'];
 
 	   return gulp.src(plugins.mainBowerFiles().concat(cssFiles))
 	       .pipe(plugins.filter('**/*.css'))
@@ -31,7 +31,7 @@ gulp.task('css',
 	       .pipe(plugins.concat('main.min.css'))
 	       .pipe(plugins.autoprefixer())
 	       .pipe(plugins.csso())
-	       .pipe(gulp.dest('dist/css'));
+	       .pipe(gulp.dest(destination + '/css'));
 	   
    })
 );
@@ -40,8 +40,8 @@ gulp.task('fonts-fa-bs', function() {
    var fontFiles = ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'];
 
    return gulp.src(fontFiles)
-       .pipe(plugins.copy('dist/fonts', { prefix: 3 }))
-       .pipe(gulp.dest('dist/fonts'));
+       .pipe(plugins.copy(destination + '/fonts', { prefix: 3 }))
+       .pipe(gulp.dest(destination + '/fonts'));
 });
 
 gulp.task('fonts-fs', function() {
@@ -68,20 +68,20 @@ gulp.task('scripts',
 	  .pipe(plugins.debug())
 	  .pipe(plugins.concat('main.min.js'))
 	  .pipe(plugins.uglify())
-	  .pipe(gulp.dest('dist/js'));
+	  .pipe(gulp.dest(destination + '/js'));
    })
 );
 
 gulp.task('html', function() {
    return gulp.src('views/**/*.pug')
        .pipe(plugins.pug({ doctype: 'html', pretty: false }))
-       .pipe(gulp.dest('dist/html'))
+       .pipe(gulp.dest(destination + '/html'))
 });
 
 gulp.task('images', function() {
    return gulp.src('public/images/**/*')
        .pipe(plugins.imagemin())
-       .pipe(gulp.dest('dist/images'))
+       .pipe(gulp.dest(destination + '/images'))
 });
 
 //gulp.task('styles', function() {
@@ -115,9 +115,9 @@ gulp.task('nodemon', function (cb) {
 gulp.task('browser-sync', 
    gulp.series('nodemon', function nodemonTask(done) {
       return bSync.init(null, {
-	       proxy: "http://localhost:3000",
-	       files: ["dist/**/*.*"],
-	       browser: "google chrome",
+	       proxy: 'http://localhost:3000',
+	       files: [destination+'/**/*.*'],
+	       browser: 'google chrome',
 	       port: 4000,
       });
       done();
@@ -131,7 +131,7 @@ gulp.task('default',
           gulp.watch('views/**/*.pug', gulp.parallel('html'));
           gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
           gulp.watch('public/stylesheets/**/*.styl', gulp.parallel('css'));
-          gulp.watch('dist/**/*', bSync.reload);
+          gulp.watch(destination+'/**/*', bSync.reload);
           done();
    })
 );
