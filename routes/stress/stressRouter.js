@@ -41,5 +41,9 @@ router.get('/the-challenge', function(req, res, next) {
         res.render('stress/the-challenge', { title: 'Genomics of abiotic stress in wild and cultivated sunflowers' });
 });
 
+router.get('/data-resource-sharing-plan', function(req, res, next) {
+        res.render('stress/data-resource-sharing-plan', { title: 'Genomics of abiotic stress in wild and cultivated sunflowers' });
+});
+
 module.exports = router;
 
