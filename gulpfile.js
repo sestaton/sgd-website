@@ -1,38 +1,61 @@
-var gulp  = require('gulp');
-var del   = require('del');
-var bSync = require('browser-sync');
+var gulp    = require('gulp');
+var del     = require('del');
+var bSync   = require('browser-sync');
+var through = require('through2');
 
 var plugins = require("gulp-load-plugins")({
         pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
         replaceString: /\bgulp[\-.]/
 });
 
-var destination = 'dist';
+var arguments = require('yargs').argv;
+var isProd = (arguments.env === 'prod');
+var destination  = arguments.outDir ? arguments.outDir : 'dist';
+
+var noop = function() {
+  return through.obj();
+};
+
+var dev = function(task) {
+  return isProd ? noop() : task;
+};
+
+var prod = function(task) {
+  return isProd ? task : noop();
+};
 
 gulp.task('clean', function() {
-  return del([destination]);
+   return del([destination]);
 });
 
 gulp.task('compile-styles', function() {
    return gulp.src('public/stylesheets/*.styl')
-       .pipe(plugins.sourcemaps.init())
+       .pipe(dev(plugins.sourcemaps.init()))
+       .pipe(plugins.cached('sty-ugly'))
        .pipe(plugins.stylus())
-       .pipe(plugins.sourcemaps.write())
+       .pipe(plugins.cached('sty-ugly'))
+       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot: 'css-source' })))
        .pipe(gulp.dest(destination + '/css'));
 });
 
 gulp.task('css',
    gulp.series('compile-styles', function cssTask() {
-	   var cssFiles = [destination+'/css/*.css'];
+	   var cssFiles = [destination + '/css/*.css'];
 
 	   return gulp.src(plugins.mainBowerFiles().concat(cssFiles))
 	       .pipe(plugins.filter('**/*.css'))
-	       .pipe(plugins.debug())
-	       .pipe(plugins.concat('main.min.css'))
+	       .pipe(dev(plugins.debug()))
+         .pipe(dev(plugins.sourcemaps.init()))
+	       //.pipe(plugins.concat('main.min.css'))
 	       .pipe(plugins.autoprefixer())
-	       .pipe(plugins.csso())
+         .pipe(plugins.cached('css-ugly'))
+  	     .pipe(plugins.csso())
+         .pipe(plugins.remember('css-ugly'))
+         .pipe(plugins.concat('main.min.css'))
+	       //.pipe(plugins.csso())
+         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
 	       .pipe(gulp.dest(destination + '/css'));
-	   
+
    })
 );
 
@@ -59,16 +82,22 @@ gulp.task('test', function() {
     .pipe(plugins.jshint.reporter('fail'));
 });
 
-gulp.task('scripts', 
+gulp.task('scripts',
    gulp.series('test', function scriptsTask() {
       var jsFiles = ['public/javascripts/*.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
 
       return gulp.src(plugins.mainBowerFiles().concat(jsFiles))
-	  .pipe(plugins.filter('**/*.js'))
-	  .pipe(plugins.debug())
-	  .pipe(plugins.concat('main.min.js'))
-	  .pipe(plugins.uglify())
-	  .pipe(gulp.dest(destination + '/js'));
+       //.pipe(dev(plugins.sourcemaps.init()))
+       .pipe(plugins.filter('**/*.js'))
+	     .pipe(dev(plugins.debug()))
+       .pipe(dev(plugins.sourcemaps.init()))
+       .pipe(plugins.cached('js-ugly'))
+	     //.pipe(plugins.concat('main.min.js'))
+	     .pipe(plugins.uglify())
+       .pipe(plugins.remember('js-ugly'))
+       .pipe(plugins.concat('main.min.js'))
+       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
+	     .pipe(gulp.dest(destination + '/js'));
    })
 );
 
@@ -96,7 +125,7 @@ gulp.task('images', function() {
 //       .pipe(gulp.dest('dist/css'));
 //});
 
-// the browser-sync recipe below is modified for gulp v4 from: 
+// the browser-sync recipe below is modified for gulp v4 from:
 // https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs
 gulp.task('nodemon', function (cb) {
    var started = false;
@@ -104,7 +133,7 @@ gulp.task('nodemon', function (cb) {
    return plugins.nodemon({
 	script: './bin/www'
 	    }).on('start', function () {
-            // ensure start only got called once 
+            // ensure start only got called once
 	    if (!started) {
 		cb();
 		started = true;
@@ -112,26 +141,30 @@ gulp.task('nodemon', function (cb) {
    });
 });
 
-gulp.task('browser-sync', 
+gulp.task('browser-sync',
    gulp.series('nodemon', function nodemonTask(done) {
-      return bSync.init(null, {
-	       proxy: 'http://localhost:3000',
-	       files: [destination+'/**/*.*'],
-	       browser: 'google chrome',
-	       port: 4000,
-      });
-      done();
+     if(!isProd) {
+       return bSync.init(null, {
+	        proxy: 'http://localhost:3000',
+	        files: [destination + '/**/*.*'],
+	        browser: 'google chrome',
+	        port: 4000,
+       });
+    }
+    done();
    })
 );
-//browser-sync 
+//browser-sync
 
-gulp.task('default', 
+gulp.task('default',
    gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts-fa-bs', 'fonts-fs'), 'browser-sync',
-      function watcher(done) {
-          gulp.watch('views/**/*.pug', gulp.parallel('html'));
-          gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
-          gulp.watch('public/stylesheets/**/*.styl', gulp.parallel('css'));
-          gulp.watch(destination+'/**/*', bSync.reload);
-          done();
+        function watcher(done) {
+          if(!isProd) {
+            gulp.watch('views/**/*.pug', gulp.parallel('html'));
+            gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
+            gulp.watch('public/stylesheets/**/*.styl', gulp.parallel('css'));
+            gulp.watch(destination + '/**/*', bSync.reload);
+          }
+        done();
    })
 );
