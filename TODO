@@ -3,9 +3,12 @@
 DONE - mapfiles for js,css
 DONE - get images in dist/build dir
 DONE - get fonts in dist/build
-- add stress website (subdomain); perhaps serve static
+DONE - add stress website (subdomain); perhaps serve static
+DONE - add additional browser security
+
+# coded but not testing in production
 - add reverse proxy for blast app
-- add https support
+- add https support (NB: certs have not been testing in production)
 
 # new features
 - add data routes with s3
