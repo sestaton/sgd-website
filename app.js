@@ -4,16 +4,20 @@ var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-var helmet       = require('helmet');
 var requireDir   = require('require-dir');
-var vhost = require('vhost');
+var vhost        = require('vhost');
 
 var app = express();
 
-// mount all routes http://stackoverflow.com/a/25446206
+// stress subdomain
 var stressRouter = require('./routes/stress/stressRouter');
 app.use(vhost('stress.localhost', stressRouter));
 
+// blast app is a Rails app running on a different port
+var blastRouter = require('./routes/blast/blastRouter');
+app.use('/blast', blastRouter);
+
+// mount all routes http://stackoverflow.com/a/25446206
 var routes = requireDir('./routes', {recurse: false}); // https://www.npmjs.org/package/require-dir
 for (var i in routes) app.use('/', routes[i]);
 
@@ -21,7 +25,6 @@ for (var i in routes) app.use('/', routes[i]);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(helmet());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev')); // short
 app.use(bodyParser.json());
