@@ -1,0 +1,27 @@
+extends header
+
+block content
+  body.home-page
+    .wrapper
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-home
+      .content.container
+      h1 Message successfully sent!
+      p.lead
+        | Thank you #{name} for contacting us. We will be in touch with you very soon.
+        | You can use the navigation to return to the main site.
+
+  include footer
