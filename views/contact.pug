@@ -50,29 +50,29 @@ html
                 h3.title Get in touch
                 p
                   | If you encounter any issues with this site or have questions not covered in the FAQ, please use the contact form below to get in touch with us. Do not use this form for solicitation offers.
-                form(name='contactform', id='mgform') //method='post', action='/scripts/send.php')
+                form(name='contactform', id='mgform')
                   .form-group.name
                     label(for='name') Name
                     |
-                    input#name.form-control(name='name', id='name', type='text', placeholder='Enter your name')
+                    input#name.form-control(name='name', type='text', placeholder='Enter your name')
                   .form-group.email
                     label(for='email')
                       | Email
                       span.required *
                     |
-                    input#email.form-control(name='email', id='email', type='email', placeholder='Enter your email')
+                    input#email.form-control(name='email', type='email', placeholder='Enter your email')
                   .form-group.phone
                     label(for='phone') Phone
                     |
-                    input#phone.form-control(name='phone', id='phone', type='tel', placeholder='Enter your contact number')
+                    input#phone.form-control(name='phone', type='tel', placeholder='Enter your contact number')
                   .form-group.message
                     label(for='message')
                       | Message
                       span.required *
-                    textarea#message.form-control(name='message', id='message', rows='6', placeholder='Enter your message here...')
+                    textarea#message.form-control(name='message', rows='6', placeholder='Enter your message here...')
                   .g-recaptcha(data-sitekey='6LdDYigTAAAAAFRnIRVE440HdoLLnMlf_3c5-f-Q')
                   |
-                  button#submit.btn.btn-theme(type='submit', name='submit', id='submit', value='submit', onclick='mgform.hid=this.value') Send message
+                  button#submit.btn.btn-theme(type='submit', name='submit', value='submit', onclick='mgform.hid=this.value') Send message
               aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
                 section.widget.has-divider
                   h3.title Postal Address
