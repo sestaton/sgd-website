@@ -30,35 +30,6 @@ gulp.task('clean', function() {
    return del([destination]);
 });
 
-//gulp.task('compile-styles', function() {
-//   return gulp.src('public/stylesheets/*.styl')
-//       .pipe(dev(plugins.sourcemaps.init()))
-//       .pipe(plugins.cached('sty-ugly'))
-//       .pipe(plugins.stylus())
-//       .pipe(plugins.remember('sty-ugly'))
-//       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot: 'css-source' })))
-//       .pipe(gulp.dest(destination + '/css'));
-//});
-
-//gulp.task('css',
-//   gulp.series('compile-styles', function cssTask() {
-//	   var cssFiles = [destination + '/css/*.css'];
-//
-//	   return gulp.src(plugins.mainBowerFiles('**/*.css').concat(cssFiles))
-//	       //.pipe(plugins.filter('**/*.css'))
-//	       .pipe(dev(plugins.debug()))
-//         .pipe(dev(plugins.sourcemaps.init()))
-//	       .pipe(plugins.autoprefixer())
-//         .pipe(plugins.cached('css-ugly'))
-//  	     .pipe(plugins.csso())
-//         .pipe(plugins.remember('css-ugly'))
-//         .pipe(plugins.concat('main.min.css'))
-//         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-//	       .pipe(gulp.dest(destination + '/css'));
-//
-//   })
-//);
-
 gulp.task('css', function() {
    return queue(gulp.src(plugins.mainBowerFiles('**/*.css')),
           gulp.src('public/stylesheets/*.styl')
@@ -75,19 +46,6 @@ gulp.task('css', function() {
 });
 
 gulp.task('fonts', function() {
-   //var bsFiles = ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'];
-   //var fsFiles = ['bower_components/flexslider/fonts/*'];
-
-   //var bsFonts = gulp.src(bsFiles)
-      //  .pipe(plugins.copy(destination + '/fonts', { prefix: 3 }))
-      //  .pipe(gulp.dest(destination + '/fonts'));
-
-   //var fsFonts = gulp.src(fsFiles)
-    //    .pipe(plugins.copy(destination + '/css/fonts', { prefix: 3 }))
-    //    .pipe(gulp.dest(destination + '/css/fonts'));
-
-   //return merge(fsFonts, bsFonts);
-
    var fontParams = [{
      files: ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'],
      dest: destination + '/fonts'
@@ -98,7 +56,7 @@ gulp.task('fonts', function() {
    }];
 
    var streams = [];
-   for (i=0; i < fontParams.length; i++) {
+   for (i in fontParams) {
      dev(console.log(fontParams[i].files));
      dev(console.log(fontParams[i].dest));
 
@@ -118,39 +76,35 @@ gulp.task('test', function() {
     .pipe(plugins.jshint.reporter('fail'));
 });
 
-gulp.task('scripts',
-   gulp.series('test', function scriptsTask() {
-      var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js',
-        'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
+gulp.task('scripts-main', function() {
+   var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
 
-      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
-	       .pipe(dev(plugins.debug()))
-         .pipe(dev(plugins.sourcemaps.init()))
-         .pipe(plugins.cached('js-ugly'))
-	       .pipe(plugins.uglify())
-         .pipe(plugins.remember('js-ugly'))
-         .pipe(plugins.concat('main.min.js'))
-         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
-	       .pipe(gulp.dest(destination + '/js'));
-   })
-);
+   return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
+      .pipe(dev(plugins.debug()))
+      .pipe(dev(plugins.sourcemaps.init()))
+      .pipe(plugins.cached('js-ugly-main'))
+      .pipe(plugins.uglify())
+      .pipe(plugins.remember('js-ugly-main'))
+      .pipe(plugins.concat('main.min.js'))
+      .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
+      .pipe(gulp.dest(destination + '/js'));
+});
 
-//gulp.task('scripts-contact',
-//   gulp.series('test', function scriptsTask() {
-//      var jsFiles = ['public/javascripts/map.js', 'public/javascripts/mail.js'];
-//
-//      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsFiles))
-//         //.pipe(plugins.filter('**/*.js'))
-//	       .pipe(dev(plugins.debug()))
-//         .pipe(dev(plugins.sourcemaps.init()))
-//         .pipe(plugins.cached('js-ugly'))
-//	       .pipe(plugins.uglify())
-//         .pipe(plugins.remember('js-ugly'))
-//         .pipe(plugins.concat('contact.min.js'))
-//         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
-//	       .pipe(gulp.dest(destination + '/js'));
-//   })
-//);
+gulp.task('scripts-contact', function() {
+   var jsContactFiles = ['public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mail.js'];
+
+   return gulp.src(jsContactFiles)
+      .pipe(dev(plugins.debug()))
+      .pipe(dev(plugins.sourcemaps.init()))
+      .pipe(plugins.cached('js-ugly-contact'))
+      .pipe(plugins.uglify())
+      .pipe(plugins.remember('js-ugly-contact'))
+      .pipe(plugins.concat('contact.min.js'))
+      .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
+      .pipe(gulp.dest(destination + '/js'));
+});
+
+gulp.task('scripts', gulp.series('test', gulp.parallel('scripts-main', 'scripts-contact')));
 
 gulp.task('html', function() {
    return gulp.src('views/**/*.pug')
