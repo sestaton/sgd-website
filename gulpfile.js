@@ -33,26 +33,39 @@ gulp.task('compile-styles', function() {
        .pipe(dev(plugins.sourcemaps.init()))
        .pipe(plugins.cached('sty-ugly'))
        .pipe(plugins.stylus())
-       .pipe(plugins.cached('sty-ugly'))
+       .pipe(plugins.remember('sty-ugly'))
        .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot: 'css-source' })))
        .pipe(gulp.dest(destination + '/css'));
 });
 
+// passthrough not rendering correctly. debug needed 4/5/17
+//gulp.task('css', function() {
+//   return gulp.src('public/stylesheets/*.styl')
+//       .pipe(plugins.stylus())
+//       .pipe(gulp.src(plugins.mainBowerFiles('**/*.css'), {passthrough: true}))
+//       .pipe(dev(plugins.debug()))
+//       .pipe(dev(plugins.sourcemaps.init()))
+//    	 .pipe(plugins.autoprefixer())
+//       .pipe(plugins.cached('css-ugly'))
+//       .pipe(plugins.csso())
+//       .pipe(plugins.remember('css-ugly'))
+//       .pipe(plugins.concat('main.min.css'))
+//       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
+//    	 .pipe(gulp.dest(destination + '/css'));
+//});
 gulp.task('css',
    gulp.series('compile-styles', function cssTask() {
 	   var cssFiles = [destination + '/css/*.css'];
 
-	   return gulp.src(plugins.mainBowerFiles().concat(cssFiles))
-	       .pipe(plugins.filter('**/*.css'))
+	   return gulp.src(plugins.mainBowerFiles('**/*.css').concat(cssFiles))
+	       //.pipe(plugins.filter('**/*.css'))
 	       .pipe(dev(plugins.debug()))
          .pipe(dev(plugins.sourcemaps.init()))
-	       //.pipe(plugins.concat('main.min.css'))
 	       .pipe(plugins.autoprefixer())
          .pipe(plugins.cached('css-ugly'))
   	     .pipe(plugins.csso())
          .pipe(plugins.remember('css-ugly'))
          .pipe(plugins.concat('main.min.css'))
-	       //.pipe(plugins.csso())
          .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
 	       .pipe(gulp.dest(destination + '/css'));
 
@@ -71,12 +84,14 @@ gulp.task('fonts-fs', function() {
    var fontFiles = ['bower_components/flexslider/fonts/*'];
 
    return gulp.src(fontFiles)
-       .pipe(plugins.copy('dist/css/fonts', { prefix: 3 }))
-       .pipe(gulp.dest('dist/css/fonts'));
+       .pipe(plugins.copy(destination + '/css/fonts', { prefix: 3 }))
+       .pipe(gulp.dest(destination + '/css/fonts'));
 });
 
+gulp.task('fonts', gulp.parallel('fonts-fa-bs', 'fonts-fs'));
+
 gulp.task('test', function() {
-   return gulp.src(['public/javascripts/**/*.js', '!public/plugins/**/*.js'])
+   return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mail.js', '!public/plugins/**/*.js'])
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.jshint.reporter('fail'));
@@ -84,22 +99,37 @@ gulp.task('test', function() {
 
 gulp.task('scripts',
    gulp.series('test', function scriptsTask() {
-      var jsFiles = ['public/javascripts/*.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
+      var jsFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js',
+        'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
 
-      return gulp.src(plugins.mainBowerFiles().concat(jsFiles))
-       //.pipe(dev(plugins.sourcemaps.init()))
-       .pipe(plugins.filter('**/*.js'))
-	     .pipe(dev(plugins.debug()))
-       .pipe(dev(plugins.sourcemaps.init()))
-       .pipe(plugins.cached('js-ugly'))
-	     //.pipe(plugins.concat('main.min.js'))
-	     .pipe(plugins.uglify())
-       .pipe(plugins.remember('js-ugly'))
-       .pipe(plugins.concat('main.min.js'))
-       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
-	     .pipe(gulp.dest(destination + '/js'));
+      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsFiles))
+	       .pipe(dev(plugins.debug()))
+         .pipe(dev(plugins.sourcemaps.init()))
+         .pipe(plugins.cached('js-ugly'))
+	       .pipe(plugins.uglify())
+         .pipe(plugins.remember('js-ugly'))
+         .pipe(plugins.concat('main.min.js'))
+         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
+	       .pipe(gulp.dest(destination + '/js'));
    })
 );
+
+//gulp.task('scripts-contact',
+//   gulp.series('test', function scriptsTask() {
+//      var jsFiles = ['public/javascripts/map.js', 'public/javascripts/mail.js'];
+//
+//      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsFiles))
+//         //.pipe(plugins.filter('**/*.js'))
+//	       .pipe(dev(plugins.debug()))
+//         .pipe(dev(plugins.sourcemaps.init()))
+//         .pipe(plugins.cached('js-ugly'))
+//	       .pipe(plugins.uglify())
+//         .pipe(plugins.remember('js-ugly'))
+//         .pipe(plugins.concat('contact.min.js'))
+//         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'js-source'})))
+//	       .pipe(gulp.dest(destination + '/js'));
+//   })
+//);
 
 gulp.task('html', function() {
    return gulp.src('views/**/*.pug')
@@ -112,18 +142,6 @@ gulp.task('images', function() {
        .pipe(plugins.imagemin())
        .pipe(gulp.dest(destination + '/images'))
 });
-
-//gulp.task('styles', function() {
-//   var styleFiles = ['public/stylesheets/styles.styl'];
-//
-//   return gulp.src(plugins.mainBowerFiles())
-//       .pipe(plugins.filter('**/*.css'))
-//       .pipe(plugins.stylus(styleFiles))
-//       .pipe(plugins.concat('main.min.css'))
-//       .pipe(plugins.autoprefixer())
-//       .pipe(plugins.csso())
-//       .pipe(gulp.dest('dist/css'));
-//});
 
 // the browser-sync recipe below is modified for gulp v4 from:
 // https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs
@@ -157,7 +175,7 @@ gulp.task('browser-sync',
 //browser-sync
 
 gulp.task('default',
-   gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts-fa-bs', 'fonts-fs'), 'browser-sync',
+   gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts'), 'browser-sync',
         function watcher(done) {
           if(!isProd) {
             gulp.watch('views/**/*.pug', gulp.parallel('html'));
