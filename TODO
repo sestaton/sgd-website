@@ -5,6 +5,7 @@ DONE - get images in dist/build dir
 DONE - get fonts in dist/build
 DONE - add stress website (subdomain); perhaps serve static
 DONE - add additional browser security
+ - add custom error responses for dev/prod envs
 
 # coded but not testing in production
 - add reverse proxy for blast app
