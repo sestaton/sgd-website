@@ -1,7 +1,9 @@
 var gulp    = require('gulp');
 var del     = require('del');
 var bSync   = require('browser-sync');
-var through = require('through2');
+var merge   = require('merge2');
+var through = require('through2').obj;
+var queue   = require('streamqueue').obj;
 
 var plugins = require("gulp-load-plugins")({
         pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
@@ -13,7 +15,7 @@ var isProd = (arguments.env === 'prod');
 var destination  = arguments.outDir ? arguments.outDir : 'dist';
 
 var noop = function() {
-  return through.obj();
+  return through();
 };
 
 var dev = function(task) {
@@ -28,67 +30,86 @@ gulp.task('clean', function() {
    return del([destination]);
 });
 
-gulp.task('compile-styles', function() {
-   return gulp.src('public/stylesheets/*.styl')
-       .pipe(dev(plugins.sourcemaps.init()))
-       .pipe(plugins.cached('sty-ugly'))
-       .pipe(plugins.stylus())
-       .pipe(plugins.remember('sty-ugly'))
-       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot: 'css-source' })))
-       .pipe(gulp.dest(destination + '/css'));
-});
-
-// passthrough not rendering correctly. debug needed 4/5/17
-//gulp.task('css', function() {
+//gulp.task('compile-styles', function() {
 //   return gulp.src('public/stylesheets/*.styl')
-//       .pipe(plugins.stylus())
-//       .pipe(gulp.src(plugins.mainBowerFiles('**/*.css'), {passthrough: true}))
-//       .pipe(dev(plugins.debug()))
 //       .pipe(dev(plugins.sourcemaps.init()))
-//    	 .pipe(plugins.autoprefixer())
-//       .pipe(plugins.cached('css-ugly'))
-//       .pipe(plugins.csso())
-//       .pipe(plugins.remember('css-ugly'))
-//       .pipe(plugins.concat('main.min.css'))
-//       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-//    	 .pipe(gulp.dest(destination + '/css'));
+//       .pipe(plugins.cached('sty-ugly'))
+//       .pipe(plugins.stylus())
+//       .pipe(plugins.remember('sty-ugly'))
+//       .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot: 'css-source' })))
+//       .pipe(gulp.dest(destination + '/css'));
 //});
-gulp.task('css',
-   gulp.series('compile-styles', function cssTask() {
-	   var cssFiles = [destination + '/css/*.css'];
 
-	   return gulp.src(plugins.mainBowerFiles('**/*.css').concat(cssFiles))
-	       //.pipe(plugins.filter('**/*.css'))
-	       .pipe(dev(plugins.debug()))
-         .pipe(dev(plugins.sourcemaps.init()))
-	       .pipe(plugins.autoprefixer())
-         .pipe(plugins.cached('css-ugly'))
-  	     .pipe(plugins.csso())
-         .pipe(plugins.remember('css-ugly'))
-         .pipe(plugins.concat('main.min.css'))
-         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-	       .pipe(gulp.dest(destination + '/css'));
+//gulp.task('css',
+//   gulp.series('compile-styles', function cssTask() {
+//	   var cssFiles = [destination + '/css/*.css'];
+//
+//	   return gulp.src(plugins.mainBowerFiles('**/*.css').concat(cssFiles))
+//	       //.pipe(plugins.filter('**/*.css'))
+//	       .pipe(dev(plugins.debug()))
+//         .pipe(dev(plugins.sourcemaps.init()))
+//	       .pipe(plugins.autoprefixer())
+//         .pipe(plugins.cached('css-ugly'))
+//  	     .pipe(plugins.csso())
+//         .pipe(plugins.remember('css-ugly'))
+//         .pipe(plugins.concat('main.min.css'))
+//         .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
+//	       .pipe(gulp.dest(destination + '/css'));
+//
+//   })
+//);
 
-   })
-);
-
-gulp.task('fonts-fa-bs', function() {
-   var fontFiles = ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'];
-
-   return gulp.src(fontFiles)
-       .pipe(plugins.copy(destination + '/fonts', { prefix: 3 }))
-       .pipe(gulp.dest(destination + '/fonts'));
+gulp.task('css', function() {
+   return queue(gulp.src(plugins.mainBowerFiles('**/*.css')),
+          gulp.src('public/stylesheets/*.styl')
+             .pipe(plugins.stylus())
+           ).pipe(dev(plugins.debug()))
+            .pipe(dev(plugins.sourcemaps.init()))
+    	      .pipe(plugins.autoprefixer())
+            .pipe(plugins.cached('css-ugly'))
+            .pipe(plugins.csso())
+            .pipe(plugins.remember('css-ugly'))
+            .pipe(plugins.concat('main.min.css'))
+            .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
+    	      .pipe(gulp.dest(destination + '/css'));
 });
 
-gulp.task('fonts-fs', function() {
-   var fontFiles = ['bower_components/flexslider/fonts/*'];
+gulp.task('fonts', function() {
+   //var bsFiles = ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'];
+   //var fsFiles = ['bower_components/flexslider/fonts/*'];
 
-   return gulp.src(fontFiles)
-       .pipe(plugins.copy(destination + '/css/fonts', { prefix: 3 }))
-       .pipe(gulp.dest(destination + '/css/fonts'));
+   //var bsFonts = gulp.src(bsFiles)
+      //  .pipe(plugins.copy(destination + '/fonts', { prefix: 3 }))
+      //  .pipe(gulp.dest(destination + '/fonts'));
+
+   //var fsFonts = gulp.src(fsFiles)
+    //    .pipe(plugins.copy(destination + '/css/fonts', { prefix: 3 }))
+    //    .pipe(gulp.dest(destination + '/css/fonts'));
+
+   //return merge(fsFonts, bsFonts);
+
+   var fontParams = [{
+     files: ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'],
+     dest: destination + '/fonts'
+   },
+   {
+     files: ['bower_components/flexslider/fonts/*'],
+     dest: destination + '/css/fonts'
+   }];
+
+   var streams = [];
+   for (i=0; i < fontParams.length; i++) {
+     dev(console.log(fontParams[i].files));
+     dev(console.log(fontParams[i].dest));
+
+     var stream = gulp.src(fontParams[i].files)
+          .pipe(plugins.copy(fontParams[i].dest, { prefix: 3 }))
+          .pipe(gulp.dest(fontParams[i].dest));
+      streams.push(stream)
+   }
+
+   return merge(streams);
 });
-
-gulp.task('fonts', gulp.parallel('fonts-fa-bs', 'fonts-fs'));
 
 gulp.task('test', function() {
    return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mail.js', '!public/plugins/**/*.js'])
@@ -99,10 +120,10 @@ gulp.task('test', function() {
 
 gulp.task('scripts',
    gulp.series('test', function scriptsTask() {
-      var jsFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js',
+      var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js',
         'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
 
-      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsFiles))
+      return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
 	       .pipe(dev(plugins.debug()))
          .pipe(dev(plugins.sourcemaps.init()))
          .pipe(plugins.cached('js-ugly'))
