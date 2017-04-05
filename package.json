@@ -15,6 +15,7 @@
     "forever": "^0.15.3",
     "helmet": "^3.5.0",
     "https": "^1.0.0",
+    "mailgun-js": "^0.9.1",
     "morgan": "~1.7.0",
     "ms": "^1.0.0",
     "pug": "~2.0.0-beta6",
@@ -46,7 +47,9 @@
     "gulp-uglify": "^2.1.2",
     "jshint": "^2.9.4",
     "main-bower-files": "^2.13.1",
+    "merge2": "^1.0.3",
     "nodemon": "^1.11.0",
+    "streamqueue": "^1.1.1",
     "through2": "^2.0.3",
     "yargs": "^7.0.2"
   }
