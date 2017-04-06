@@ -1,25 +1,57 @@
-var express = require('express');
-var Mailgun = require('mailgun-js')
+var express   = require('express');
+var Mailgun   = require('mailgun-js');
+var Recaptcha = require('recaptcha').Recaptcha;
 
 var router = express.Router();
 
 //Your api key, from Mailgun’s Control Panel
-var api_key = 'key-e37b7da04b1d31e31cbc574be0ffae07';
+var mg_api_key = process.env.MG_KEY;
 //Your domain, from the Mailgun Control Panel
 var domain = 'mail.sunflowergenome.org';
 //Your sending email address
 var from_who = '"SGD website" <contact@mail.sunflowergenome.org>';
 var recipient = 'statonse@protonmail.com';
 
+var PUBLIC_KEY  = process.env.GRA_KEY_PUB,
+    PRIVATE_KEY = process.env.GRA_KEY_PRIV;
+
 router.get('/contact', function(req, res, next) {
-	 res.render('contact', { title: 'Sunflower Genome Database' });
+	var recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY);
+
+	 res.render('contact', { title: 'Sunflower Genome Database',
+	 	layout: false,
+		locals: { recaptcha_form: recaptcha.toHTML() }
+	 });
+});
+
+router.post('/', function(req, res) {
+    var data = {
+        remoteip:  req.connection.remoteAddress,
+        response:  req.body['g-recaptcha-response']
+    };
+    var recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY, data);
+
+    recaptcha.verify(function(success, error_code) {
+        if (success) {
+            res.send('Recaptcha response valid.');
+        }
+        else {
+            // Redisplay the form.
+            res.render('error', {
+                layout: false,
+                locals: {
+                    recaptcha_form: recaptcha.toHTML()
+                }
+            });
+        }
+    });
 });
 
 // Send a message to the specified email address when you navigate to /submit/someaddr@email.com
 // The index redirects here
 router.get('/submit/:mail', function(req, res) {
     //We pass the api_key and domain to the wrapper, or it won't be able to identify + send emails
-    var mailgun = new Mailgun({apiKey: api_key, domain: domain});
+    var mailgun = new Mailgun({apiKey: mg_api_key, domain: domain});
 
     var data = {
       //Specify email data
