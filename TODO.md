@@ -15,7 +15,7 @@ Running list of features to implement and issues to address
 <table>
 <tr><th>Status</th><th>Task</th></tr>
 <tr><td></td><td>add reverse proxy for blast app</td></tr>
-<tr><td></td><td>add https support (NB: certs have not been testing in production)</td></tr>
+<tr><td></td><td>add https support (NB: certs have not been tested in production)</td></tr>
 </table>
 
 # New features
