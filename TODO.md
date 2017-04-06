@@ -1,8 +1,8 @@
 TODO
 ========
-Running list of features and issues to implement.
+Running list of features to implement and issues to address
 
-# Transfer of old static site**
+# Transfer of old static site
 <table>
 <tr><th>Status</th><th>Task</th></tr>
 <tr><td>&#10004;</td><td>mapfiles for js,css</td></tr>
@@ -15,7 +15,7 @@ Running list of features and issues to implement.
 <table>
 <tr><th>Status</th><th>Task</th></tr>
 <tr><td></td><td>add reverse proxy for blast app</td></tr>
-<tr><td></td><td>add https support (NB: certs have not been testing in production)<td></tr>
+<tr><td></td><td>add https support (NB: certs have not been testing in production)</td></tr>
 </table>
 
 # New features
