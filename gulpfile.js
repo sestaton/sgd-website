@@ -55,16 +55,24 @@ gulp.task('fonts', function() {
      dest: destination + '/css/fonts'
    }];
 
-   var streams = [];
-   for (i in fontParams) {
-     dev(console.log(fontParams[i].files));
-     dev(console.log(fontParams[i].dest));
+   // imperative style
+   //var streams = [];
+   //for (i in fontParams) {
+     //dev(console.log(fontParams[i].files));
+     //dev(console.log(fontParams[i].dest));
 
-     var stream = gulp.src(fontParams[i].files)
-          .pipe(plugins.copy(fontParams[i].dest, { prefix: 3 }))
-          .pipe(gulp.dest(fontParams[i].dest));
-      streams.push(stream)
-   }
+     //var stream = gulp.src(fontParams[i].files)
+      //    .pipe(plugins.copy(fontParams[i].dest, { prefix: 3 }))
+      //    .pipe(gulp.dest(fontParams[i].dest));
+      //streams.push(stream)
+   //}
+
+   // declarative style
+   var streams = fontParams.map(function(v, i) {
+     return gulp.src(fontParams[i].files)
+         .pipe(plugins.copy(fontParams[i].dest, { prefix: 3 }))
+         .pipe(gulp.dest(fontParams[i].dest))
+   });
 
    return merge(streams);
 });
