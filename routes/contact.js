@@ -1,6 +1,6 @@
 var express   = require('express');
 var Mailgun   = require('mailgun-js');
-var Recaptcha = require('recaptcha').Recaptcha;
+var Recaptcha = require('node-recaptcha2').Recaptcha;
 
 var router = express.Router();
 
