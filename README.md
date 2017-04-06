@@ -6,10 +6,10 @@ sunflower genome database website
 
 Download the package:
 
-    ```bash
-    git clone https://github.com/sestaton/sgd-website.git
-    cd sgd-website
-    ```
+```bash
+git clone https://github.com/sestaton/sgd-website.git
+cd sgd-website
+```
 
 Install the deps:
 
