@@ -26,25 +26,30 @@ var prod = function(task) {
   return isProd ? task : noop();
 };
 
+// Clean task returns a Promise
 gulp.task('clean', function() {
    return del([destination]);
 });
 
+// We need to load the CSS in a certain order so we use a queue.
+// Some options are specific to development, such as generating sourcemaps.
 gulp.task('css', function() {
    return queue(gulp.src(plugins.mainBowerFiles('**/*.css')),
           gulp.src('public/stylesheets/*.styl')
              .pipe(plugins.stylus())
            ).pipe(dev(plugins.debug()))
             .pipe(dev(plugins.sourcemaps.init()))
-    	      .pipe(plugins.autoprefixer())
+    	    .pipe(plugins.autoprefixer())
             .pipe(plugins.cached('css-ugly'))
             .pipe(plugins.csso())
             .pipe(plugins.remember('css-ugly'))
             .pipe(plugins.concat('main.min.css'))
             .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-    	      .pipe(gulp.dest(destination + '/css'));
+    	    .pipe(gulp.dest(destination + '/css'));
 });
 
+// Fonts have to be loaded from separate locations, so we create multiple streams
+// and merge them.
 gulp.task('fonts', function() {
    var fontParams = [{
      files: ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'],
@@ -77,6 +82,7 @@ gulp.task('fonts', function() {
    return merge(streams);
 });
 
+// Check for syntax errors when JS files are changed
 gulp.task('test', function() {
    return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mail.js', '!public/plugins/**/*.js'])
     .pipe(plugins.jshint())
