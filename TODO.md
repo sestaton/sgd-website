@@ -3,7 +3,7 @@
 
 <table>
 <tr><th>Status</th><th>Task</th></tr>
-<tr><th>&#10004;</a></th><td>mapfiles for js,css</td></tr>
+<tr><th>&#10003;</a></th><td>mapfiles for js,css</td></tr>
 <tr><th><a href="https://github.com/sestaton/transposome-scripts/blob/master/get_seqs_from_list.pl">get_seqs_from_list.pl</a></th><td>Pull sequences from a file given a file of sequence IDs.</td></tr>
 <tr><th><a href="https://github.com/sestaton/transposome-scripts/blob/master/sample_and_interleave_pairs.pl">sample_and_interleave_pairs.pl</a></th><td>Sample reads from both pairs of a paired-end read and interleave them for input to Transposome.</td></tr>
 <tr><th><a href="https://github.com/sestaton/transposome-scripts/blob/master/permute_graph_edges.pl">permute_graph_edges.pl</a></th><td>Test a range of parameters for filtering pairwise matches to graph edges.</td></tr>
