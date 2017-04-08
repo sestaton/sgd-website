@@ -12,7 +12,7 @@ var plugins = require("gulp-load-plugins")({
 
 var arguments = require('yargs').argv;
 var isProd = (arguments.env === 'prod');
-var destination  = arguments.outDir ? arguments.outDir : 'dist';
+var destination = arguments.outDir ? arguments.outDir : 'dist';
 
 var noop = function() {
   return through();
@@ -35,17 +35,17 @@ gulp.task('clean', function() {
 // Some options are specific to development, such as generating sourcemaps.
 gulp.task('css', function() {
    return queue(gulp.src(plugins.mainBowerFiles('**/*.css')),
-          gulp.src('public/stylesheets/*.styl')
-             .pipe(plugins.stylus())
-           ).pipe(dev(plugins.debug()))
-            .pipe(dev(plugins.sourcemaps.init()))
-    	    .pipe(plugins.autoprefixer())
-            .pipe(plugins.cached('css-ugly'))
-            .pipe(plugins.csso())
-            .pipe(plugins.remember('css-ugly'))
-            .pipe(plugins.concat('main.min.css'))
-            .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-    	    .pipe(gulp.dest(destination + '/css'));
+                gulp.src('public/stylesheets/*.styl')
+                   .pipe(plugins.stylus())
+          ).pipe(dev(plugins.debug()))
+           .pipe(dev(plugins.sourcemaps.init()))
+    	     .pipe(plugins.autoprefixer())
+           .pipe(plugins.cached('css-ugly'))
+           .pipe(plugins.csso())
+           .pipe(plugins.remember('css-ugly'))
+           .pipe(plugins.concat('main.min.css'))
+           .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
+    	     .pipe(gulp.dest(destination + '/css'));
 });
 
 // Fonts have to be loaded from separate locations, so we create multiple streams
@@ -85,9 +85,9 @@ gulp.task('fonts', function() {
 // Check for syntax errors when JS files are changed
 gulp.task('test', function() {
    return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mail.js', '!public/plugins/**/*.js'])
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('default'))
-    .pipe(plugins.jshint.reporter('fail'));
+      .pipe(plugins.jshint())
+      .pipe(plugins.jshint.reporter('default'))
+      .pipe(plugins.jshint.reporter('fail'));
 });
 
 gulp.task('scripts-main', function() {
@@ -122,14 +122,24 @@ gulp.task('scripts', gulp.series('test', gulp.parallel('scripts-main', 'scripts-
 
 gulp.task('html', function() {
    return gulp.src('views/**/*.pug')
-       .pipe(plugins.pug({ doctype: 'html', pretty: false }))
-       .pipe(gulp.dest(destination + '/html'))
+      .pipe(plugins.pug({ doctype: 'html', pretty: false }))
+      .pipe(gulp.dest(destination + '/html'))
 });
 
 gulp.task('images', function() {
    return gulp.src('public/images/**/*')
-       .pipe(plugins.imagemin())
-       .pipe(gulp.dest(destination + '/images'))
+      .pipe(plugins.imagemin([
+        plugins.imagemin.gifsicle({interlaced: true}),
+        plugins.imagemin.jpegtran({progressive: true}),
+        plugins.imagemin.optipng({optimizationLevel: 5}),
+        plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
+      ],
+      {
+        verbose: true
+      }))
+      .pipe(gulp.dest(destination + '/images'))
+      //.pipe(plugins.imagemin())
+      //.pipe(gulp.dest(destination + '/images'))
 });
 
 // the browser-sync recipe below is modified for gulp v4 from:
@@ -138,7 +148,7 @@ gulp.task('nodemon', function (cb) {
    var started = false;
 
    return plugins.nodemon({
-	script: './bin/www'
+	  script: './bin/www'
 	    }).on('start', function () {
             // ensure start only got called once
 	    if (!started) {
