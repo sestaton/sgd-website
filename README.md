@@ -11,7 +11,7 @@ Download the package:
 
 Install the server dependencies:
 
-    npm i -g gulp bower
+    npm i -g gulp-cli bower nodemon forever
     npm install
 
 Install the browser dependencies:
