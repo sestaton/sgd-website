@@ -49,13 +49,13 @@ router.post('/', function(req, res) {
 
 // Send a message to the specified email address when you navigate to /submit/someaddr@email.com
 // The index redirects here
-router.get('/submit/:mail', function(req, res) {
+router.get('/submit/', function(req, res) {
     //We pass the api_key and domain to the wrapper, or it won't be able to identify + send emails
     var mailgun = new Mailgun({apiKey: mg_api_key, domain: domain});
 
     var data = {
       //Specify email data
-    	from: from_who,
+      from: from_who,
       //The email to contact
       to: recipient,
       //Subject and text data
