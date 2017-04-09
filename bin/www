@@ -7,22 +7,22 @@
 var app   = require('../app');
 var debug = require('debug')('sgd-website:server');
 var http  = require('http');
-//var https = require('https');
+var https = require('https');
 var helmet = require('helmet');
-//var ms           = require('ms');
-//var fs  = require('fs');
-//var enforceSSL   = require('express-enforces-ssl');
+var ms     = require('ms');
+var fs     = require('fs');
+var enforceSSL = require('express-enforces-ssl');
 
 /**
 * Security settings
 */
 app.disable('x-powered-by');  // do not advertise Express
-//app.enable('trust proxy');    // use SSL
-//app.use(enforceSSL());        // enforce SSL
-//app.use(helmet.hsts({         // enforces SSL on subdomains
-//  maxAge: ms('1 year'),
-//  includeSubdomains: true
-//}));
+app.enable('trust proxy');    // use SSL
+app.use(enforceSSL());        // enforce SSL
+app.use(helmet.hsts({         // enforces SSL on subdomains
+  maxAge: ms('1 year'),
+  includeSubdomains: true
+}));
 app.use(helmet.xssFilter());  // prevent cross-site attacks
 app.use(helmet.frameguard('sameorigin')); // prevent clickjacking by disallowing anyone to put site in a frame
 //app.use(helmet.noSniff());    //  do not let browsers infer file type (disabled until uploads allowed)
@@ -32,29 +32,30 @@ app.use(helmet.frameguard('sameorigin')); // prevent clickjacking by disallowing
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+console.log("listening on port", port);
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-//var httpsOptions = {
-//  key: fs.readFileSync("path/to/private/key.pem"),
-//  cert: fs.readFileSync("path/to/certificate.pem")
-//};
-//var httpsServer = https.createServer(httpsOptions, app);
+var httpsOptions = {
+  key: fs.readFileSync("/etc/ssl/certs/sunflowergenome.key"),
+  cert: fs.readFileSync("/etc/ssl/certs/sunflowergenome.crt")
+};
+var httpsServer = https.createServer(httpsOptions, app);
 var httpServer  = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-httpServer.listen(port); // 80
+httpServer.listen(80); // 80
 httpServer.on('error', onError);
 httpServer.on('listening', onListening);
 
-//httpsServer.listen(port); // 443
-//httpsServer.on('error', onError);
-//httpsServer.on('listening', onListening);
+httpsServer.listen(443); // 443
+httpsServer.on('error', onError);
+httpsServer.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
