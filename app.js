@@ -65,7 +65,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  console.log("Node ENV: ", req.app.get('env'));
+  req.app.get('env') === 'development' ? res.render('error') : res.render('404');
 });
 
 module.exports = app;
