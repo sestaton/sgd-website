@@ -10,6 +10,19 @@ var compression  = require('compression');
 
 var app = express();
 
+//use compression
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false;
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res);
+}
+
+app.use(compression({filter: shouldCompress}));
+
 // stress subdomain
 var stressRouter = require('./routes/stress/stressRouter');
 app.use(vhost('stress.sunflowergenome.org', stressRouter));
@@ -37,17 +50,17 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'dist')));
 //use compression
-app.use(compression({filter: shouldCompress}))
+//app.use(compression({filter: shouldCompress}))
 
-function shouldCompress (req, res) {
-  if (req.headers['x-no-compression']) {
-    // don't compress responses with this request header
-    return false
-  }
-
-  // fallback to standard filter function
-  return compression.filter(req, res)
-}
+//function shouldCompress (req, res) {
+//  if (req.headers['x-no-compression']) {
+//    // don't compress responses with this request header
+//    return false
+//  }
+//
+//  // fallback to standard filter function
+//  return compression.filter(req, res)
+//}
 //
 
 // catch 404 and forward to error handler
