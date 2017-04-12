@@ -21,7 +21,12 @@ function shouldCompress (req, res) {
   return compression.filter(req, res);
 }
 
-app.use(compression({filter: shouldCompress}));
+app.use(compression({
+  filter: shouldCompress,
+  level: 9,
+  memLevel: 9
+  })
+);
 
 // stress subdomain
 var stressRouter = require('./routes/stress/stressRouter');
@@ -33,8 +38,11 @@ var blastRouter = require('./routes/blast/blastRouter');
 app.use(vhost('sunflowergenome.org/blast/', blastRouter));
 app.use(vhost('www.sunflowergenome.org/blast/', blastRouter));
 
+// route for jbrowse
+app.use('/jbrowse_current', express.static(path.join(__dirname, '/var/www/jbrowse/JBrowse-1.12.1')))
+
 // mount all routes http://stackoverflow.com/a/25446206
-var routes = requireDir('./routes', {recurse: false}); // https://www.npmjs.org/package/require-dir
+var routes = requireDir('./routes', { recurse: false }); // https://www.npmjs.org/package/require-dir
 for (var i in routes) app.use('/', routes[i]);
 
 // view engine setup
@@ -49,6 +57,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'dist')));
+//app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')));
+
 //use compression
 //app.use(compression({filter: shouldCompress}))
 
