@@ -84,7 +84,7 @@ gulp.task('fonts', function() {
 
 // Check for syntax errors when JS files are changed
 gulp.task('test', function() {
-   return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mail.js', '!public/plugins/**/*.js'])
+   return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mailer.js', '!public/plugins/**/*.js'])
       .pipe(plugins.jshint())
       .pipe(plugins.jshint.reporter('default'))
       .pipe(plugins.jshint.reporter('fail'));
@@ -105,7 +105,7 @@ gulp.task('scripts-main', function() {
 });
 
 gulp.task('scripts-contact', function() {
-   var jsContactFiles = ['public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mail.js'];
+   var jsContactFiles = ['public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
 
    return gulp.src(jsContactFiles)
       .pipe(dev(plugins.debug()))
