@@ -15,7 +15,7 @@ sed -i "s@src=\"\/js@src=\"assets/js@g" views/stress/footer.pug
 
 # Step 2: Compile HTML
 echo -e "=====> Compiling templates into HTML..."
-gulp html
+gulp --env prod --outDir dist html
 
 # Step 3: Prepare the pages so we don't have the edit every single file PATH
 echo -e "=====> Preparing static distribution..."
