@@ -23,7 +23,7 @@
 
   // create a new script element
   var script   = document.createElement('script');
-  script.src   = '//www.google-analytics.com/analytics.js';
+  script.src   = 'https://www.google-analytics.com/analytics.js';
   script.async = true;
 
   // insert the script element into the document
