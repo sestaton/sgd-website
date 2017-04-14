@@ -91,7 +91,7 @@ gulp.task('test', function() {
 });
 
 gulp.task('scripts-main', function() {
-   var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js'];
+   var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js', '!bower_components/gmaps/gmaps.js'];
 
    return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
       .pipe(dev(plugins.debug()))
