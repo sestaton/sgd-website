@@ -36,7 +36,7 @@ function sendMailgun($data) {
 
   $api_key = 'key-e37b7da04b1d31e31cbc574be0ffae07';
   $api_domain = 'mail.sunflowergenome.org';
-  $send_to = 'sgd-webmail@protonmail.com';
+  $send_to = 'statonse@protonmail.com';
 
   $name = $data['name'];
   $email = $data['email'];
