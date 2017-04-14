@@ -12,7 +12,7 @@ use File::Basename;
 use File::Path qw(make_path);
 use Cwd        qw(abs_path getcwd);
 use Getopt::Long;
-use Data::Dump::Color;
+#use Data::Dump::Color;
 
 my $usage = "\nUSAGE: ".basename($0)." -i <indir> -o <outdir>\n";
 $usage .= "\n <indir>  : A directory of HTML files 
