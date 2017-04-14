@@ -29,7 +29,7 @@ my $wd    = getcwd();
 my $base  = basename($opts{indir});
 my $dname = dirname($opts{indir});
 
-# prepare assets
+# Prepare assets
 my $assetdir = File::Spec->catdir($opts{outdir}, 'assets'); 
 make_path($assetdir, {verbose => 0, mode => 0771,});
 
@@ -41,18 +41,16 @@ die "\nERROR: No HTML files found in $opts{indir}. Exiting.\n"
 
 for my $in (@files) {
     next if $in eq $opts{indir};
-    next if $in =~ /nav-|header|footer/;
+    next if $in =~ /nav-|header|footer/; # Skip these templates. We can probably tell gulp to not compile them
 
     if (-f $in && $in =~ /\.html$/) {
 	_copy_page($in, $opts{outdir}, $dname);
     }
     elsif (-d $in) {
-	#say STDERR "DEBUG subdir: $in";
 	my $name = basename($in);
 
 	my $outdir = File::Spec->catdir($opts{outdir}, $name);
 	make_path($outdir, {verbose => 0, mode => 0771,});
-	#say STDERR "path: $outdir";
 
 	my @subfiles;
         find(sub { push @subfiles, $File::Find::name if -f and /\.html$/ }, $in);
@@ -67,21 +65,15 @@ for my $in (@files) {
 ## Asset PATHs
 for my $dir (qw(css js images fonts)) {
     my $asset = File::Spec->catdir($dname, $dir);
-    my $assetdir = File::Spec->catdir($opts{outdir}, 'assets'); #, $dir);
-    #make_path($assetdir, {verbose => 0, mode => 0771,});
-
-    #say STDERR join q{ }, "DEBUG assets", $asset, $assetdir;
-
+    my $assetdir = File::Spec->catdir($opts{outdir}, 'assets'); 
     my $cmd = "cp -R $asset $assetdir/";
-    #say STDERR "CMD: $cmd";
     system($cmd) == 0 or die $!;
 }
 
-#my $link = "ln -s $opts{outdir}/assets $opts{outdir}/stress/assets";
-#say STDERR $link;
+# Link assets for subdomains, in this case a separate site in the 'stress' subdirectory
 system("ln -s $opts{outdir}/assets $opts{outdir}/stress/assets") == 0 or die $!;
-#my $cp = "cp -R $wd/public/scripts $opts{outdir}/assets/";
-#say STDERR $cp;
+
+# We don't need to transform php scripts, just copy them in place
 system("cp -R $wd/public/scripts $opts{outdir}/assets/") == 0 or die $!;
 
 sub _copy_page {
@@ -91,10 +83,8 @@ sub _copy_page {
 
     if ($name eq 'index') {
 	my $index = File::Spec->catfile($dest, $name.$suffix);
-	#say STDERR "index: $file $index";
 
 	unless (-e $index) {
-	    say STDERR "$index DOES NOT EXIST";
 	    copy($file, $index) or die "Copy failed: $!"
 	}
 
