@@ -18,7 +18,7 @@ fi
 echo -e "=====> Editing asset PATHs in templates..."
 find ./views/ -type f -name "*.pug" -exec sed -i "s@src='\/images@src='assets/images@g" {} \;
 find ./views/ -type f -name "*.pug" -exec sed -i "s@src=\"\/images@src=\"assets/images@g" {} \;
-find ./views/ -type f -name "*-data.pug" -exec sed -i "s@href=\'\/data@href=\'assets/data@g" {} \;
+find ./views/ -type f -name "*-data.pug" -exec sed -i "s@href='\/data@href='assets/data@g" {} \;
 find ./views/ -type f -name "*-data.pug" -exec sed -i "s@href=\"\/data@href=\"assets/data@g" {} \;
 sed -i "s@href=\"\/css@href=\"assets/css@g" views/header.pug
 sed -i "s@src=\"\/js@src=\"assets/js@g" views/footer.pug
