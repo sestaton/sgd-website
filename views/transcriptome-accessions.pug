@@ -8,7 +8,7 @@ block content
         .header-main.container
           h1.logo.col-md-4.col-sm-4
             a(href='https://sunflowergenome.org')
-              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+              img#logo(src='assets/images/logo.png', with='200px', height='75px', alt='Logo')
           .info.col-md-8.col-sm-8
             ul.menu-top.navbar-right.hidden-xs
               li.divider
@@ -32,924 +32,924 @@ block content
                   i.fa.fa-angle-right
                 li.current Transcriptome accessions
             <!-- breadcrumbs -->
-        .page-content
-          .row.page-row
-          aside.page-sidebar.col-md-2.col-sm-2.affix-top
-            section.widget
-              ul.nav
-                li
-                  a(href='/transcriptome') Procedures
-                    |
-                    |
-                    i.fa.fa-book(aria-hidden='true')
-                li.active
-                  a(href='/transcriptome-accessions') Accessions
-                    |
-                    |
-                    i.fa.fa-table(aria-hidden='true')
-                li
-                  a(href='/transcriptome-data') Files
-                    |
-                    |
-                    i.fa.fa-download(aria-hidden='true')
-          article.welcome.col-md-8.col-sm-7
-            h2 Reference-based genotyping of 168 sunflower transcriptomes
-            p
-              | ESTs from a variety of cultivated and wild sunflowers were produced via Sanger, 454, and Illumina sequencing. Each sample&apos;s ID, species, subspecies or ecotype, and technology used for sequencing is presented in the table of metadata below. Reads were aligned to the TranscriptomeRef_mar30.fa reference assembly using BWA and individuals were genotyped with SAMtools. Indels were excluded. Genotypes are presented in a tab-delimited table with reference sites in rows, and individuals in columns. See the bottom of this page for a descriptive table of the accessions used in genotyping.
-            h3.has-divider.text-highlight Accessions
-            .table-responsive
-               table.table.table-striped.table-bordered
-                  thead
-                    tr
-                      th ID
-                      th Species
-                      th SSP/Ecotype
-                      th Read Technology
-                  tbody
-                    tr
-                      td HA412
-                      td annuus
-                      td elite
-                      td 454
-                    tr
-                      td HA369
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA384
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA412cold
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA412drought
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA412-flowers
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA412-roots_stems
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA89-5
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td HA89-9
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td KOSI
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td MAI
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td RHA274
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td Sunrise
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td VNIIMK8931
-                      td annuus
-                      td elite
-                      td illumina
-                    tr
-                      td ha89
-                      td annuus
-                      td elite
-                      td sanger
-                    tr
-                      td psc8
-                      td annuus
-                      td elite
-                      td sanger
-                    tr
-                      td rha280
-                      td annuus
-                      td elite
-                      td sanger
-                    tr
-                      td rha801
-                      td annuus
-                      td elite
-                      td sanger
-                    tr
-                      td CAN
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td EUW1
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td EUW2
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td ISI
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td QLD
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td WAN
-                      td annuus
-                      td invasive
-                      td 454
-                    tr
-                      td SAW3
-                      td annuus
-                      td invasive
-                      td illumina
-                    tr
-                      td HODL
-                      td annuus
-                      td landrace
-                      td 454
-                    tr
-                      td SEL
-                      td annuus
-                      td landrace
-                      td 454
-                    tr
-                      td ARL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HA
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HAL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HAW59
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HIL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HOPL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td MAL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td MEL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td MEN
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td ZUL
-                      td annuus
-                      td landrace
-                      td illumina
-                    tr
-                      td HTAI
-                      td annuus
-                      td texanus
-                      td 454
-                    tr
-                      td 14TB-2
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td 2OTB-7
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td arg14B-14
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td btm11-1
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td btm3-2
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td btm35-4
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td btm6-1
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td K111
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td TEX
-                      td annuus
-                      td texanus
-                      td illumina
-                    tr
-                      td CAW
-                      td annuus
-                      td weedy
-                      td 454
-                    tr
-                      td INW
-                      td annuus
-                      td weedy
-                      td 454
-                    tr
-                      td KAW
-                      td annuus
-                      td weedy
-                      td 454
-                    tr
-                      td UTW
-                      td annuus
-                      td weedy
-                      td 454
-                    tr
-                      td ALB
-                      td annuus
-                      td weedy
-                      td illumina
-                    tr
-                      td Canal2
-                      td annuus
-                      td weedy
-                      td illumina
-                    tr
-                      td Canal5
-                      td annuus
-                      td weedy
-                      td illumina
-                    tr
-                      td Manteca4
-                      td annuus
-                      td weedy
-                      td illumina
-                    tr
-                      td Manteca8
-                      td annuus
-                      td weedy
-                      td illumina
-                    tr
-                      td CON2
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td IOW
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td KSN
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td MOW
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td NDW
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td NMN
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td OKW
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td UTN1
-                      td annuus
-                      td wild
-                      td 454
-                    tr
-                      td Academy2
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td Academy7
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td ALB
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td LEW1
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td MEN
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td NEW
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td TEW
-                      td annuus
-                      td wild
-                      td illumina
-                    tr
-                      td ann1312
-                      td annuus
-                      td wild
-                      td sanger
-                    tr
-                      td HW10
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td HW1
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td HW3
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td HWE13
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td HWE2
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td HWE5
-                      td annuus
-                      td winterii
-                      td illumina
-                    tr
-                      td F1-14
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-17
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-1
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-3
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-4
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-7
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-TA
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td F1-TB
-                      td annuus X petiolaris
-                      td F1
-                      td illumina
-                    tr
-                      td Ano1495
-                      td anomalus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg1820
-                      td argophyllus
-                      td &nbsp;
-                      td 454
-                    tr
-                      td Ames449
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td Ames695
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg11B-11
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg14B-7
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td ARG1805
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td ARG1820
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td ARG1834
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg2B-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg4B-8
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg6B-1
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm10-5
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm13-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm17-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm19-1
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm19-2
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm20-8
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm21-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm22-8
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm25-2
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm26-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm27-3
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm30-6
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm31-6
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm32-3
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm34-6
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm5-1
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm7B-14
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td btm9-4
-                      td argophyllus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td argophyllus.chwlms
-                      td argophyllus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td argophyllus.chwxyz
-                      td argophyllus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td argophyllus.qh
-                      td argophyllus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td ciliaris.chclms
-                      td ciliaris
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td Dahlia-buds_flowers_leaves
-                      td Dahlia sp.
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td HDW
-                      td deblis
-                      td &nbsp;
-                      td 454
-                    tr
-                      td K105
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td RAR43
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td RAR46
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td RAR50
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td RAR55
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td RAR57
-                      td deblis
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td arg4B-14
-                      td deblis
-                      td cucumerifolius
-                      td illumina
-                    tr
-                      td btm30-4
-                      td deblis
-                      td cucumerifolius
-                      td illumina
-                    tr
-                      td btm33-4
-                      td deblis
-                      td cucumerifolius
-                      td illumina
-                    tr
-                      td Des1484
-                      td deserticola
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td des2458
-                      td deserticola
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td exilis.chelms
-                      td exilis
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td exilis.chelms
-                      td exilis
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td king141B
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td king145B
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td king147A
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td King151
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td king152
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td King156B
-                      td paradoxus
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td paradoxus.chulms
-                      td paradoxus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td paradoxus.chuxyz
-                      td paradoxus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td paradoxus.qh
-                      td paradoxus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td PL109
-                      td petiolaris
-                      td &nbsp;
-                      td 454
-                    tr
-                      td GSD1439
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td GSD975
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td ISS01
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td ISS19
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td KSG54
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td pet2119
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td Pet2152
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET-2
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET2341
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET2342
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET2343
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET2344
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PET-3
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td pet489
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td Pet489
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td Pi468805
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI468812
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI468815
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI503232
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI531058
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI547210
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI586932b_1
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI613767
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PI649907
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td PL109
-                      td petiolaris
-                      td &nbsp;
-                      td illumina
-                    tr
-                      td petiolaris.chpxyz
-                      td petiolaris
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td btm13-6
-                      td praecox
-                      td runyonii
-                      td illumina
-                    tr
-                      td btm14-4
-                      td praecox
-                      td runyonii
-                      td illumina
-                    tr
-                      td btm15-2
-                      td praecox
-                      td runyonii
-                      td illumina
-                    tr
-                      td btm16-2
-                      td praecox
-                      td runyonii
-                      td illumina
-                    tr
-                      td tuberosus.chtlms
-                      td tuberosus
-                      td &nbsp;
-                      td sanger
-                    tr
-                      td tuberosus.chtxyz
-                      td tuberosus
-                      td &nbsp;
-                      td sanger
+          .page-content
+            .row.page-row
+             aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/transcriptome') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/transcriptome-accessions') Accessions
+                      |
+                      |
+                      i.fa.fa-table(aria-hidden='true')
+                  li
+                    a(href='/transcriptome-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+             article.welcome.col-md-8.col-sm-7
+              h2 Reference-based genotyping of 168 sunflower transcriptomes
+              p
+                | ESTs from a variety of cultivated and wild sunflowers were produced via Sanger, 454, and Illumina sequencing. Each sample&apos;s ID, species, subspecies or ecotype, and technology used for sequencing is presented in the table of metadata below. Reads were aligned to the TranscriptomeRef_mar30.fa reference assembly using BWA and individuals were genotyped with SAMtools. Indels were excluded. Genotypes are presented in a tab-delimited table with reference sites in rows, and individuals in columns. See the bottom of this page for a descriptive table of the accessions used in genotyping.
+              h3.has-divider.text-highlight Accessions
+              .table-responsive
+                 table.table.table-striped.table-bordered
+                    thead
+                      tr
+                        th ID
+                        th Species
+                        th SSP/Ecotype
+                        th Read Technology
+                    tbody
+                      tr
+                        td HA412
+                        td annuus
+                        td elite
+                        td 454
+                      tr
+                        td HA369
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA384
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA412cold
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA412drought
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA412-flowers
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA412-roots_stems
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA89-5
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td HA89-9
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td KOSI
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td MAI
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td RHA274
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td Sunrise
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td VNIIMK8931
+                        td annuus
+                        td elite
+                        td illumina
+                      tr
+                        td ha89
+                        td annuus
+                        td elite
+                        td sanger
+                      tr
+                        td psc8
+                        td annuus
+                        td elite
+                        td sanger
+                      tr
+                        td rha280
+                        td annuus
+                        td elite
+                        td sanger
+                      tr
+                        td rha801
+                        td annuus
+                        td elite
+                        td sanger
+                      tr
+                        td CAN
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td EUW1
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td EUW2
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td ISI
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td QLD
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td WAN
+                        td annuus
+                        td invasive
+                        td 454
+                      tr
+                        td SAW3
+                        td annuus
+                        td invasive
+                        td illumina
+                      tr
+                        td HODL
+                        td annuus
+                        td landrace
+                        td 454
+                      tr
+                        td SEL
+                        td annuus
+                        td landrace
+                        td 454
+                      tr
+                        td ARL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HA
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HAL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HAW59
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HIL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HOPL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td MAL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td MEL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td MEN
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td ZUL
+                        td annuus
+                        td landrace
+                        td illumina
+                      tr
+                        td HTAI
+                        td annuus
+                        td texanus
+                        td 454
+                      tr
+                        td 14TB-2
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td 2OTB-7
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td arg14B-14
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td btm11-1
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td btm3-2
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td btm35-4
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td btm6-1
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td K111
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td TEX
+                        td annuus
+                        td texanus
+                        td illumina
+                      tr
+                        td CAW
+                        td annuus
+                        td weedy
+                        td 454
+                      tr
+                        td INW
+                        td annuus
+                        td weedy
+                        td 454
+                      tr
+                        td KAW
+                        td annuus
+                        td weedy
+                        td 454
+                      tr
+                        td UTW
+                        td annuus
+                        td weedy
+                        td 454
+                      tr
+                        td ALB
+                        td annuus
+                        td weedy
+                        td illumina
+                      tr
+                        td Canal2
+                        td annuus
+                        td weedy
+                        td illumina
+                      tr
+                        td Canal5
+                        td annuus
+                        td weedy
+                        td illumina
+                      tr
+                        td Manteca4
+                        td annuus
+                        td weedy
+                        td illumina
+                      tr
+                        td Manteca8
+                        td annuus
+                        td weedy
+                        td illumina
+                      tr
+                        td CON2
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td IOW
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td KSN
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td MOW
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td NDW
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td NMN
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td OKW
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td UTN1
+                        td annuus
+                        td wild
+                        td 454
+                      tr
+                        td Academy2
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td Academy7
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td ALB
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td LEW1
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td MEN
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td NEW
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td TEW
+                        td annuus
+                        td wild
+                        td illumina
+                      tr
+                        td ann1312
+                        td annuus
+                        td wild
+                        td sanger
+                      tr
+                        td HW10
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td HW1
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td HW3
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td HWE13
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td HWE2
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td HWE5
+                        td annuus
+                        td winterii
+                        td illumina
+                      tr
+                        td F1-14
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-17
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-1
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-3
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-4
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-7
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-TA
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td F1-TB
+                        td annuus X petiolaris
+                        td F1
+                        td illumina
+                      tr
+                        td Ano1495
+                        td anomalus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg1820
+                        td argophyllus
+                        td &nbsp;
+                        td 454
+                      tr
+                        td Ames449
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td Ames695
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg11B-11
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg14B-7
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td ARG1805
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td ARG1820
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td ARG1834
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg2B-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg4B-8
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg6B-1
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm10-5
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm13-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm17-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm19-1
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm19-2
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm20-8
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm21-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm22-8
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm25-2
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm26-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm27-3
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm30-6
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm31-6
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm32-3
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm34-6
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm5-1
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm7B-14
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td btm9-4
+                        td argophyllus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td argophyllus.chwlms
+                        td argophyllus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td argophyllus.chwxyz
+                        td argophyllus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td argophyllus.qh
+                        td argophyllus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td ciliaris.chclms
+                        td ciliaris
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td Dahlia-buds_flowers_leaves
+                        td Dahlia sp.
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td HDW
+                        td deblis
+                        td &nbsp;
+                        td 454
+                      tr
+                        td K105
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td RAR43
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td RAR46
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td RAR50
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td RAR55
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td RAR57
+                        td deblis
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td arg4B-14
+                        td deblis
+                        td cucumerifolius
+                        td illumina
+                      tr
+                        td btm30-4
+                        td deblis
+                        td cucumerifolius
+                        td illumina
+                      tr
+                        td btm33-4
+                        td deblis
+                        td cucumerifolius
+                        td illumina
+                      tr
+                        td Des1484
+                        td deserticola
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td des2458
+                        td deserticola
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td exilis.chelms
+                        td exilis
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td exilis.chelms
+                        td exilis
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td king141B
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td king145B
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td king147A
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td King151
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td king152
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td King156B
+                        td paradoxus
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td paradoxus.chulms
+                        td paradoxus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td paradoxus.chuxyz
+                        td paradoxus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td paradoxus.qh
+                        td paradoxus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td PL109
+                        td petiolaris
+                        td &nbsp;
+                        td 454
+                      tr
+                        td GSD1439
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td GSD975
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td ISS01
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td ISS19
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td KSG54
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td pet2119
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td Pet2152
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET-2
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET2341
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET2342
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET2343
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET2344
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PET-3
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td pet489
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td Pet489
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td Pi468805
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI468812
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI468815
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI503232
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI531058
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI547210
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI586932b_1
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI613767
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PI649907
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td PL109
+                        td petiolaris
+                        td &nbsp;
+                        td illumina
+                      tr
+                        td petiolaris.chpxyz
+                        td petiolaris
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td btm13-6
+                        td praecox
+                        td runyonii
+                        td illumina
+                      tr
+                        td btm14-4
+                        td praecox
+                        td runyonii
+                        td illumina
+                      tr
+                        td btm15-2
+                        td praecox
+                        td runyonii
+                        td illumina
+                      tr
+                        td btm16-2
+                        td praecox
+                        td runyonii
+                        td illumina
+                      tr
+                        td tuberosus.chtlms
+                        td tuberosus
+                        td &nbsp;
+                        td sanger
+                      tr
+                        td tuberosus.chtxyz
+                        td tuberosus
+                        td &nbsp;
+                        td sanger
 
     include footer

@@ -8,7 +8,7 @@ block content
         .header-main.container
           h1.logo.col-md-4.col-sm-4
             a(href='https://sunflowergenome.org')
-              img#logo(src='/images/logo.png', with='200px', height='75px', alt='Logo')
+              img#logo(src='assets/images/logo.png', with='200px', height='75px', alt='Logo')
           .info.col-md-8.col-sm-8
             ul.menu-top.navbar-right.hidden-xs
               li.divider
@@ -32,42 +32,42 @@ block content
                   i.fa.fa-angle-right
                 li.current Transcriptome procedures
             <!-- breadcrumbs -->
-        .page-content
-          .row.page-row
-          aside.page-sidebar.col-md-2.col-sm-2.affix-top
-            section.widget
-              ul.nav
-                li.active
-                  a(href='/transcriptome') Procedures
-                    |
-                    |
-                    i.fa.fa-book(aria-hidden='true')
-                li
-                  a(href='/transcriptome-accessions') Accessions
-                    |
-                    |
-                    i.fa.fa-table(aria-hidden='true')
-                li
-                  a(href='/transcriptome-data') Files
-                    |
-                    |
-                    i.fa.fa-download(aria-hidden='true')
-          article.welcome.col-md-8.col-sm-7
-              h2 Sanger and 454 Assembly
-              p
-                | Our March30 reference EST set consists of 16312 contiguous sequences (contigs). It was assembled from available Sanger and 454 EST sequences generated for H. annuus (both wild and cultivated individuals spanning the whole distribution of the species) and from several different tissue types (Heesacker et al. 2008, Lai et al.2012) . Individual genotypes were first assembled with MIRA version 3.0 (Chevreux et al., 2004), using the flags &quot;accurate,est,denovo,454&quot; for the 454 data and &quot;accurate,est,denovo,Sanger&quot; for the Sanger sequences. All MIRA contigs and singletons were reassembled further using the program CAP3 at 94% identity (Huang and Madan, 1999), as in Lai et al. 2012. Contigs found in at least two different genotypes and with total length greater than 500bp were kept from this final merged assembly. It has gone through strict quality trimming and should represent the majority of genes expressed in young seedlings. Based on comparisons to genetic map data (J. Bowers, pers. Com), 783 contain sequences that map to multiple locations and were removed, as they likely represent families of close paralogs that cannot be resolved. Of the 16312 remaining sequences, 8226 map to single locations on genetic maps (J. Bowers, pers. Com) and appear to be single copy, while the remainder were not assessed. In addition to the mapped and unmapped nuclear loci, this reference set also contains the whole chloroplast genome, which spans nearly 127KB.
-              h2 Trinity assembly of Illumina ESTs
-              p
-                | One lane of Illumina sequence was generated for each of the following four tissue or treatment libraries:
-              ul
-                li Cold
-                li Drought
-                li Flowers &amp; Leaves
-                li Roots &amp; Stems
-              p
-                | Reads were quality trimmed and de-novo assembled using
-                |
-                a(href='http://trinityrnaseq.sourceforge.net/') Trinity
-                | . Raw sequence data is available on GenBank.
+          .page-content
+            .row.page-row
+             aside.page-sidebar.col-md-2.col-sm-2.affix-top
+               section.widget
+                 ul.nav
+                   li.active
+                     a(href='/transcriptome') Procedures
+                       |
+                       |
+                       i.fa.fa-book(aria-hidden='true')
+                   li
+                     a(href='/transcriptome-accessions') Accessions
+                       |
+                       |
+                       i.fa.fa-table(aria-hidden='true')
+                   li
+                     a(href='/transcriptome-data') Files
+                       |
+                       |
+                       i.fa.fa-download(aria-hidden='true')
+             article.welcome.col-md-8.col-sm-7
+               h2 Sanger and 454 Assembly
+               p
+                 | Our March30 reference EST set consists of 16312 contiguous sequences (contigs). It was assembled from available Sanger and 454 EST sequences generated for H. annuus (both wild and cultivated individuals spanning the whole distribution of the species) and from several different tissue types (Heesacker et al. 2008, Lai et al.2012) . Individual genotypes were first assembled with MIRA version 3.0 (Chevreux et al., 2004), using the flags &quot;accurate,est,denovo,454&quot; for  the 454 data and &quot;accurate,est,denovo,Sanger&quot; for the Sanger sequences. All MIRA contigs and singletons were reassembled further using the program CAP3 at 94% identity (Huang and Madan, 1999), as in Lai et al. 2012. Contigs found in at least two different genotypes and with total length greater than 500bp were kept from this final merged assembly. It has gone through strict quality trimming and should represent the majority of genes expressed in young seedlings. Based on comparisons to genetic map data (J. Bowers, pers. Com), 783 contain sequences that map to multiple locations and were removed, as they likely represent families of close paralogs that cannot be resolved. Of the 16312 remaining sequences, 8226 map to single locations on genetic maps (J. Bowers, pers. Com) and appear to be single copy, while the remainder were not assessed. In addition to the mapped and unmapped nuclear loci, this reference set also contains the whole chloroplast genome, which spans nearly 127KB.
+               h2 Trinity assembly of Illumina ESTs
+               p
+                 | One lane of Illumina sequence was generated for each of the following four tissue or treatment libraries:
+               ul
+                 li Cold
+                 li Drought
+                 li Flowers &amp; Leaves
+                 li Roots &amp; Stems
+               p
+                 | Reads were quality trimmed and de-novo assembled using
+                 |
+                 a(href='http://trinityrnaseq.sourceforge.net/') Trinity
+                 | . Raw sequence data is available on GenBank.
 
     include footer
