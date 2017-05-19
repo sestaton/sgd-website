@@ -5,6 +5,7 @@
 use 5.014;
 use strict;
 use warnings;
+use autodie;
 use File::Find;
 use File::Spec;
 use File::Copy;
