@@ -57,21 +57,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'dist')));
-//app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')));
-
-//use compression
-//app.use(compression({filter: shouldCompress}))
-
-//function shouldCompress (req, res) {
-//  if (req.headers['x-no-compression']) {
-//    // don't compress responses with this request header
-//    return false
-//  }
-//
-//  // fallback to standard filter function
-//  return compression.filter(req, res)
-//}
-//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
