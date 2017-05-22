@@ -5,6 +5,7 @@
 use 5.014;
 use strict;
 use warnings;
+use autodie;
 use File::Find;
 use File::Spec;
 use File::Copy;
@@ -76,6 +77,10 @@ system("ln -s $opts{outdir}/assets $opts{outdir}/stress/assets") == 0 or die $!;
 # We don't need to transform php scripts, just copy them in place
 system("cp -R $wd/public/scripts $opts{outdir}/assets/") == 0 or die $!;
 
+_write_htaccess($opts{outdir});
+
+exit;
+## methods
 sub _copy_page {
     my ($file, $dest, $dname) = @_;
 
@@ -101,6 +106,69 @@ sub _copy_page {
     unlink $file;
 
     system("ln -s $dest/assets $outdir/assets") == 0 or die $!;
+
+    return;
+}
+
+sub _write_htaccess {
+    my ($outdir) = @_;
+
+    my $content = 
+"## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+RewriteEngine On
+# This will enable the Rewrite capabilities
+
+RewriteCond %{HTTPS} !=on
+# This checks to make sure the connection is not already HTTPS
+
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+# This rule will redirect users from their original location, to the same location but using HTTPS.
+# i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
+# The leading slash is made optional so that this will work either in httpd.conf
+# or .htaccess context
+
+# Load stress.sunflowergenome.org from the stress/ directory if that URL is requested
+RewriteCond %{HTTP_HOST} ^(?:www.)?stress\.sunflowergenome\.org$ [NC]
+RewriteRule ^(.*)$ /stress/$1 [L]
+RewriteCond %{REQUEST_URI} !^/stress/
+
+Options -Indexes
+DirectoryIndex index.html
+
+# Enable compression
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Handle 404 errors
+ErrorDocument 404 /404/index.html";
+
+    my $htfile = File::Spec->catfile($outdir, '.htaccess');
+    open my $out, '>', $htfile;
+    say $out $content;
+    close $out;
 
     return;
 }
