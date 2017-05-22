@@ -39,13 +39,13 @@ gulp.task('css', function() {
                    .pipe(plugins.stylus())
           ).pipe(dev(plugins.debug()))
            .pipe(dev(plugins.sourcemaps.init()))
-    	     .pipe(plugins.autoprefixer())
+    	   .pipe(plugins.autoprefixer())
            .pipe(plugins.cached('css-ugly'))
            .pipe(plugins.csso())
            .pipe(plugins.remember('css-ugly'))
            .pipe(plugins.concat('main.min.css'))
            .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-    	     .pipe(gulp.dest(destination + '/css'));
+    	   .pipe(gulp.dest(destination + '/css'));
 });
 
 // Fonts have to be loaded from separate locations, so we create multiple streams
