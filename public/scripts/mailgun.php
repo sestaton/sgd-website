@@ -34,9 +34,9 @@ function ajaxResponse($status, $message, $data = NULL, $mg = NULL) {
 
 function sendMailgun($data) {
 
-  $api_key = 'key-e37b7da04b1d31e31cbc574be0ffae07';
-  $api_domain = 'mail.sunflowergenome.org';
-  $send_to = 'statonse@protonmail.com';
+  $api_key = getenv('MAILGUN_API_KEY');
+  $api_domain = MAILGUN_API_DOMAIN;
+  $send_to = RECIPIENT_EMAIL;
 
   $name = $data['name'];
   $email = $data['email'];
