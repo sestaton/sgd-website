@@ -23,6 +23,8 @@ find ./views/ -type f -name "*-data.pug" -exec sed -i "s@href=\"\/data@href=\"as
 sed -i "s@href=\"\/css@href=\"assets/css@g" views/header.pug
 sed -i "s@src=\"\/js@src=\"assets/js@g" views/footer.pug
 sed -i "s@src=\"\/js@src=\"assets/js@g" views/stress/footer.pug
+sed -i "s@href=\"\/css@href=\"assets/css@g" views/contact.pug
+sed -i "s@src=\"\/js@src=\"assets/js@g" views/contact.pug
 
 # Step 2: Compile HTML
 echo -e "=====> Compiling templates into HTML..."
