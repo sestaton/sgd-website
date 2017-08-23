@@ -1,0 +1,70 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', width='300px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Pan-genome
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Pan-genome procedures
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li.active
+                    a(href='/pangenome') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/pangenome-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/pangenome-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | We have developed a pan-genome gene space for cultivated sunflower and SNP data set from analysis of this resource. These data sets are described in detail below.
+	      h2 SNP data set
+	      p
+	        | To produce a SNP dataset across the SAM (sunflower association mapping) population, raw sequence data generated for each accession was processed and cleaned using Trimmomatic v.036 and aligned to the HA412-HO.v.1.1 reference assembly. Alignment of clean reads was conducted with an aligner developed by SAP SE (Waldorf, Germany). Alignment files were processed to remove potential PCR duplicates using picard. To reduce the computational intensity of the variant calling process, we targeted genic regions and 2Kbp flanking sequence. Prior to variant calling, low quality alignments and reads mapping to highly repetitive regions were removed. 
+
+	      p
+	        | Variants including SNPs and indels were called across all accessions in one batch using a haplotype sensitive algorithm implemented in the open source software FreeBayes. The dataset was further filtered to include only highly inbred accessions from the SAM population and to remove variants with quality < 30, more than 30% missing data, minor allele frequency lower than 5%, minimum genotype depth of 1 read and maximum of 30, maximum observed heterozygosity of 10%, and strand or direction biased alleles. The sum of depth of coverage across all accessions was set between 1000 and 2300 to further remove outliers in the depth distribution. In addition, SNPs found close to a gap (<5bp) and indels were removed from the dataset. Following this set of filters, a panel of high quality and trustable SNPs across 239 highly inbred accessions from the SAM population was obtained. 
+	      h2 Pan-genome sequence file
+	      p
+	        | To develop a pan-genome gene space for cultivated sunflower the HA412-HO.v1.1 reference sequence and annotations were used to guide the assembly process of accessions from the SAM (sunflower association mapping) population. Following the alignment of reads from each accession in the SAM population to the reference, unmapped and badly mapped reads (defined as edit distance ≥ 8 for a read-pair) were extracted. These reads were assembled de novo for each of the 287 cultivated accessions independently using the Ray assembler with a range of k-mers between 13 and 51 to enable the assembly of contigs from low coverage data. All sequences were blasted against the UniVec database to remove potential contaminants. Assembled contigs shorter than 200bp were removed from further analysis. Remaining contigs were aligned to the reference genome to identify sequences that were re-assembled and are already present in the reference. Contigs with more than 75% similarity along more than 75% of the alignment length were considered as represented in the reference genome and were excluded from further analysis. These steps were executed for each accession in the cultivated genepool separately. Next, all contigs from all accessions were pooled into one dataset that represents all dispensable sequences not found in the reference genome. To cluster overlapping sequences and avoid redundancy, the pooled dataset was processed using the software CD-HIT with a similarity threshold of 95%, keeping the longest contig at each cluster. Remaining sequences were searched against the NCBI nr database to look for potential assembled contamination. A total of 526 sequences were identified as potential contamination and were excluded from further analysis. To annotate the non-redundant sequences from the pooled dataset, annotations of the HA412-HO reference genome were integrated with the plant protein database to create a more complete annotation database. Annotations for the non-redundant de novo assembled sequences were determined using blastx with a minimum bit-score threshold of 200 to ensure high quality of annotations. Only the best hit was kept while giving priority to the HA412-HO hits associated with each query. The final outcome of this process was a set of annotated genes which correspond to the cultivated sunflower pan-genome, including core and dispensable genes.
+	      h2 Introgression table
+              p
+                | To identify the wild source of introgressed genes in the pan-genome, genes of each cultivated accession were compared with whole genome shotgun sequences generated for 189 wild accessions representing 11 congeneric species. Raw reads from wild accessions were cleaned, trimmed and aligned to the cultivated sunflower pan-genome. A consensus sequence was called for each wild accession alignment separately. A comprehensive comparison of sequences from all wild accessions to all cultivated accessions was performed with blastn and results were filtered using a minimum bit-score of 200, minimum alignment length of 150bp, and a minimum of 75% identity. Of the remaining hits, only the best hit was kept as a potential source of introgression. The pairwise identity matrix was further filtered to remove wild introgressions supported by only one cultivated accession. 
+
+  include footer
