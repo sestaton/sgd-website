@@ -36,8 +36,11 @@ This will build a static site in the 'sgd-static' directory:
 
     bash prepare-static.sh
 
-You should then be able to move that directory to some place of your choosing and point your `http.conf` document root to it. That's it, other than configuring access and other applications, which I won't document here since it is rather specific.
+That will prepare the site to be used in place. If you wish to move the document root you will need to run one more command to convert absolute links to relative links.
 
+    perl fixlns.pl -i sgd-static
+
+You should then be able to move that directory to some place of your choosing and point your `http.conf` document root to it. That's it, other than configuring access and other applications, which I won't document here since it is rather specific.
 
 ## For development
 
