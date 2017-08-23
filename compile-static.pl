@@ -114,7 +114,7 @@ sub _write_htaccess {
     my ($outdir) = @_;
 
     my $content = 
-"## EXPIRES CACHING ##
+'## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType image/jpg "access 1 year"
@@ -163,7 +163,7 @@ AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 
 # Handle 404 errors
-ErrorDocument 404 /404/index.html";
+ErrorDocument 404 /404/index.html';
 
     my $htfile = File::Spec->catfile($outdir, '.htaccess');
     open my $out, '>', $htfile;
