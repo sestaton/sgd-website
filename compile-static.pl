@@ -77,6 +77,9 @@ system("ln -s $opts{outdir}/assets $opts{outdir}/stress/assets") == 0 or die $!;
 # We don't need to transform php scripts, just copy them in place
 system("cp -R $wd/public/scripts $opts{outdir}/assets/") == 0 or die $!;
 
+# Copy assets for mounted applications
+system("cp -R $wd/public/expression $opts{outdir}/expression") == 0 or die $!;
+
 _write_htaccess($opts{outdir});
 
 exit;
