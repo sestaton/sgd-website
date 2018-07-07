@@ -44,10 +44,17 @@
 	   "js/jquery.prettyPhoto.js"
 	 ]
       },
-      "jflickfeed" : "jflickfeed.js",
+      "jflickfeed" : {
+        "main" : [ "jflickfeed.js" ],
+	"ignore": true
+      },
+      "gmaps" : {
+        "main": [ "gmaps.js" ],
+	"ignore": true
+      },
       "install" : {
-	  "ignore": true
-      }
+          "ignore": true
+      }	  
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
