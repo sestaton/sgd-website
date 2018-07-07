@@ -3,7 +3,7 @@
   "description": "Sunflower Genome Database website",
   "main": "app.js",
   "authors": [
-    "Evan Staton <statonse@gmail.com>"
+    "Evan Staton <evan@evanstaton.com>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/sestaton/sgd-website",
