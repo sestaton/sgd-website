@@ -38,7 +38,7 @@ die "\nERROR: No HTML files found in $opts{indir}. Exiting.\n"
 
 for my $in (@files) {
     next if $in eq $opts{indir};
-    next if $in =~ /assets|stress|jbrowse/;
+    next if $in =~ /assets|stress|^jbrowse/;
     say $in; # for debugging
 
     chdir $in or die $!;
