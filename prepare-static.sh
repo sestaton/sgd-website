@@ -34,4 +34,7 @@ gulp --env prod --outDir dist html css scripts images fonts
 echo -e "=====> Preparing static distribution..."
 perl compile-static.pl -i dist/html -o $static_dir
 
+# Finally, copy favicon from public to static dir
+cp public/favicon.ico $static_dir
+
 echo "=====> Done."
