@@ -17,15 +17,17 @@ use Getopt::Long;
 
 my $usage = "\nUSAGE: ".basename($0)." -i <indir> -o <outdir>\n";
 $usage .= "\n <indir>  : A directory of HTML files 
- <outdir> : The base directory to write the results.";
+ <outdir> : The base directory to write the results.\n";
 
 my %opts;
 GetOptions(\%opts, 'indir|i=s', 'outdir|o=s');
 say STDERR $usage and exit(1) unless %opts;
 
 $opts{indir}  = abs_path($opts{indir});
-$opts{outdir} = abs_path($opts{outdir});
+say STDERR "\nERROR: '$opts{indir}' does not exist.\n$usage" 
+    and exit(1) unless defined $opts{indir} && -e $opts{indir};
 
+$opts{outdir} = abs_path($opts{outdir});
 my $wd    = getcwd();
 my $base  = basename($opts{indir});
 my $dname = dirname($opts{indir});
