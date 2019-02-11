@@ -1,0 +1,71 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='assets/images/logo.png', width='300px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Pan-genome
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Pan-genome procedures
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li.active
+                    a(href='/pangenome') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li
+                    a(href='/pangenome-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/pangenome-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | To characterize genetic diversity in the sunflower and to quantify contributions from wild relatives, we sequenced 287 cultivated lines, 17 Native American landraces and 189 wild accessions representing 11 compatible wild species. 
+              p(align='left')
+                | As described in H&#220;bner 
+                em et al. 
+                | (2019), cultivar sequences failing to map to the sunflower reference were assembled de novo for each genotype to determine the gene repertoire, pan-, of the cultivated sunflower. Assembled genes were then compared to the wild species to estimate origins.
+              .ow.page-row
+                h3.has-divider.text-highlight References
+                ol.ref-apa
+                  li
+                    | <a data-test="author-name" data-track="click" data-track-action="open author" data-track-category="article body" data-track-label="link" href="#auth-1" class="icon icon-right-top icon-mail-12x9-blue pr15 js-no-scroll" data-corresp-id="c1">H&#220;bner S, Bercovich N, Todesco M, Mandel JR, 
+                    em et al. 
+                    | 2019. Sunflower pan-genome analysis shows that hybridization altered gene content and disease resistance.
+                    em Nature Plants
+                    |  5:54-62.
+
+  include footer

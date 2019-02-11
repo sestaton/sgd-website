@@ -1,0 +1,72 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='assets/images/logo.png', width='300px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-data
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left Pan-genome
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current Pan-genome statistics
+          .page-content
+           .row.page-row
+            aside.page-sidebar.col-md-2.col-sm-2.affix-top
+              section.widget
+                ul.nav
+                  li
+                    a(href='/pangenome') Procedures
+                      |
+                      |
+                      i.fa.fa-book(aria-hidden='true')
+                  li.active
+                    a(href='/pangenome-results') Statistics
+                      |
+                      |
+                      i.fa.fa-bar-chart(aria-hidden='true')
+                  li
+                    a(href='/pangenome-data') Files
+                      |
+                      |
+                      i.fa.fa-download(aria-hidden='true')
+            .events-wrapper.col-md-8.col-sm-7
+              p.lead
+                | Results indicate that the cultivated sunflower pan-genome comprises 61,205 genes, of which 27% vary across genotypes. Approximately 10% of the cultivated sunflower pan-genome is derived through introgression from wild sunflower species, and 1.5% of genes originated solely through introgression. Gene ontology functional analyses further indicate that genes associated with biotic resistance are over-represented among introgressed regions, an observation consistent with breeding records. Analyses of allelic variation associated with downy mildew resistance provide an example in which such introgressions have contributed to resistance to a globally challenging disease.
+              h2 Variant Calls
+              p
+                | Variants were called across 493 accessions including the sunflower association mapping population (SAM), 17 landraces and 189 wild congener species (H. annuus from the primary gene pool; H. petiolaris, H. neglectus, H. argophyllus, H. anomalus, H. debilis, H. paradoxus and H. praecox from the secondary gene pool; and H. divaricatus, H. grosseserratus and H. giganteus representing the tertiary gene pool). Raw sequence data were processed and cleaned using Trimmomatic v.036 and aligned to the HA412-HO.v.1.1 reference assembly with an aligner developed at SAP SE. To reduce the computational intensity of the variant calling process, we targeted genic regions and a 2.5Kbp flanking sequence. Before variant calling, low-quality alignments, PCR-duplicates and reads mapping to highly repetitive regions were removed. Variants were called across all 493 accessions in one batch using a haplotype-sensitive algorithm implemented in the open source software FreeBayes. Called variants were filtered for minor allele frequency lower than 5%, variant quality lower than 30, indels and maximum of 10% missing data. 
+              h2 Genome Scans
+              p 
+                | Genome scans statistics in the SAM population and each subgroup (males-RHA, females-HA, Oil and non-oil). Genome scans were conducted for a panel of high-quality and trustable SNPs across 239 highly inbred accessions from the SAM population. Genomic scans were calculated in 1-Mb sliding windows and included nucleotide diversity (&#928;), Tajima's D, SNP density, selective sweeps (CLR) and recombination rate. In addition, genomic scans for differentiation (Weir-Cockerham Fst), were conducted between subgroups (that is, male versus female and oil versus non-oil).
+
+              h2 Pan-genome Gene Sequences
+              p
+                | The cultivated sunflower pan-genome sequences in nucleotide fasta format. The HA412-HO.v1.1 reference sequence and annotations were used to guide the assembly of the cultivated sunflower pan-genome using a conservative approach. Following the alignment of reads from each accession in the cultivated gene pool to the reference genome, unmapped and poorly mapped reads were extracted and assembled de novo for 270 accessions that were well classified and characterized in the SAM population and an additional 17 landraces independently. Contigs were assembled using the Ray assembler with a range of k-mers between 13 and 51 to enable the assembly of low-coverage data. Obtained contigs were filtered for potential bacterial/virus contamination, and sequences shorter than 200 bp were removed. Remaining contigs were aligned to the reference genome to identify sequences that were reassembled and are already present in the reference. Contigs with >75% similarity along >75% of the alignment length were considered as represented in the reference genome and were excluded. Next, all contigs from all accessions were pooled into one data set that represents all dispensable sequences not found in the reference genome. Overlapping sequences were clustered to avoid redundancy using the software CD-HIT with a similarity threshold of 95%, keeping the longest contig at each cluster. 
+              h2 Pan-genome Protein Sequences
+              p
+                | The cultivated sunflower pan-genome genes in protein FASTA format. The cultivated pan-genome was annotated using both the HA412-HO genome annotations and the plant protein database to obtain a complete annotation database. Annotations for the de novo assembled sequences (absent in the reference genome) were determined using blastx with a minimum bit-score threshold of 200 to ensure a high quality of annotations. Only the best hit was kept while giving priority to the HA412-HO hits associated with each query and redundant representation was merged based on protein name. 
+
+
+  include footer
