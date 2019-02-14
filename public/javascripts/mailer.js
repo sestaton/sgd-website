@@ -17,9 +17,25 @@ $('#mgform').on('submit',function(e) {
       responseSuccess(data);
       console.log(data);
     },
-    error  : function(data) {
-      console.log('Silent failure.');
-    }
+    error: function (xhr, status) {
+              switch (status) {
+                 case 404:
+                     alert('File not found');
+                     break;
+                 case 500:
+                     alert('Server error');
+                     break;
+                 case 0:
+                     alert('Request aborted');
+                     break;
+                 default:
+                     alert('Unknown error ' + xhr.status);
+             }
+         }
+    //error  : function(data) {
+    //  console.log('Silent failure.');
+    //  console.log(data);
+    //}
   });
 
   return false;
@@ -28,9 +44,12 @@ $('#mgform').on('submit',function(e) {
 
 function responseSuccess(data) {
 
-  data = JSON.parse(data);
+  //data = JSON.parse(data);
 
-  if(data.status === 'success') {
+  //if(data.status === 'success') {
+  var str = JSON.parse(JSON.stringify(body));
+
+  if(str['message'] === 'Queued. Thank you.') {
     $('#mgform').html('Submission sent succesfully.');
   } else {
     $('#mgform').html('Submission failed, please contact directly.');
