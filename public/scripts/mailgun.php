@@ -35,8 +35,8 @@ function ajaxResponse($status, $message, $data = NULL, $mg = NULL) {
 function sendMailgun($data) {
 
   $api_key = getenv('MAILGUN_API_KEY');
-  $api_domain = MAILGUN_API_DOMAIN;
-  $send_to = RECIPIENT_EMAIL;
+  $api_domain = getenv('MAILGUN_API_DOMAIN');
+  $send_to = getenv('RECIPIENT_EMAIL');
 
   $name = $data['name'];
   $email = $data['email'];
