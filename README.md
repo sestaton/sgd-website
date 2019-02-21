@@ -1,6 +1,6 @@
 sgd-website
 ===========
-sunflower genome database website
+sunflower genome database website (https://sunflowergenome.org/)
 
 **Install**
 
@@ -54,6 +54,6 @@ In most cases, it is easier to just use `nodemon` to watch for changes, which al
 
     npm start
 
-# Author
+# License/Author
 
-Evan Staton
+MIT @ Evan Staton
