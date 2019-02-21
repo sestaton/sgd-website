@@ -5,7 +5,7 @@ const merge   = require('merge2');
 const through = require('through2').obj;
 const queue   = require('streamqueue').obj;
 
-const plugins = require("gulp-load-plugins")({
+const plugins = require('gulp-load-plugins')({
         pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
         replaceString: /\bgulp[\-.]/
 });
@@ -91,7 +91,7 @@ gulp.task('test', () => {
 });
 
 gulp.task('scripts-main', () => {
-	let jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js']; //, '!bower_components/gmaps/gmaps.js'];
+   let jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js']; //, '!bower_components/gmaps/gmaps.js'];
 
    return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
       .pipe(dev(plugins.debug()))
@@ -105,7 +105,7 @@ gulp.task('scripts-main', () => {
 });
 
 gulp.task('scripts-contact', () => {
-	let jsContactFiles = ['bower_components/gmaps/gmaps.min.js','public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
+   let jsContactFiles = ['bower_components/gmaps/gmaps.min.js','public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
 	//var jsContactFiles = ['public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
 
    return gulp.src(jsContactFiles)
