@@ -1,39 +1,39 @@
-var gulp    = require('gulp');
-var del     = require('del');
-var bSync   = require('browser-sync');
-var merge   = require('merge2');
-var through = require('through2').obj;
-var queue   = require('streamqueue').obj;
+const gulp    = require('gulp');
+const del     = require('del');
+const bSync   = require('browser-sync');
+const merge   = require('merge2');
+const through = require('through2').obj;
+const queue   = require('streamqueue').obj;
 
-var plugins = require("gulp-load-plugins")({
+const plugins = require("gulp-load-plugins")({
         pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
         replaceString: /\bgulp[\-.]/
 });
 
-var arguments = require('yargs').argv;
-var isProd = (arguments.env === 'prod');
-var destination = arguments.outDir ? arguments.outDir : 'dist';
+const arguments = require('yargs').argv;
+const isProd = (arguments.env === 'prod');
+const destination = arguments.outDir ? arguments.outDir : 'dist';
 
-var noop = function() {
+const noop = () => {
   return through();
 };
 
-var dev = function(task) {
+const dev = (task) => {
   return isProd ? noop() : task;
 };
 
-var prod = function(task) {
+const prod = (task) => {
   return isProd ? task : noop();
 };
 
 // Clean task returns a Promise
-gulp.task('clean', function() {
+gulp.task('clean', () => {
    return del([destination]);
 });
 
 // We need to load the CSS in a certain order so we use a queue.
 // Some options are specific to development, such as generating sourcemaps.
-gulp.task('css', function() {
+gulp.task('css', () => {
    return queue(gulp.src(plugins.mainBowerFiles('**/*.css')),
                 gulp.src('public/stylesheets/*.styl')
                    .pipe(plugins.stylus())
@@ -50,8 +50,8 @@ gulp.task('css', function() {
 
 // Fonts have to be loaded from separate locations, so we create multiple streams
 // and merge them.
-gulp.task('fonts', function() {
-   var fontParams = [{
+gulp.task('fonts', () => {
+   let fontParams = [{
      files: ['bower_components/font-awesome/fonts/*', 'bower_components/bootstrap/fonts/*'],
      dest: destination + '/fonts'
    },
@@ -73,7 +73,7 @@ gulp.task('fonts', function() {
    //}
 
    // declarative style
-   var streams = fontParams.map(function(v, i) {
+   let streams = fontParams.map((v, i) => {
      return gulp.src(fontParams[i].files)
          .pipe(plugins.copy(fontParams[i].dest, { prefix: 3 }))
          .pipe(gulp.dest(fontParams[i].dest))
@@ -83,15 +83,15 @@ gulp.task('fonts', function() {
 });
 
 // Check for syntax errors when JS files are changed
-gulp.task('test', function() {
+gulp.task('test', () => {
    return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/mailer.js', '!public/plugins/**/*.js'])
       .pipe(plugins.jshint())
       .pipe(plugins.jshint.reporter('default'))
       .pipe(plugins.jshint.reporter('fail'));
 });
 
-gulp.task('scripts-main', function() {
-	var jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js']; //, '!bower_components/gmaps/gmaps.js'];
+gulp.task('scripts-main', () => {
+	let jsMainFiles = ['public/javascripts/back-to-top.js', 'public/javascripts/main.js', 'public/javascripts/sgd_ga.js', 'bower_components/jflickrfeed/jflickrfeed.js']; //, '!bower_components/gmaps/gmaps.js'];
 
    return gulp.src(plugins.mainBowerFiles('**/*.js').concat(jsMainFiles))
       .pipe(dev(plugins.debug()))
@@ -104,8 +104,8 @@ gulp.task('scripts-main', function() {
       .pipe(gulp.dest(destination + '/js'));
 });
 
-gulp.task('scripts-contact', function() {
-	var jsContactFiles = ['bower_components/gmaps/gmaps.min.js','public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
+gulp.task('scripts-contact', () => {
+	let jsContactFiles = ['bower_components/gmaps/gmaps.min.js','public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
 	//var jsContactFiles = ['public/javascripts/map.js', 'public/javascripts/sgd_ga.js', 'public/javascripts/mailer.js'];
 
    return gulp.src(jsContactFiles)
@@ -121,13 +121,13 @@ gulp.task('scripts-contact', function() {
 
 gulp.task('scripts', gulp.series('test', gulp.parallel('scripts-main', 'scripts-contact')));
 
-gulp.task('html', function() {
+gulp.task('html', () => {
    return gulp.src('views/**/*.pug')
       .pipe(plugins.pug({ doctype: 'html', pretty: false }))
       .pipe(gulp.dest(destination + '/html'))
 });
 
-gulp.task('images', function() {
+gulp.task('images', () => {
    return gulp.src('public/images/**/*')
       .pipe(plugins.imagemin([
         plugins.imagemin.gifsicle({interlaced: true}),
@@ -145,12 +145,12 @@ gulp.task('images', function() {
 
 // the browser-sync recipe below is modified for gulp v4 from:
 // https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs
-gulp.task('nodemon', function (cb) {
-   var started = false;
+gulp.task('nodemon', (cb) => {
+   let started = false;
 
    return plugins.nodemon({
 	  script: './bin/www'
-	    }).on('start', function () {
+	    }).on('start', () => {
             // ensure start only got called once
 	    if (!started) {
 		cb();
@@ -176,7 +176,7 @@ gulp.task('browser-sync',
 
 gulp.task('default',
    gulp.series('clean', gulp.parallel('html', 'css', 'images', 'scripts', 'fonts'), 'browser-sync',
-        function watcher(done) {
+      function watcher(done) {
           if(!isProd) {
             gulp.watch('views/**/*.pug', gulp.parallel('html'));
             gulp.watch('public/javascripts/**/*.js', gulp.parallel('scripts'));
