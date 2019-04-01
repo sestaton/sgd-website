@@ -39,13 +39,13 @@ gulp.task('css', () => {
                    .pipe(plugins.stylus())
           ).pipe(dev(plugins.debug()))
            .pipe(dev(plugins.sourcemaps.init()))
-    	   .pipe(plugins.autoprefixer())
+    	     .pipe(plugins.autoprefixer())
            .pipe(plugins.cached('css-ugly'))
            .pipe(plugins.csso())
            .pipe(plugins.remember('css-ugly'))
            .pipe(plugins.concat('main.min.css'))
            .pipe(dev(plugins.sourcemaps.write())) //'.', { sourceRoot = 'css-source'})))
-    	   .pipe(gulp.dest(destination + '/css'));
+    	     .pipe(gulp.dest(destination + '/css'));
 });
 
 // Fonts have to be loaded from separate locations, so we create multiple streams
@@ -149,13 +149,13 @@ gulp.task('nodemon', (cb) => {
    let started = false;
 
    return plugins.nodemon({
-	  script: './bin/www'
-	    }).on('start', () => {
-            // ensure start only got called once
-	    if (!started) {
-		cb();
-		started = true;
-	    }
+      script: './bin/www'
+	}).on('start', () => {
+        // ensure start only got called once
+	if (!started) {
+	   cb();
+	   started = true;
+	}
    });
 });
 
@@ -163,10 +163,10 @@ gulp.task('browser-sync',
    gulp.series('nodemon', function nodemonTask(done) {
      if(!isProd) {
        return bSync.init(null, {
-	        proxy: 'http://localhost:3000',
-	        files: [destination + '/**/*.*'],
-	        browser: 'google chrome',
-	        port: 4000,
+	  proxy: 'http://localhost:3000',
+	  files: [destination + '/**/*.*'],
+	  browser: 'google chrome',
+	  port: 4000,
        });
     }
     done();
