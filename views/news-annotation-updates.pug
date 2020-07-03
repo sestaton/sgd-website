@@ -1,0 +1,110 @@
+extends header
+
+block content
+  body
+    .wrapper
+      <!-- ******HEADER****** -->
+      header.header
+        .header-main.container
+          h1.logo.col-md-4.col-sm-4
+            a(href='https://sunflowergenome.org')
+              img#logo(src='/images/logo.png', width='300px', height='75px', alt='Logo')
+          .info.col-md-8.col-sm-8
+            ul.menu-top.navbar-right.hidden-xs
+              li.divider
+                a(href='https://sunflowergenome.org') Home
+              li.divider
+                a(href='/faq') FAQ
+              li
+                a(href='/contact') Contact
+            br
+      include nav-news
+      <!-- ******CONTENT****** -->
+      .content.container
+        .page-wrapper
+          header.page-heading.clearfix
+            h1.heading-title.pull-left News
+            .breadcrumbs.pull-right
+              ul.breadcrumbs-list
+                li.breadcrumbs-label You are here:
+                li
+                  a(href='https://sunflowergenome.org') Home
+                  i.fa.fa-angle-right
+                li.current News - Annotations
+            <!-- breadcrumbs -->
+          .page-content
+            .row.page-row
+              .news-wrapper.col-md-8.col-sm-7
+                article.news-item
+                p.meta.text-muted
+                  | By:
+                  |
+                  a(href='https://evanstaton.com') SES
+                  |  | Posted on: 3 Jul 2020
+                p.featured-image
+                  img.img-responsive(alt='', src='/images/news/annotation-canvfeats-2.jpg')
+                p.box
+                  | Shown above is a screen capture from the
+                  |
+                  a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata/HA412HOv2') genome browser
+                  |  displaying expression levels of genes and transposons in a small window on chromosome 1.
+                p
+                  | Annotation of the sunflower genome has been an iterative process aimed at improving discovery and description. Along with an improved assembly (Ha412HOv2.0), we are making these latest annotations available to the community. Our approach, described briefly under the activities tab, relies on annotating and masking the repetitive fraction of the genome prior to annotating the gene space. The gene and transposon sequences, and the functional annotations, are available for
+                  |
+                  a(href='/annotations') download
+                  | , viewing in the
+                  |
+                  a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata/HA412HOv2') genome browser
+                  | , and researchers may also perform a sequence-based search of the genome searching through the web-based
+                  |
+                  a(href='https://sunflowergenome.org/blast/') BLAST
+                  |
+                  | tool which links results to the genome browser.
+                p For all new projects with sunflower line Ha412HO, please use the latest
+                |
+                a(href='/assembly') assembly
+                | and
+                |
+                a(href='/annotations') annotation
+                | versions.
+              aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1.col-xs-12
+                section.widget.has-divider
+                  h3.title Other News
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='/images/news/expression-thumb-1.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-expression') HA412HO gene expression browser released
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(alt='', src='/images/news/browser-thumb-3.jpg')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-browser') Genome browser updates
+                  article.news-item.row
+                    figure.thumb.col-md-2.col-sm-3.col-xs-3
+                      img(src='/images/news/jbrowse-thumb-2.jpg', alt='')
+                    .details.col-md-10.col-sm-9.col-xs-9
+                      h4.title
+                        a(href='/news-annotation') Gene and transposon annotations released
+                section.widget.has-divider
+                  h3.title Upcoming Events
+                  article.events-item.row.page-row
+                    .date-label-wrapper.col-md-3.col-sm-4.col-xs-4
+                      p.date-label
+                        span.month AUG
+                        |
+                        span.date-number 15
+                    .details.col-md-9.col-sm-8.col-xs-8
+                      h5.title Bioinformatics Workshop
+                      p.meta
+                        span.time
+                        i.fa.fa-clock-o
+                        | TBD
+                      br
+                      span.location
+                        i.fa.fa-map-marker
+                        |  UBC Main Campus
+
+  include footer
