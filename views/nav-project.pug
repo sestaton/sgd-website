@@ -33,10 +33,17 @@ nav.main-nav(role='navigation')
             | Tools
             i.fa.fa-angle-down
           ul.dropdown-menu
+            li.dropdown-submenu
+              a.trigger(tabindex='-1', href='#')
+                | JBrowse
+                i.fa.fa-angle-right
+              ul.dropdown-menu
+                li
+                  a(tabindex='-1', href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') JBrowse (HA412-HOv1.1 Bronze Assembly)
+                li
+                  a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2FHA412HOv2&loc=Ha412HOChr01%3A267..1733&highlight=Ha412HOChr01%3A267..1733&tracks=Genes%2CTranscript') JBrowse (HA412-HOv2.0 Assembly)
             li
-              a(href='https://sunflowergenome.org/jbrowse_current/?data=extdata%2Fbronze&loc=Ha1%3A116901..164500&tracks=Genes%2CTranscript%2CVariants%2CSeed&highlight=') JBrowse
-            li
-              a(href='https://sunflowergenome.org/blast/') BLAST (HA412-HO Bronze Assembly)
+              a(href='https://sunflowergenome.org/blast/') BLAST (All Assemblies)
             li
               a(href='https://sunflowergenome.org/cgi-bin/cmap/viewer?ref_map_set_acc=1') cMap
             li
