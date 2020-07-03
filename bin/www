@@ -4,14 +4,14 @@
  * Module dependencies.
  */
 
-var app   = require('../app');
-var debug = require('debug')('sgd-website:server');
-var http  = require('http');
-var https = require('https');
-var helmet = require('helmet');
-var ms     = require('ms');
-var fs     = require('fs');
-var enforceSSL = require('express-enforces-ssl');
+const app    = require('../app');
+const debug  = require('debug')('sgd-website:server');
+const http   = require('http');
+const https  = require('https');
+const helmet = require('helmet');
+const ms     = require('ms');
+const fs     = require('fs');
+const enforceSSL = require('express-enforces-ssl');
 
 /**
 * Security settings
@@ -21,7 +21,7 @@ app.enable('trust proxy');    // use SSL
 app.use(enforceSSL());        // enforce SSL
 app.use(helmet.hsts({         // enforces SSL on subdomains
   maxAge: ms('1 year'),
-  includeSubdomains: true
+  includeSubDomains: true
 }));
 app.use(helmet.xssFilter());  // prevent cross-site attacks
 app.use(helmet.frameguard('sameorigin')); // prevent clickjacking by disallowing anyone to put site in a frame
@@ -31,7 +31,7 @@ app.use(helmet.frameguard('sameorigin')); // prevent clickjacking by disallowing
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '3000');
 console.log("listening on port", port);
 app.set('port', port);
 
@@ -43,7 +43,7 @@ app.set('port', port);
 //  cert: fs.readFileSync(process.env.CRTFILE")
 //};
 //var httpsServer = https.createServer(httpsOptions, app);
-var httpServer  = http.createServer(app);
+let httpServer = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -61,7 +61,7 @@ httpServer.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  let port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -85,7 +85,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
@@ -110,8 +110,8 @@ function onError(error) {
 
 function onListening() {
   //var addr = server.address();
-  var addr = this.address();
-  var bind = typeof addr === 'string'
+  let addr = this.address();
+  let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
