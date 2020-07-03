@@ -54,7 +54,7 @@ block content
             .events-wrapper.col-md-8.col-sm-7
               .row.page-row
                 p
-                  | Below are some basic descriptive statistics for the HA412-HO genome assembly. Note that the 'bronze-pseudomolecules' assembly is the annotated version available for download.
+                  | Below are the published assemblies for sunflower line HA412-HO. Note that the 'bronze-pseudomolecules' assembly is the annotated version available for download.
                 .table-responsive
                   table.table.table-striped.table-bordered
                     thead
@@ -65,11 +65,31 @@ block content
                     tbody
                       tr
                         td
-                          | HA412HO v1.1
+                          | HA412HO v2.0
                           p
                             span.label.label-success
                               i.fa.fa-check-circle
                               | Latest Version
+                        td
+                          | Assembled chromosomes in FASTA format (not including organelles)
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/assemblies/Ha412HOv2.0-20181130.fasta.gz')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+                      tr
+                        td
+                          | HA412HO v2.0
+                          p
+                            span.label.label-success
+                              i.fa.fa-check-circle
+                              | Latest Version
+                        td MD5 checksum of HA412HO v2.0 assembly FASTA file
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/assemblies/Ha412HOv2.0-20181130.fasta.gz.md5')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+                      tr
+                        td HA412HO v1.1
                         td
                           | Assembled pseudomolecules in FASTA format (not including organelles or concatenated unplaced contigs)
                         td
@@ -77,36 +97,21 @@ block content
                             span.glyphicon.glyphicon-cloud-download
                             |  Download
                       tr
-                        td
-                          | HA412HO v1.1
-                          p
-                            span.label.label-success
-                              i.fa.fa-check-circle
-                              | Latest Version
+                        td HA412HO v1.1
                         td MD5 checksum of FASTA file
                         td
                            a.btn.btn-sm.btn-default(href='assets/data/assemblies/Ha412v1r1_genome_no_cp-mt-rd_chr-q.fasta.gz.md5')
                              span.glyphicon.glyphicon-cloud-download
                              |  Download
                       tr
-                        td
-                          | HA412HO v1.1
-                          p
-                            span.label.label-success
-                              i.fa.fa-check-circle
-                              | Latest Version
+                        td HA412HO v1.1
                         td Assembled organelles and rDNA in FASTA format
                         td
                            a.btn.btn-sm.btn-default(href='assets/data/assemblies/Ha412v1r1_organelles_rDNA.fasta.gz')
                              span.glyphicon.glyphicon-cloud-download
                              |  Download
                       tr
-                        td
-                          | HA412HO v1.1
-                          p
-                            span.label.label-success
-                              i.fa.fa-check-circle
-                              | Latest Version
+                        td HA412HO v1.1
                         td MD5 checksum of FASTA file
                         td
                           a.btn.btn-sm.btn-default(href='assets/data/assemblies/Ha412v1r1_organelles_rDNA.fasta.gz.md5')
@@ -126,5 +131,41 @@ block content
                           a.btn.btn-sm.btn-default(href='assets/data/assemblies/HA412.v1.0.bronze.20140814.fasta.gz.md5')
                             span.glyphicon.glyphicon-cloud-download
                             |  Download
-
+              .row.page-row
+                p
+                  | Below are the published assemblies for sunflower line PSC8.
+                .table-responsive
+                  table.table.table-striped.table-bordered
+                    thead
+                      tr
+                        th Release version
+                        th Description
+                        th Download
+                    tbody
+                      tr
+                        td
+                          | PSC8 v1.0
+                          p
+                            span.label.label-success
+                              i.fa.fa-check-circle
+                              | Latest Version
+                        td
+                          | Assembled chromosomes in FASTA format (not including organelles)
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/assemblies/HanPSC8.fasta.gz')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+                      tr
+                        td
+                          | PSC8 v1.0
+                          p
+                            span.label.label-success
+                              i.fa.fa-check-circle
+                              | Latest Version
+                        td MD5 checksum of PSC8 v1.0 assembly FASTA file
+                        td
+                          a.btn.btn-sm.btn-default(href='assets/data/assemblies/HanPSC8.fasta.gz.md5')
+                            span.glyphicon.glyphicon-cloud-download
+                            |  Download
+                          
   include footer
