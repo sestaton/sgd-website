@@ -1,14 +1,14 @@
-var express      = require('express');
-var path         = require('path');
-var favicon      = require('serve-favicon');
-var logger       = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var requireDir   = require('require-dir');
-var vhost        = require('vhost');
-var compression  = require('compression');
+const express      = require('express');
+const path         = require('path');
+const favicon      = require('serve-favicon');
+const logger       = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser   = require('body-parser');
+const requireDir   = require('require-dir');
+const vhost        = require('vhost');
+const compression  = require('compression');
 
-var app = express();
+const app = express();
 
 //use compression
 function shouldCompress (req, res) {
@@ -29,12 +29,12 @@ app.use(compression({
 );
 
 // stress subdomain
-var stressRouter = require('./routes/stress/stressRouter');
+const stressRouter = require('./routes/stress/stressRouter');
 app.use(vhost('stress.sunflowergenome.org', stressRouter));
 app.use(vhost('www.stress.sunflowergenome.org', stressRouter));
 
 // blast app is a Rails app running on a different port
-var blastRouter = require('./routes/blast/blastRouter');
+const blastRouter = require('./routes/blast/blastRouter');
 app.use(vhost('sunflowergenome.org/blast/', blastRouter));
 app.use(vhost('www.sunflowergenome.org/blast/', blastRouter));
 
@@ -42,8 +42,8 @@ app.use(vhost('www.sunflowergenome.org/blast/', blastRouter));
 app.use('/jbrowse_current', express.static(path.join(__dirname, '/var/www/jbrowse/JBrowse-1.12.1')))
 
 // mount all routes http://stackoverflow.com/a/25446206
-var routes = requireDir('./routes', { recurse: false }); // https://www.npmjs.org/package/require-dir
-for (var i in routes) app.use('/', routes[i]);
+let routes = requireDir('./routes', { recurse: false }); // https://www.npmjs.org/package/require-dir
+for (let i in routes) app.use('/', routes[i]);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
