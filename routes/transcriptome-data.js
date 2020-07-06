@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET transcriptome listing. */
 router.get('/transcriptome-data', function(req, res, next) {

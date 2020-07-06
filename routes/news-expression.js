@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET news-expression listing. */
 router.get('/news-expression', function(req, res, next) {

@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET terms-and-conditions listing. */
 router.get('/terms-and-conditions', function(req, res, next) {

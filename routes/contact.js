@@ -1,18 +1,18 @@
-var express   = require('express');
-var Mailgun   = require('mailgun-js');
-var Recaptcha = require('node-recaptcha2').Recaptcha;
+const express   = require('express');
+const Mailgun   = require('mailgun-js');
+const Recaptcha = require('node-recaptcha2').Recaptcha;
 
-var router = express.Router();
+const router = express.Router();
 
 //Your api key, from Mailgun’s Control Panel
-var mg_api_key = process.env.MG_KEY;
+const mg_api_key = process.env.MG_KEY;
 //Your domain, from the Mailgun Control Panel
-var domain = 'mail.sunflowergenome.org';
+const domain = 'mail.sunflowergenome.org';
 //Your sending email address
-var from_who = '"SGD website" <contact@mail.sunflowergenome.org>';
-var recipient = 'statonse@protonmail.com';
+const from_who = '"SGD website" <contact@mail.sunflowergenome.org>';
+const recipient = 'statonse@protonmail.com';
 
-var PUBLIC_KEY  = process.env.GRA_KEY_PUB,
+const PUBLIC_KEY  = process.env.GRA_KEY_PUB,
     PRIVATE_KEY = process.env.GRA_KEY_PRIV;
 
 router.get('/contact', function(req, res, next) {

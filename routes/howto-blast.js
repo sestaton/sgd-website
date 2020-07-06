@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET howto-blast listing. */
 router.get('/howto-blast', function(req, res, next) {
