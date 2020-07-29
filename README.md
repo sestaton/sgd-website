@@ -1,7 +1,5 @@
-[![SGD website](half_logo.png)](https://sunflowergenome.org)
+[![SGD website](public/images/logo.png)](https://sunflowergenome.org)
 
-===========
-sunflower genome database website (https://sunflowergenome.org/)
 
 **Install**
 
