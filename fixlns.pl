@@ -44,36 +44,7 @@ for my $in (@files) {
     chdir $in or die $!;
     unlink('assets') if -e 'assets';
     system("ln -s ../assets assets") == 0 or die $!;
-    #exit;
 }
 
 exit;
-## methods
-sub _copy_page {
-    my ($file, $dest, $dname) = @_;
-
-    my ($name, $path, $suffix) = fileparse($file, qr/\.[^.]*/);
-
-    if ($name eq 'index') {
-	my $index = File::Spec->catfile($dest, $name.$suffix);
-
-	unless (-e $index) {
-	    copy($file, $index) or die "Copy failed: $!"
-	}
-
-	return;
-    }
-
-    my $outdir = File::Spec->catdir($dest, $name);
-    unless (-e $outdir) {
-	make_path($outdir, {verbose => 0, mode => 0771,});
-    }
-
-    my $outfile = File::Spec->catfile($outdir, 'index.html');
-    copy($file, $outfile) or die "Copy failed: $!";
-    unlink $file;
-
-    system("ln -s $dest/assets $outdir/assets") == 0 or die $!;
-
-    return;
 }
