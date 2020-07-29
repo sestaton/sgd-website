@@ -1,4 +1,4 @@
-![SGD website](logo.png)
+[![SGD website](half_logo.png)](https://sunflowergenome.org)
 
 ===========
 sunflower genome database website (https://sunflowergenome.org/)
