@@ -1,4 +1,5 @@
-sgd-website
+[![SGD website](logo.png)](https://sunflowergenome.org)
+
 ===========
 sunflower genome database website (https://sunflowergenome.org/)
 
@@ -34,9 +35,11 @@ There are a number of ENV vars relating to API keys that have to be set, but I'l
 
 This will build a static site in the 'sgd-static' directory:
 
-    bash prepare-static.sh
+    bash prepare-static.sh /data/raid5part4/rushmore_rieseberg1/sgd-website-data/
 
-That will prepare the site to be used in place. If you wish to move the document root you will need to run one more command to convert absolute links to relative links.
+The argument to the script is the location of the data for the downloads (nothing will be touched, but the location has to be known to handle the links properly). The above is just an example from an old iteration of this site, so use whatever is appropriate on your machine.
+
+The above script will prepare the site to be used in place. If you wish to move the document root you will need to run one more command to convert absolute links to relative links.
 
     perl fixlns.pl -i sgd-static
 
@@ -53,6 +56,12 @@ That command will also watch all the assets, and if any files change, it will re
 In most cases, it is easier to just use `nodemon` to watch for changes, which allows you to skip all the `gulp` stuff. The following command will start the server and log the port that is open to the console.
 
     npm start
+
+The web fonts and browser dependencies are all on github and handled by the build process to avoid issues with library versions. If you have issues with these libraries or specific problems on certain browsers or platforms (e.g., mobile devices), you may want to update these dependencies:
+
+    bower install
+
+Be sure to test these changes to make sure everything is working, and also update the changes in the package files (bower.json and package.json) and lockfile before pushing any updates to github.
 
 # License/Author
 
