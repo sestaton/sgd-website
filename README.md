@@ -32,8 +32,6 @@ Then, start the server:
 
     npm start
 
-There are a number of ENV vars relating to API keys that have to be set, but I'll document that later.
-
 ## In production with Apache/Nginx (or any server other than Node.js)
 
 For complicated sites with numerous apps it can be easier to compile a static version of the main site and let Apache or Nginx handle the traffic, as well as routing for the other apps that are running. This has the added benefit of using the security and support of these other communities. 
@@ -49,6 +47,20 @@ The above script will prepare the site to be used in place. If you wish to move 
     perl fixlns.pl -i sgd-static
 
 You should then be able to move that directory to some place of your choosing and point your `http.conf` document root to it. That's it, other than configuring access and other applications, which I won't document here since it is rather specific.
+
+## Service configuration
+
+In production, there are a number of ENV vars relating to API keys that have to be set and I'll explain these here. For the email form, we use a service called	[mailgun](https://www.mailgun.com/). You will need to register an account and set the following ENV vars for the service to work as expected:
+
+    MAILGUN_API_KEY     # Your API key
+    MAILGUN_API_DOMAIN  # Your domain
+    RECIPIENT_EMAIL     # Who is getting the mail, i.e., you the developer
+
+If you don't want to set these then the mail form won't work, which is no big deal. See below about the importance of not hard-coding these values. For any person or bots reading this there are no valid keys anywhere in the code or history!
+
+The above is what would be considered a back-end service that can set the rate and location of usage, so these must be kept private. Other servies used here are [Google Analytics](https://analytics.google.com/analytics/web/) (used in [sgd_ga.js](public/javascripts/sgd_ga.js)) and the [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key) (used in [contact.pug](views/contact.pug)).
+
+These front-end services display your tokens in the HTML so anyone can see them. That's okay because they limit the rate and usage of the service by the domain, IP address, and account so it is useless to anyone else. These are also free services and for these reasons it does not make much sense to try hid these tokens from your code because they will be displayed anyway. Change them as appropriate so they can be managed properly and use variables for these as well if you prefer.
 
 ## For development
 
@@ -68,6 +80,12 @@ The web fonts and browser dependencies are all on github and handled by the buil
 
 Be sure to test these changes to make sure everything is working, and also update the changes in the package files (bower.json and package.json) and lockfile before pushing any updates to github.
 
+## Development advice
+
+- Do your changes in a separate branch so as to not break the main website code. That allows mulitple people to work on the site, and still keep a working copy. After testing that your changes look good, you can then push them to the remote and then pull them on the host machine to make an update.
+
+- DO NOT commit API keys. These will get picked up by bots that scan everything on Github and soon enough you will find out your accounts are being abused (this is true mainly for services like e-mail, not as important for the google tokens which are tied to an account and domain).
+
 # License/Author
 
-MIT @ Evan Staton
+MIT @ [Evan Staton](https://evanstaton.com)
