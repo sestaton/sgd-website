@@ -15,12 +15,13 @@ use Cwd        qw(abs_path getcwd);
 use Getopt::Long;
 #use Data::Dump::Color;
 
-my $usage = "\nUSAGE: ".basename($0)." -i <indir> -o <outdir>\n";
-$usage .= "\n <indir>  : A directory of HTML files 
- <outdir> : The base directory to write the results.\n";
+my $usage = "\nUSAGE: ".basename($0)." -i <indir> -o <outdir> -d <datadir>\n";
+$usage .= "\n <indir>   : A directory of HTML files 
+ <outdir>  : The base directory to write the results.
+ <datadir> : The location of the annotation and assembly data files (not stored in document root).\n";
 
 my %opts;
-GetOptions(\%opts, 'indir|i=s', 'outdir|o=s');
+GetOptions(\%opts, 'indir|i=s', 'outdir|o=s', 'datadir|d=s');
 say STDERR $usage and exit(1) unless %opts;
 
 $opts{indir}  = abs_path($opts{indir});
@@ -28,6 +29,8 @@ say STDERR "\nERROR: '$opts{indir}' does not exist.\n$usage"
     and exit(1) unless defined $opts{indir} && -e $opts{indir};
 
 $opts{outdir} = abs_path($opts{outdir});
+$opts{datadir} = abs_path($opts{datadir});
+
 my $wd    = getcwd();
 my $base  = basename($opts{indir});
 my $dname = dirname($opts{indir});
@@ -66,9 +69,13 @@ for my $in (@files) {
 }
 
 ## Asset PATHs
+my $cwd = getcwd();
+chdir $assetdir or die $!;
+system("ln -s $opts{datadir} data") == 0 or die $!;
+chdir $cwd or die $!;
+
 for my $dir (qw(css js images fonts)) {
     my $asset = File::Spec->catdir($dname, $dir);
-    my $assetdir = File::Spec->catdir($opts{outdir}, 'assets'); 
     my $cmd = "cp -R $asset $assetdir/";
     system($cmd) == 0 or die $!;
 }
