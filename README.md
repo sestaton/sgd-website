@@ -10,8 +10,8 @@ contact them concerning the current live website, but feel free to contact me ab
 
 Download the package:
 
-    git clone https://github.com/sestaton/sgd-website.git
-    cd sgd-website
+    git clone git@github.com:rieseberglab/sgd-website.git rlab-sgd-website
+    cd rlab-sgd-website
 
 Install the server dependencies:
 
