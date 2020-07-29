@@ -34,9 +34,11 @@ Then, start the server:
 
 There are a number of ENV vars relating to API keys that have to be set, but I'll document that later.
 
-## In production with Apache server
+## In production with Apache/Nginx (or any server other than Node.js)
 
-This will build a static site in the 'sgd-static' directory:
+For complicated sites with numerous apps it can be easier to compile a static version of the main site and let Apache or Nginx handle the traffic, as well as routing for the other apps that are running. This has the added benefit of using the security and support of these other communities. 
+
+The command below will build a static site in the 'sgd-static' directory:
 
     bash prepare-static.sh /data/raid5part4/rushmore_rieseberg1/sgd-website-data/
 
