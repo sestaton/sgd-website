@@ -3,7 +3,7 @@
 ## About
 
 This is the code for the [sunflower genome website](https://sunflowergenome.org) that I developed
-and maintained from 2016-2020. This is now being maintained by the Rieseberg lab at UBC, so please
+and maintained from 2016-2020. This is now being maintained by the [Rieseberg lab](https://github.com/rieseberglab) at UBC, so please
 contact them concerning the current live website, but feel free to contact me about this code or projects.
 
 ## Install
