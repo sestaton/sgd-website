@@ -4,6 +4,31 @@ set -euo pipefail
 
 ## We need to make a few changes in order to get an Express/Node site to work under Apache
 ## This only needs to be done once, when development is over and you are ready for production.
+function usage() {
+cat << EOF
+USAGE: $0 <data_dir>
+
+data_dir  :  The directory path to the data files for the download section of the site
+             (e.g., /data/raid5part1/website_data)
+
+EOF
+}
+
+function print_error() {
+cat << ERR
+
+ERROR: Command line not parsed correctly. Check input.
+
+ERR
+}
+
+if [ $# -lt 1 ]; then
+    print_error
+    usage
+    exit 1
+fi
+
+data_dir=$1
 
 # Test for the results directory and warn if it exists
 static_dir='sgd-static'
@@ -32,7 +57,7 @@ gulp --env prod --outDir dist html css scripts images fonts
 
 # Step 3: Prepare the pages so we don't have the edit every single file PATH
 echo -e "=====> Preparing static distribution..."
-perl compile-static.pl -i dist/html -o $static_dir
+perl compile-static.pl -i dist/html -o $static_dir -d $data_dir
 
 # Finally, copy favicon from public to static dir
 cp public/favicon.ico $static_dir
