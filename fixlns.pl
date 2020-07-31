@@ -47,4 +47,3 @@ for my $in (@files) {
 }
 
 exit;
-}
