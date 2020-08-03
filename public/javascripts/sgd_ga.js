@@ -31,7 +31,7 @@
   firstScript.parentNode.insertBefore(script, firstScript);
 })();
 
-ga('create', 'UA-82384679-1', 'auto');
+ga('create', GA_API_KEY, 'auto');
 ga('send', 'pageview');
 
 // the below is modified for jslint, based on:
