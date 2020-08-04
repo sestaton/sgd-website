@@ -1,3 +1,6 @@
+# Uncomment when in production. Do not commit this file
+#.env
+
 # Webstorm
 .idea
 
