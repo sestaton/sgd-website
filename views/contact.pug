@@ -69,7 +69,7 @@ html
                       | Message
                       span.required *
                     textarea#message.form-control(name='message', rows='6', placeholder='Enter your message here...')
-                  .g-recaptcha(data-sitekey='6LdDYigTAAAAAFRnIRVE440HdoLLnMlf_3c5-f-Q')
+                  .g-recaptcha(data-sitekey=CAPTCHA_SITE_KEY)
                   |
                   button#submit.btn.btn-theme(type='submit', name='submit', value='submit', onclick='mgform.hid=this.value') Send message
               aside.page-sidebar.col-md-3.col-md-offset-1.col-sm-4.col-sm-offset-1
@@ -104,14 +104,14 @@ html
                     | Email:
                     |
                     a(href='#') lriesebe@mail.ubc.ca
-                  h3.title Website Admin
+                  <!-- h3.title Website Admin
                   p
                     | If you get no response from the submission form, please direct questions about the site to the address below.
                   p.email
                     i.fa.fa-envelope
                     | Email:
                     |
-                    a(href='#') evan@evanstaton.com
+                    a(href='#') evan@evanstaton.com -->
             .page-row
               article.map-section
                 h3.title How to find us
