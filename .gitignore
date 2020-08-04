@@ -1,3 +1,6 @@
+# Uncomment when in production. Do not commit this file
+#.env
+
 # Webstorm
 .idea
 
@@ -40,3 +43,6 @@ bower_components
 
 # build
 dist
+
+# compiled static version of site which should not be tracked
+sgd-static

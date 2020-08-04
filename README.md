@@ -10,8 +10,8 @@ contact them concerning the current live website, but feel free to contact me ab
 
 Download the package:
 
-    git clone https://github.com/sestaton/sgd-website.git
-    cd sgd-website
+    git clone git@github.com:rieseberglab/sgd-website.git rlab-sgd-website
+    cd rlab-sgd-website
 
 Install the server dependencies:
 
@@ -50,17 +50,15 @@ You should then be able to move that directory to some place of your choosing an
 
 ## Service configuration
 
-In production, there are a number of ENV vars relating to API keys that have to be set and I'll explain these here. For the email service (contact form), I used a service provider called [mailgun](https://www.mailgun.com/). You will need to register an account and set the following ENV vars for the service to work as expected:
-
-    MAILGUN_API_KEY     # Your API key
-    MAILGUN_API_DOMAIN  # Your domain
-    RECIPIENT_EMAIL     # Who is getting the mail, i.e., you the developer
+In production, there are a number of ENV vars relating to API keys that have to be set and I'll explain these here. For the email service (contact form), I used a service provider called [mailgun](https://www.mailgun.com/).
 
 If you don't want to set these then the mail form won't work, which is no big deal. See below about the importance of not hard-coding these values. For any person or bots reading this there are no valid keys anywhere in the code or history!
 
 The above is what would be considered a back-end service that can set the rate and location of usage, so these must be kept private. Other servies used here are [Google Analytics](https://analytics.google.com/analytics/web/) (used in [sgd_ga.js](public/javascripts/sgd_ga.js)) and the [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key) (used in [contact.pug](views/contact.pug)).
 
-These front-end services display your tokens in the HTML so anyone can see them. That's okay because they limit the rate and usage of the service by the domain, IP address, and account so it is useless to anyone else. These are also free services and for these reasons it does not make much sense to hid these tokens from your code because they will be displayed anyway. Change them as appropriate so they can be managed properly and use variables for these as well if you prefer.
+These front-end services display your tokens in the HTML so anyone can see them. That's okay because they limit the rate and usage of the service by the domain, IP address, and account so these are not useful to anyone else if configured correctly. These are also free services and for these reasons it is not as important (though recommended) to hide these tokens from your code. Change them as appropriate so they can be managed properly, and I would recommend using variables for these to be safe.
+
+You will need to register accounts with these services and set the following ENV vars in the [.env](.env) file for these services to work. You can source these manually or use the [dotenv](https://www.npmjs.com/package/dotenv) package. Once you have set these values in production, uncomment the second line in the [.gitignore](.gitignore) file so the file is not tracked and commited with your information. I am putting a template here to guide configuration of the site.
 
 ## For development
 

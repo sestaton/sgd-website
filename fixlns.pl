@@ -4,8 +4,6 @@
 ## if you are going to be moving the entire static directory to another location on 
 ## the file system.
 
-#TODO:
-
 use 5.014;
 use strict;
 use warnings;
