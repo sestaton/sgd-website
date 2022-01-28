@@ -55,7 +55,7 @@
     "merge2": "^1.4.1",
     "nodemon": "^1.19.4",
     "streamqueue": "^1.1.2",
-    "through2": "^2.0.5",
+    "through2": "^4.0.2",
     "yargs": "^17.3.1"
   }
 }
