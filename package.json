@@ -43,19 +43,19 @@
     "gulp-imagemin": "^3.4.0",
     "gulp-jshint": "^2.1.0",
     "gulp-jslint": "^1.0.10",
-    "gulp-load-plugins": "^1.6.0",
+    "gulp-load-plugins": "^2.0.7",
     "gulp-nodemon": "^2.5.0",
     "gulp-pug": "^3.3.0",
     "gulp-remember": "^0.3.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.1",
-    "gulp-uglify": "^2.1.2",
+    "gulp-uglify": "^3.0.2",
     "jshint": "^2.11.1",
     "main-bower-files": "^2.13.3",
     "merge2": "^1.4.1",
     "nodemon": "^1.19.4",
     "streamqueue": "^1.1.2",
-    "through2": "^2.0.5",
+    "through2": "^4.0.2",
     "yargs": "^17.3.1"
   }
 }
