@@ -30,7 +30,7 @@
     "vhost": "^3.0.2"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.7",
     "debug": "^4.3.3",
     "del": "^2.2.2",
     "gulp": "git://github.com/gulpjs/gulp.git",
@@ -49,7 +49,7 @@
     "gulp-remember": "^0.3.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.1",
-    "gulp-uglify": "^2.1.2",
+    "gulp-uglify": "^3.0.2",
     "jshint": "^2.11.1",
     "main-bower-files": "^2.13.3",
     "merge2": "^1.4.1",
